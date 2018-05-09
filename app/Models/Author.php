@@ -4,14 +4,14 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 
 
-class Services extends Model  {
+class Author extends Model  {
 
 	/**
 	 * The database table used by the model.
 	 *
 	 * @var string
 	 */
-	protected $table = 'services';
+	protected $table = 'author';
 
 	 /**
      * Indicates if the model should be timestamped.
@@ -25,14 +25,8 @@ class Services extends Model  {
      * @var array
      */
     protected $fillable = [
-                            'title', 
-                            'slug', 
-                            'alias',                             
-                            'status', 
-                            'display_order', 
-                            'description', 
-                            'image_url',
-                            'url',
+                            'name',                             
+                            'detail_url',                                                        
                             'created_user', 
                             'updated_user'
                         ];
@@ -45,8 +39,8 @@ class Services extends Model  {
     {
         return $this->belongsTo('App\Models\Account', 'updated_user');
     }
-
-    public static function getList(){
-        return self::where('status', 1)->orderBy('display_order')->get();
+    public function books()
+    {
+        return $this->hasMany('App\Models\Book', 'author_id');
     }
 }

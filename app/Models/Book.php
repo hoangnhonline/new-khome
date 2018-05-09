@@ -3,14 +3,14 @@
 use Illuminate\Database\Eloquent\Model;
 
 
-class CateParent extends Model  {
+class Book extends Model  {
 
 	/**
 	 * The database table used by the model.
 	 *
 	 * @var string
 	 */
-	protected $table = 'cate_parent';	
+	protected $table = 'book';	
 
 	 /**
      * Indicates if the model should be timestamped.
@@ -23,12 +23,9 @@ class CateParent extends Model  {
      *
      * @var array
      */
-    protected $fillable = [ 'name', 'alias', 'slug', 'description', 'image_url', 'display_order', 'meta_id', 'is_hot', 'status', 'created_user', 'updated_user', 'is_widget'];
-
-    public function cates()
+    protected $fillable = [ 'name', 'folder_id', 'slug', 'image_url', 'author_id', 'publish_company', 'publish_year', 'duration', 'display_order', 'status', 'created_user', 'updated_user'];    
+    public function folder()
     {
-        return $this->hasMany('App\Models\Cate', 'parent_id');
-    }
-    
-
+        return $this->belongsTo('App\Models\Folder', 'folder_id');
+    }   
 }
