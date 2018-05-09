@@ -21,7 +21,7 @@ class UserController extends Controller
     {        
         if(Auth::check()){
             if(Auth::user()->id != 5){
-                return redirect()->route('product.index');    
+                return redirect()->route('book.index');    
             }else{
                 return redirect()->route('orders.index');    
             }
@@ -56,7 +56,7 @@ class UserController extends Controller
             $dataArr['status'] = 1;
             if (Auth::attempt($dataArr)) {                    
                 if(Auth::user()->id != 5 && Auth::user()->role  > 1){
-                    return redirect()->route('product.index');    
+                    return redirect()->route('book.index');    
                 }else{
                     return redirect()->route('orders.index');    
                 }

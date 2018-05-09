@@ -4,11 +4,11 @@
 <!-- Content Header (Page header) -->
 <section class="content-header">
   <h1>
-    Sản phẩm
+    Book
   </h1>
   <ol class="breadcrumb">
     <li><a href="#"><i class="fa fa-dashboard"></i> Dashboard</a></li>
-    <li><a href="{{ route( 'product.index' ) }}">Sản phẩm</a></li>
+    <li><a href="{{ route( 'book.index' ) }}">Book</a></li>
     <li class="active">Danh sách</li>
   </ol>
 </section>
@@ -20,56 +20,50 @@
       @if(Session::has('message'))
       <p class="alert alert-info" >{{ Session::get('message') }}</p>
       @endif
-      <a href="{{ route('product.create', ['parent_id' => $arrSearch['parent_id'], 'cate_id' => $arrSearch['cate_id']]) }}" class="btn btn-info btn-sm" style="margin-bottom:5px">Tạo mới</a>
+      <a href="{{ route('book.create', ['folder_id' => $arrSearch['folder_id'], 'author_id' => $arrSearch['author_id']]) }}" class="btn btn-info btn-sm" style="margin-bottom:5px">Tạo mới</a>
       <div class="panel panel-default">
         <div class="panel-heading">
           <h3 class="panel-title">Bộ lọc</h3>
         </div>
         <div class="panel-body">
-          <form class="form-inline" id="searchForm" role="form" method="GET" action="{{ route('product.index') }}">
+          <form class="form-inline" id="searchForm" role="form" method="GET" action="{{ route('book.index') }}">
            
           
             
             <div class="form-group">
-              <label for="email">Loại sản phẩm</label>
-              <select class="form-control" name="parent_id" id="parent_id">
-                <option value="">--Tất cả--</option>
-                @foreach( $cateParentList as $value )
-                <option value="{{ $value->id }}" {{ $value->id == $arrSearch['parent_id'] ? "selected" : "" }}>{{ $value->name }}</option>
+              <label for="email">Folder</label>
+              <select class="form-control" name="folder_id" id="folder_id">
+                <option value="">--All--</option>
+                @foreach( $folderList as $value )
+                <option value="{{ $value->id }}" {{ $value->id == $arrSearch['folder_id'] ? "selected" : "" }}>{{ $value->name }}</option>
                 @endforeach
               </select>
             </div>
               <div class="form-group">
-              <label for="email">Danh mục cha</label>
+              <label for="email">Author</label>
 
-              <select class="form-control" name="cate_id" id="cate_id">
-                <option value="">--Tất cả--</option>
-                @foreach( $cateList as $value )
-                <option value="{{ $value->id }}" {{ $value->id == $arrSearch['cate_id'] ? "selected" : "" }}>{{ $value->name }}</option>
+              <select class="form-control" name="author_id" id="author_id">
+                <option value="">--All--</option>
+                @foreach( $authorList as $value )
+                <option value="{{ $value->id }}" {{ $value->id == $arrSearch['author_id'] ? "selected" : "" }}>{{ $value->name }}</option>
                 @endforeach
               </select>
             </div>
             <div class="form-group">
-              <label for="email">Danh mục con</label>
+              <label for="email">Created user</label>
 
-              <select class="form-control" name="grand_id" id="grand_id">
-                <option value="">--Tất cả--</option>
-                @foreach( $grandList as $value )
-                <option value="{{ $value->id }}" {{ $value->id == $arrSearch['grand_id'] ? "selected" : "" }}>{{ $value->name }}</option>
+              <select class="form-control" name="created_user" id="created_user">
+                <option value="">--All--</option>
+                @foreach( $userList as $value )
+                <option value="{{ $value->id }}" {{ $value->id == $arrSearch['created_user'] ? "selected" : "" }}>{{ $value->name }}</option>
                 @endforeach
               </select>
             </div>
             <div class="form-group">
-              <label for="email">Tên</label>
-              <input type="text" class="form-control" name="name" value="{{ $arrSearch['name'] }}">
-            </div>            
-            <div class="form-group">
-              <label><input type="checkbox" name="is_hot" value="1" {{ $arrSearch['is_hot'] == 1 ? "checked" : "" }}> HOT</label>              
-            </div>
-            <div class="form-group">
-              <label><input type="checkbox" name="is_sale" value="1" {{ $arrSearch['is_sale'] == 1 ? "checked" : "" }}> SALE</label>              
-            </div>                                 
-            <button type="submit" style="margin-top:-5px" class="btn btn-primary btn-sm">Lọc</button>
+              <label for="email">ID/Name</label>
+              <input type="text" class="form-control" name="keyword" value="{{ $arrSearch['keyword'] }}">
+            </div>                       
+            <button type="submit" style="margin-top:-5px" class="btn btn-primary btn-sm">Filter</button>
           </form>         
         </div>
       </div>
@@ -87,9 +81,9 @@
           <table class="table table-bordered" id="table-list-data">
             <tr>
               <th style="width: 1%">#</th>
-              @if($arrSearch['is_hot'] == 1 && $arrSearch['parent_id'] > 0 )
+              
               <th style="width: 1%;white-space:nowrap">Thứ tự</th>
-              @endif
+              
               <th width="210px">Hình ảnh</th>
               <th style="text-align:center">Thông tin sản phẩm</th>                              
               <th width="1%;white-space:nowrap">Thao tác</th>
@@ -103,16 +97,16 @@
                 ?>
               <tr id="row-{{ $item->id }}">
                 <td><span class="order">{{ $i }}</span></td>
-                @if($arrSearch['is_hot'] == 1 && $arrSearch['parent_id'] > 0 )
+                
                 <td style="vertical-align:middle;text-align:center">
                   <img src="{{ URL::asset('backend/dist/img/move.png')}}" class="move img-thumbnail" alt="Cập nhật thứ tự"/>
                 </td>
-                @endif
+                
                 <td>
                   <img class="img-thumbnail lazy" width="206" data-original="{{ $item->image_url ? Helper::showImage($item->image_url) : URL::asset('backend/dist/img/no-image.jpg') }}" alt="{{ $item->name }}" title="{{ $item->name }}" />
                 </td>
                 <td>                  
-                  <a style="color:#333;font-weight:bold" href="{{ route( 'product.edit', [ 'id' => $item->id ]) }}">{{ $item->name }}</a> &nbsp; @if( $item->is_hot == 1 )
+                  <a style="color:#333;font-weight:bold" href="{{ route( 'book.edit', [ 'id' => $item->id ]) }}">{{ $item->name }}</a> &nbsp; @if( $item->is_hot == 1 )
                   <label class="label label-danger">HOT</label>
                   @endif<br />
                   <strong style="color:#337ab7;font-style:italic"> {{ $item->cate_parent_name }} / {{ $item->cate_name }}</strong>
@@ -134,9 +128,9 @@
                 </td>
                 <td style="white-space:nowrap; text-align:right">
                   <a class="btn btn-default btn-sm" href="{{ route('product', [ $item->slug, $item->product_id ]) }}" target="_blank"><i class="fa fa-eye" aria-hidden="true"></i> Xem</a>                 
-                  <a href="{{ route( 'product.edit', [ 'id' => $item->id ]) }}" class="btn btn-warning btn-sm">Chỉnh sửa</a>                 
+                  <a href="{{ route( 'book.edit', [ 'id' => $item->id ]) }}" class="btn btn-warning btn-sm">Chỉnh sửa</a>                 
 
-                  <a onclick="return callDelete('{{ $item->name }}','{{ route( 'product.destroy', [ 'id' => $item->id ]) }}');" class="btn btn-danger btn-sm">Xóa</a>
+                  <a onclick="return callDelete('{{ $item->name }}','{{ route( 'book.destroy', [ 'id' => $item->id ]) }}');" class="btn btn-danger btn-sm">Xóa</a>
 
                 </td>
               </tr> 
@@ -194,15 +188,15 @@ $(document).ready(function(){
     obj.parent().parent().parent().submit(); 
   });
   
-  $('#parent_id').change(function(){
-    $('#cate_id').val('');
+  $('#folder_id').change(function(){
+    $('#author_id').val('');
     $('#searchForm').submit();
   });
-  $('#cate_id').change(function(){
-    $('#grand_id').val('');
+  $('#author_id').change(function(){
+    $('#created_user').val('');
     $('#searchForm').submit();
   });
-  $('#grand_id').change(function(){    
+  $('#created_user').change(function(){    
     $('#searchForm').submit();
   });
   $('#table-list-data tbody').sortable({

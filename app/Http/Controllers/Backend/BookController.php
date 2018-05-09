@@ -6,22 +6,12 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use App\Models\Product;
-use App\Models\CateType;
-use App\Models\CateParent;
-use App\Models\Cate;
-use App\Models\ProductImg;
-use App\Models\MetaData;
-use App\Models\Tag;
-use App\Models\TagObjects;
-use App\Models\ThongSo;
-use App\Models\Rating;
-use App\Models\Grand;
+use App\Models\Book;
 
 
 use Helper, File, Session, Auth, Hash, URL, Image;
 
-class ProductController extends Controller
+class BookController extends Controller
 {
     /**
     * Display a listing of the resource.
@@ -31,111 +21,81 @@ class ProductController extends Controller
     public function change(Request $request){
         $parent_id = isset($request->parent_id) ? $request->parent_id : null;
         $cate_id = isset($request->cate_id) ? $request->cate_id : null;    
-        return view('backend.product.change', compact('parent_id', 'cate_id'));   
+        return view('backend.book.change', compact('parent_id', 'cate_id'));   
     }
     public function index(Request $request)
     {   
-        $arrSearch['parent_id'] = $parent_id = isset($request->parent_id) ? $request->parent_id : null;
-        $arrSearch['cate_id'] = $cate_id = isset($request->cate_id) ? $request->cate_id : null;    
-        $arrSearch['grand_id'] = $grand_id = isset($request->grand_id) ? $request->grand_id : null;        
-        $arrSearch['code'] = $code = isset($request->code) && trim($request->code) != '' ? trim($request->code) : '';
-        $arrSearch['status'] = $status = isset($request->status) ? $request->status : 1;
-        $arrSearch['is_hot'] = $is_hot = isset($request->is_hot) ? $request->is_hot : null;
-        $arrSearch['is_sale'] = $is_sale = isset($request->is_sale) ? $request->is_sale : null;
-        $arrSearch['out_of_stock'] = $out_of_stock = isset($request->out_of_stock) ? $request->out_of_stock : null;
-        $arrSearch['name'] = $name = isset($request->name) && trim($request->name) != '' ? trim($request->name) : '';
+        $arrSearch['folder_id'] = $folder_id = isset($request->folder_id) ? $request->folder_id : null;
+        $arrSearch['author_id'] = $author_id = isset($request->author_id) ? $request->author_id : null;
+        $arrSearch['status'] = $status = isset($request->status) ? $request->status : 1;    
+        $arrSearch['created_user'] = $created_user = isset($request->created_user) ? $request->created_user : null;        
+        $arrSearch['keyword'] = $keyword = isset($request->keyword) && trim($request->keyword) != '' ? trim($request->keyword) : '';
         
-        $query = Product::where('product.status', $status);
-        if( $is_hot ){
-            $query->where('product.is_hot', $is_hot);
-        }
-        if( $is_sale ){
-            $query->where('product.is_sale', $is_sale);
-        }
-        if( $parent_id ){
-            $query->where('product.parent_id', $parent_id);
-        }
-        if( $cate_id ){
-            $query->where('product.cate_id', $cate_id);
-        }
-        if( $grand_id ){
-            $query->where('product.grand_id', $grand_id);
-        }
-        if( $out_of_stock ){
-            $query->where('product.out_of_stock', $out_of_stock);
-        }        
-        if( $name != ''){
-            $query->where('product.alias', 'LIKE', '%'.$name.'%');           
-        }
-        if( $code != ''){
-            $query->where('product.code', 'LIKE', '%'.$code.'%');           
-        }
-        $query->join('users', 'users.id', '=', 'product.created_user');
-        $query->join('cate_parent', 'cate_parent.id', '=', 'product.parent_id');
-        $query->join('cate', 'cate.id', '=', 'product.cate_id');
-        //$query->join('grand', 'grand.id', '=', 'product.grand_id');
-        $query->orderBy('product.is_hot', 'desc')->orderBy('product.id', 'desc');
-        $items = $query->select(['product.*','product.id as product_id', 'display_name' , 'product.created_at as time_created', 'cate_parent.name as cate_parent_name', 'cate.name as cate_name'])
-        ->paginate(50);   
+        $query = Book::where('book.status', $status);
         
-        if( $parent_id ){
-            $cateList = Cate::where('parent_id', $parent_id)->orderBy('display_order', 'desc')->get();
-        }else{
-            $cateList = (object) [];
+        if( $folder_id ){
+            $query->where('book.folder_id', $folder_id);
         }
-        if( $cate_id ){
-            $grandList = Grand::where('cate_id', $cate_id)->orderBy('display_order', 'desc')->get();
-        }else{
-            $grandList = (object) [];
+        if( $author_id ){
+            $query->where('book.author_id', $author_id);
         }
+        if( $created_user ){
+            $query->where('book.created_user', $created_user);
+        }         
+        if( $keyword != ''){
+            $query->where('book.name', 'LIKE', '%'.$name.'%');           
+            $query->orWhere('book.id', 'LIKE', '%'.$name.'%');
+        } 
+        $query->orderBy('book.display_order', 'asc')->orderBy('book.id', 'desc');
+        $items = $query->paginate(100);        
 
-        return view('backend.product.index', compact( 'items', 'arrSearch', 'cateList', 'grandList'));        
+        return view('backend.book.index', compact( 'items', 'arrSearch'));        
     }
    
     public function ajaxGetTienIch(Request $request){
         $district_id = $request->district_id;
         $tienIchLists = Tag::where(['type' => 3])->get();
-        return view('backend.product.ajax-get-tien-ich', compact( 'tienIchLists'));   
+        return view('backend.book.ajax-get-tien-ich', compact( 'tienIchLists'));   
     }
     public function saveOrderHot(Request $request){
         $data = $request->all();
         if(!empty($data['display_order'])){
             foreach ($data['display_order'] as $id => $display_order) {
-                $model = Product::find($id);
+                $model = Book::find($id);
                 $model->display_order = $display_order;
                 $model->save();
             }
         }
         Session::flash('message', 'Cập nhật thứ tự tin HOT thành công');
 
-        return redirect()->route('product.index', ['is_hot' => 1]);
+        return redirect()->route('book.index', ['is_hot' => 1]);
     }
     public function ajaxSearch(Request $request){    
         $search_type = $request->search_type;        
         $arrSearch['cate_id'] = $cate_id = isset($request->cate_id) ? $request->cate_id : -1;
         $arrSearch['name'] = $name = isset($request->name) && trim($request->name) != '' ? trim($request->name) : '';
         
-        $query = Product::whereRaw('1');        
+        $query = Book::whereRaw('1');        
         
         if( $cate_id ){
-            $query->where('product.cate_id', $cate_id);
+            $query->where('book.cate_id', $cate_id);
         }
         if( $name != ''){
-            $query->where('product.title', 'LIKE', '%'.$name.'%');
+            $query->where('book.title', 'LIKE', '%'.$name.'%');
             $query->orWhere('name_extend', 'LIKE', '%'.$name.'%');
         }
-        $query->join('users', 'users.id', '=', 'product.created_user');
-        $query->join('estate_type', 'estate_type.id', '=', 'product.type_id');
-        $query->join('cate', 'cate.id', '=', 'product.cate_id');
-        $query->leftJoin('product_img', 'product_img.id', '=','product.thumbnail_id');        
-        $query->orderBy('product.id', 'desc');
-        $items = $query->select(['product_img.image_url','product.*','product.id as product_id', 'fullname' , 'product.created_at as time_created', 'users.fullname', 'estate_type.name as ten_loai', 'cate.name as ten_cate'])
+        $query->join('users', 'users.id', '=', 'book.created_user');
+        $query->join('estate_type', 'estate_type.id', '=', 'book.type_id');
+        $query->join('cate', 'cate.id', '=', 'book.cate_id');
+        $query->leftJoin('product_img', 'product_img.id', '=','book.thumbnail_id');        
+        $query->orderBy('book.id', 'desc');
+        $items = $query->select(['product_img.image_url','book.*','book.id as product_id', 'fullname' , 'book.created_at as time_created', 'users.fullname', 'estate_type.name as ten_loai', 'cate.name as ten_cate'])
         ->paginate(1000);
 
         $estateTypeArr = CateParent::all();  
         
 
-        return view('backend.product.content-search', compact( 'items', 'arrSearch', 'estateTypeArr',  'search_type'));
+        return view('backend.book.content-search', compact( 'items', 'arrSearch', 'estateTypeArr',  'search_type'));
     }
 
    
@@ -165,7 +125,7 @@ class ProductController extends Controller
             $grandList = (object) [];
         }        
         
-        return view('backend.product.create', compact('cateList', 'parent_id', 'cate_id', 'tagList', 'grandList', 'grand_id'));
+        return view('backend.book.create', compact('cateList', 'parent_id', 'cate_id', 'tagList', 'grandList', 'grand_id'));
     }
 
     /**
@@ -205,7 +165,7 @@ class ProductController extends Controller
         $dataArr['created_user'] = Auth::user()->id;
         $dataArr['updated_user'] = Auth::user()->id;              
 
-        $rs = Product::create($dataArr);
+        $rs = Book::create($dataArr);
         $product_id = $rs->id;       
         
         $this->storeMeta($product_id, 0, $dataArr);
@@ -219,7 +179,7 @@ class ProductController extends Controller
 
         Session::flash('message', 'Tạo mới thành công');
 
-        return redirect()->route('product.index', ['parent_id' => $dataArr['parent_id'], 'cate_id' => $dataArr['cate_id']]);
+        return redirect()->route('book.index', ['parent_id' => $dataArr['parent_id'], 'cate_id' => $dataArr['cate_id']]);
     }
     public function storeChange(Request $request)
     {
@@ -247,7 +207,7 @@ class ProductController extends Controller
                     ]);
                 $grand_id = $grandDetail->id;
 
-                $productList = Product::where('cate_id', $cate_id)->get();
+                $productList = Book::where('cate_id', $cate_id)->get();
                 foreach($productList as $pro){
                     $pro->grand_id = $grand_id;
                     $pro->cate_id = $dataArr['cate_id'];
@@ -257,7 +217,7 @@ class ProductController extends Controller
             }
         }
          Session::flash('message', 'Cập nhật thành công');
-        return redirect()->route('product.change', ['parent_id' => $dataArr['parent_id'], 'cate_id' => $dataArr['cate_id']]);
+        return redirect()->route('book.change', ['parent_id' => $dataArr['parent_id'], 'cate_id' => $dataArr['cate_id']]);
     }
     private function processRelation($dataArr, $object_id, $type = 'add'){
     
@@ -279,7 +239,7 @@ class ProductController extends Controller
             $arrData['created_user'] = Auth::user()->id;            
             $rs = MetaData::create( $arrData );
             $meta_id = $rs->id;            
-            $modelSp = Product::find( $id );
+            $modelSp = Book::find( $id );
             $modelSp->meta_id = $meta_id;
             $modelSp->save();
         }else {
@@ -310,7 +270,7 @@ class ProductController extends Controller
     {        
         $tagList = Tag::where('type', 1)->get();
         $hinhArr = (object) [];
-        $detail = Product::find($id);  
+        $detail = Book::find($id);  
         
         $cateList = Cate::where('parent_id', $detail->parent_id)->get();
         $grandList = Grand::where('cate_id', $detail->cate_id)->get();
@@ -320,15 +280,15 @@ class ProductController extends Controller
             $meta = MetaData::find( $detail->meta_id );
         }               
         
-        $tagSelected = Product::productTag($id);
+        $tagSelected = Book::productTag($id);
 
-        return view('backend.product.edit', compact( 'detail', 'meta', 'cateList', 'tagList', 'tagSelected', 'grandList'));
+        return view('backend.book.edit', compact( 'detail', 'meta', 'cateList', 'tagList', 'tagSelected', 'grandList'));
     }
     public function ajaxDetail(Request $request)
     {       
         $id = $request->id;
-        $detail = Product::find($id);
-        return view('backend.product.ajax-detail', compact( 'detail' ));
+        $detail = Book::find($id);
+        return view('backend.book.ajax-detail', compact( 'detail' ));
     }
     /**
     * Update the specified resource in storage.
@@ -367,7 +327,7 @@ class ProductController extends Controller
         $dataArr['out_of_stock'] = isset($dataArr['out_of_stock']) ? 1 : 0;             
         $dataArr['updated_user'] = Auth::user()->id;        
         
-        $model = Product::find($dataArr['id']);
+        $model = Book::find($dataArr['id']);
 
         $model->update($dataArr);
         
@@ -378,7 +338,7 @@ class ProductController extends Controller
 
         Session::flash('message', 'Cập nhật thành công');
 
-        return redirect()->route('product.edit', $product_id);
+        return redirect()->route('book.edit', $product_id);
         
     }
     public function ajaxSaveInfo(Request $request){
@@ -389,7 +349,7 @@ class ProductController extends Controller
         
         $dataArr['updated_user'] = Auth::user()->id;
         
-        $model = Product::find($dataArr['id']);
+        $model = Book::find($dataArr['id']);
 
         $model->update($dataArr);
         
@@ -408,7 +368,7 @@ class ProductController extends Controller
     public function destroy($id)
     {
         // delete
-        $model = Product::find($id);        
+        $model = Book::find($id);        
         $model->delete();
         Rating::where('object_id', $id)->where('object_type', 1)->delete();
         // redirect

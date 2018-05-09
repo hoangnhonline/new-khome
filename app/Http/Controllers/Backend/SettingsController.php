@@ -19,7 +19,7 @@ class SettingsController  extends Controller
     {   
                   
         if(Auth::user()->role < 3){
-            return redirect()->route('product.index');
+            return redirect()->route('book.index');
         }
         $settingArr = Helper::setting();
 
@@ -35,7 +35,7 @@ class SettingsController  extends Controller
      public function noti(Request $request)
     {           
         if(Auth::user()->role < 3){
-            return redirect()->route('product.index');
+            return redirect()->route('book.index');
         }   
         $settingArr = Helper::setting();
 
@@ -44,7 +44,7 @@ class SettingsController  extends Controller
     public function dashboard(Request $request)
     {              
         if(Auth::user()->role < 3){
-            return redirect()->route('product.index');
+            return redirect()->route('book.index');
         }
         $settingArr = Helper::setting();
         $query = Product::where('product.status', 2);
@@ -57,7 +57,7 @@ class SettingsController  extends Controller
         $kyguiList = $query->select(['product_img.image_url as image_urls','product.*', 'estate_type.slug as slug_loai'])->get();
 
 
-        return view('backend.product.index', compact( 'settingArr', 'kyguiList'));
+        return view('backend.book.index', compact( 'settingArr', 'kyguiList'));
     }
     public function storeNoti(Request $request){
 
@@ -79,7 +79,7 @@ class SettingsController  extends Controller
     public function update(Request $request){
 
         if(Auth::user()->role < 3){
-            return redirect()->route('product.index');
+            return redirect()->route('book.index');
         }
     	$dataArr = $request->all();
 

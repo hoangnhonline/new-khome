@@ -26,7 +26,7 @@
   $(document).ready(function(){
     $('#btnSaveAjax').click(function(){
        $.ajax({
-        url : "{{ route('product.ajax-save-info') }}",
+        url : "{{ route('book.ajax-save-info') }}",
         data : $('#formAjax').serialize(),
         type: "POST",
         success :function(data){

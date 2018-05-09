@@ -8,16 +8,16 @@
     </h1>
     <ol class="breadcrumb">
       <li><a href="#"><i class="fa fa-dashboard"></i> Dashboard</a></li>
-      <li><a href="{{ route('product.index') }}">Sản phẩm</a></li>
+      <li><a href="{{ route('book.index') }}">Sản phẩm</a></li>
       <li class="active">Cập nhật</li>
     </ol>
   </section>
 
   <!-- Main content -->
   <section class="content">
-    <a class="btn btn-default btn-sm" href="{{ route('product.index') }}" style="margin-bottom:5px">Quay lại</a>
+    <a class="btn btn-default btn-sm" href="{{ route('book.index') }}" style="margin-bottom:5px">Quay lại</a>
     <a class="btn btn-primary btn-sm" href="{{ route('product', [ $detail->slug, $detail->id ]) }}" target="_blank" style="margin-top:-6px"><i class="fa fa-eye" aria-hidden="true"></i> Xem</a>
-    <form role="form" method="POST" action="{{ route('product.update') }}" id="dataForm">
+    <form role="form" method="POST" action="{{ route('book.update') }}" id="dataForm">
         <input type="hidden" name="id" value="{{ $detail->id }}">    
     <div class="row">
       <!-- left column -->
@@ -56,40 +56,40 @@
                     <div role="tabpanel" class="tab-pane active" id="home">
                         <div class="form-group col-md-4 none-padding">
                           <label for="email">Loại sản phẩm<span class="red-star">*</span></label>
-                          <select class="form-control req" name="parent_id" id="parent_id">
+                          <select class="form-control req" name="folder_id" id="folder_id">
                             <option value="">--Chọn--</option>
-                            @foreach( $cateParentList as $value )
-                            <option value="{{ $value->id }}" {{ $value->id == old('parent_id', $detail->parent_id) ? "selected" : "" }}>{{ $value->name }}</option>
+                            @foreach( $folderList as $value )
+                            <option value="{{ $value->id }}" {{ $value->id == old('folder_id', $detail->folder_id) ? "selected" : "" }}>{{ $value->name }}</option>
                             @endforeach
                           </select>
                         </div>
                           <div class="form-group col-md-4 none-padding pleft-5">
                           <label for="email">Danh mục cha<span class="red-star">*</span></label>
                           <?php 
-                          $parent_id = old('parent_id', $detail->parent_id);
-                          if($parent_id > 0){
-                            $cateList = DB::table('cate')->where('parent_id', $parent_id)->orderBy('display_order')->get();
+                          $folder_id = old('folder_id', $detail->folder_id);
+                          if($folder_id > 0){
+                            $authorList = DB::table('cate')->where('folder_id', $folder_id)->orderBy('display_order')->get();
                           }
                           ?>
-                          <select class="form-control req" name="cate_id" id="cate_id">
+                          <select class="form-control req" name="author_id" id="author_id">
                             <option value="">--Chọn--</option>
-                            @foreach( $cateList as $value )
-                            <option value="{{ $value->id }}" {{ $value->id == old('cate_id', $detail->cate_id) ? "selected" : "" }}>{{ $value->name }}</option>
+                            @foreach( $authorList as $value )
+                            <option value="{{ $value->id }}" {{ $value->id == old('author_id', $detail->author_id) ? "selected" : "" }}>{{ $value->name }}</option>
                             @endforeach
                           </select>
                         </div> 
                          <div class="form-group col-md-4 none-padding pleft-5">
                           <label for="email">Danh mục con<span class="red-star">*</span></label>
                           <?php 
-                          $cate_id = old('cate_id', $detail->cate_id);
-                          if($cate_id > 0){
-                            $grandList = DB::table('grand')->where('cate_id', $cate_id)->orderBy('display_order')->get();
+                          $author_id = old('author_id', $detail->author_id);
+                          if($author_id > 0){
+                            $grandList = DB::table('grand')->where('author_id', $author_id)->orderBy('display_order')->get();
                           }
                           ?>
-                          <select class="form-control" name="grand_id" id="grand_id">
+                          <select class="form-control" name="created_user" id="created_user">
                             <option value="">--Chọn--</option>
                             @foreach( $grandList as $value )
-                            <option value="{{ $value->id }}" {{ $value->id == old('grand_id', $detail->grand_id) ? "selected" : "" }}>{{ $value->name }}</option>
+                            <option value="{{ $value->id }}" {{ $value->id == old('created_user', $detail->created_user) ? "selected" : "" }}>{{ $value->name }}</option>
                             @endforeach
                           </select>
                         </div> 
@@ -165,7 +165,7 @@
             <div class="box-footer">              
               <button type="button" class="btn btn-default" id="btnLoading" style="display:none"><i class="fa fa-spin fa-spinner"></i></button>
               <button type="submit" class="btn btn-primary" id="btnSave">Lưu</button>
-              <a class="btn btn-default" class="btn btn-primary" href="{{ route('product.index')}}">Hủy</a>
+              <a class="btn btn-default" class="btn btn-primary" href="{{ route('book.index')}}">Hủy</a>
             </div>
             
         </div>
@@ -320,36 +320,36 @@ $(document).on('click', '.remove-image', function(){
           $(this).addClass('error');
         }
       });
-      $('#cate_id').change(function(){
-        //location.href="{{ route('product.create') }}?parent_id=" + $(this).val();
+      $('#author_id').change(function(){
+        //location.href="{{ route('book.create') }}?folder_id=" + $(this).val();
 		$.ajax({
             url : '{{ route('get-child') }}',
             data : {
               mod : 'grand',
-              col : 'cate_id',              
+              col : 'author_id',              
               id : $(this).val()
             },
             type : 'POST',
             dataType : 'html',
             success : function(data){
-              $('#grand_id').html(data);                                             
+              $('#created_user').html(data);                                             
             }
           });
       });
-	  $('#parent_id').change(function(){
-        //location.href="{{ route('product.create') }}?parent_id=" + $(this).val();
+	  $('#folder_id').change(function(){
+        //location.href="{{ route('book.create') }}?folder_id=" + $(this).val();
 		$.ajax({
             url : '{{ route('get-child') }}',
             data : {
               mod : 'cate',
-              col : 'parent_id',              
+              col : 'folder_id',              
               id : $(this).val()
             },
             type : 'POST',
             dataType : 'html',
             success : function(data){
-              $('#cate_id').html(data);
-				$('#grand_id').html('');			  
+              $('#author_id').html(data);
+				$('#created_user').html('');			  
             }
           });
       });	
