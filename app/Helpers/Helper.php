@@ -32,7 +32,7 @@ class Helper
     public static function getChild($table, $column, $parent_id, $is_branch = 0){
         $listData = DB::table($table)->where($column, $parent_id)->get();
         
-            echo '<option value="">--Chọn--</option>';
+            echo '<option value="">--'.trans('text.choose').'--</option>';
         if($is_branch == 0){
             if(!empty(  (array) $listData  )){
                 

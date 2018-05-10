@@ -28,4 +28,16 @@ class Book extends Model  {
     {
         return $this->belongsTo('App\Models\Folder', 'folder_id');
     }   
+    public function author()
+    {
+        return $this->belongsTo('App\Models\Author', 'author_id');
+    }
+    public function user()
+    {
+        return $this->belongsTo('App\Models\Account', 'created_user');
+    }
+    public function chapters()
+    {
+        return $this->hasMany('App\Models\Chapter', 'book_id');
+    } 
 }

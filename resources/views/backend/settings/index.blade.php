@@ -7,9 +7,9 @@
       Cài đặt site
     </h1>
     <ol class="breadcrumb">
-      <li><a href="#"><i class="fa fa-dashboard"></i> Dashboard</a></li>
+      <li><a href="#"><i class="fa fa-dashboard"></i> {{ trans('text.dashboard') }}</a></li>
       <li><a href="{{ route('settings.index') }}">Cài đặt</a></li>
-      <li class="active">Cập nhật</li>
+      <li class="active">{{ trans('text.{{ trans('text.author') }}') }}</li>
     </ol>
   </section>
 
@@ -23,7 +23,7 @@
         <!-- general form elements -->
         <div class="box box-primary">
           <div class="box-header with-border">
-            <h3 class="box-title">Cập nhật</h3>
+            <h3 class="box-title">{{ trans('text.{{ trans('text.author') }}') }}</h3>
           </div>
           <!-- /.box-header -->               
             {!! csrf_field() !!}
@@ -43,7 +43,7 @@
               @endif
                  <!-- text input -->
                 <div class="form-group col-md-12">
-                  <label>Tên site <span class="red-star">*</span></label>
+                  <label>{{ trans('text.name') }} site <span class="red-star">*</span></label>
                   <input type="text" class="form-control" name="site_name" id="site_name" value="{{ $settingArr['site_name'] }}">
                 </div>
                 
@@ -127,7 +127,7 @@
                 <div class="clearfix"></div>
             </div>                        
             <div class="box-footer">
-              <button type="submit" class="btn btn-primary btn-sm">Lưu</button>         
+              <button type="submit" class="btn btn-primary btn-sm">{{ trans('text.save') }}</button>         
             </div>
             
         </div>

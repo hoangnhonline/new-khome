@@ -7,9 +7,9 @@
     Tài khoản
   </h1>
   <ol class="breadcrumb">
-    <li><a href="#"><i class="fa fa-dashboard"></i> Dashboard</a></li>
+    <li><a href="#"><i class="fa fa-dashboard"></i> {{ trans('text.dashboard') }}</a></li>
     <li><a href="{{ route( 'account.index' ) }}">Tài khoản</a></li>
-    <li class="active">Danh sách</li>
+    <li class="active">{{ trans('text.the_list') }}</li>
   </ol>
 </section>
 
@@ -20,7 +20,7 @@
       @if(Session::has('message'))
       <p class="alert alert-info" >{{ Session::get('message') }}</p>
       @endif
-      <a href="{{ route('account.create') }}" class="btn btn-info btn-sm" style="margin-bottom:5px">Tạo mới</a>
+      <a href="{{ route('account.create') }}" class="btn btn-info btn-sm" style="margin-bottom:5px">{{ trans('text.add_new') }}</a>
       @if(Auth::user()->role == 3)
       <div class="panel panel-default">
         <div class="panel-heading">
@@ -44,7 +44,7 @@
       <div class="box">
 
         <div class="box-header with-border">
-          <h3 class="box-title">Danh sách</h3>
+          <h3 class="box-title">{{ trans('text.the_list') }}</h3>
         </div>
         
         <!-- /.box-header -->
@@ -52,11 +52,11 @@
           <table class="table table-bordered" id="table-list-data">
             <tr>
               <th style="width: 1%">#</th>              
-              <th>Tên hiển thị</th>
+              <th>{{ trans('text.name') }} hiển thị</th>
               <th>Email truy cập</th>
               <th>Phân loại</th>
               <th>Trạng thái</th>
-              <th width="1%" style="white-space:nowrap">Thao tác</th>
+              <th width="1%" style="white-space:nowrap">{{ trans('text.action') }}</th>
             </tr>
             <tbody>
             @if( $items->count() > 0 )
@@ -90,7 +90,7 @@
               @endforeach
             @else
             <tr>
-              <td colspan="9">Không có dữ liệu.</td>
+              <td colspan="9">{{ trans('text.no_data') }}</td>
             </tr>
             @endif
 
@@ -110,13 +110,13 @@
 <script type="text/javascript">
 function callDelete(name, url){  
   swal({
-    title: 'Bạn muốn xóa "' + name +'"?',
+    title: '{{ trans('text.confirm') }}',
     text: "Dữ liệu sẽ không thể phục hồi.",
     type: 'warning',
     showCancelButton: true,
     confirmButtonColor: '#3085d6',
     cancelButtonColor: '#d33',
-    confirmButtonText: 'Yes'
+    confirmButtonText: '{{ trans('text.yess') }}'
   }).then(function() {
     location.href= url;
   })

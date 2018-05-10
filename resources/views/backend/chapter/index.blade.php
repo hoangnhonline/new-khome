@@ -4,11 +4,11 @@
 <!-- Content Header (Page header) -->
 <section class="content-header">
   <h1>
-   {{ trans('text.book') }}
+   {{ trans('text.chapter') }}
   </h1>
   <ol class="breadcrumb">
     <li><a href="#"><i class="fa fa-dashboard"></i> {{ trans('text.dashboard') }}</a></li>
-    <li><a href="{{ route( 'book.index' ) }}">{{ trans('text.book') }}</a></li>
+    <li><a href="{{ route( 'chapter.index' ) }}">{{ trans('text.chapter') }}</a></li>
     <li class="active">{{ trans('text.the_list') }}</li>
   </ol>
 </section>
@@ -19,49 +19,35 @@
       @if(Session::has('message'))
       <p class="alert alert-info" >{{ Session::get('message') }}</p>
       @endif
-      <a href="{{ route('book.create', ['folder_id' => $arrSearch['folder_id'], 'author_id' => $arrSearch['author_id']]) }}" class="btn btn-info btn-sm" style="margin-bottom:5px">{{ trans('text.add_new') }}</a>
+      <a href="{{ route('chapter.create', ['folder_id' => $folder_id, 'book_id' => $book_id]) }}" class="btn btn-info btn-sm" style="margin-bottom:5px">{{ trans('text.add_new') }}</a>
       <div class="panel panel-default">
         <div class="panel-heading">
           <h3 class="panel-title">{{ trans('text.filter') }}</h3>
         </div>
         <div class="panel-body">
-          <form class="form-inline" id="searchForm" role="form" method="GET" action="{{ route('book.index') }}">
+          <form class="form-inline" id="searchForm" role="form" method="GET" action="{{ route('chapter.index') }}">
            
           
             
             <div class="form-group">
               <label for="email">&nbsp;&nbsp;{{ trans('text.folder') }}</label>
               <select class="form-control" name="folder_id" id="folder_id">
-                <option value="">{{ trans('text.all') }}</option>
+                <option value="">{{ trans('text.choose') }}</option>
                 @foreach( $folderList as $value )
-                <option value="{{ $value->id }}" {{ $value->id == $arrSearch['folder_id'] ? "selected" : "" }}>{{ $value->name }}</option>
+                <option value="{{ $value->id }}" {{ $value->id == $folder_id ? "selected" : "" }}>{{ $value->name }}</option>
                 @endforeach
               </select>
             </div>
               <div class="form-group">
-              <label for="email">&nbsp;&nbsp;{{ trans('text.author') }}</label>
+              <label for="email">&nbsp;&nbsp;{{ trans('text.book') }}</label>
 
-              <select class="form-control" name="author_id" id="author_id">
-                <option value="">{{ trans('text.all') }}</option>
-                @foreach( $authorList as $value )
-                <option value="{{ $value->id }}" {{ $value->id == $arrSearch['author_id'] ? "selected" : "" }}>{{ $value->name }}</option>
+              <select class="form-control" name="book_id" id="book_id">
+                <option value="">{{ trans('text.choose') }}</option>
+                @foreach( $bookList as $value )
+                <option value="{{ $value->id }}" {{ $value->id == $book_id ? "selected" : "" }}>{{ $value->name }}</option>
                 @endforeach
               </select>
-            </div>
-            <div class="form-group">
-              <label for="email">&nbsp;&nbsp;{{ trans('text.releaser') }}</label>
-
-              <select class="form-control" name="created_user" id="created_user">
-                <option value="">{{ trans('text.all') }}</option>
-                @foreach( $userList as $value )
-                <option value="{{ $value->id }}" {{ $value->id == $arrSearch['created_user'] ? "selected" : "" }}>{{ $value->full_name }}</option>
-                @endforeach
-              </select>
-            </div>
-            <div class="form-group">
-              <label for="email">&nbsp;&nbsp;{{ trans('text.find') }}</label>
-              <input type="text" class="form-control" name="keyword" value="{{ $arrSearch['keyword'] }}">
-            </div>                       
+            </div>                                  
             <button type="submit" style="margin-top:-5px" class="btn btn-primary btn-sm">{{ trans('text.filter') }}</button>
           </form>         
         </div>
@@ -69,20 +55,17 @@
       <div class="box">
 
         <div class="box-header with-border">
-          <h3 class="box-title">{{ trans('text.the_list') }}</h3>
+          <h3 class="box-title">{{ trans('text.the_list') }} ({{$items->count()}})</h3>
         </div>          
         <!-- /.box-header -->
         <div class="box-body">
 
           <table class="table table-bordered" id="table-list-data">
             <tr>
-              <th style="width: 1%">#</th>              
-              <th width="1%" style="white-space: nowrap;">{{ trans('text.cover') }}</th>
+              <th style="width: 1%">#</th>
               <th>{{ trans('text.name') }}</th>
-              <th>{{ trans('text.author') }}</th>
-              <th>{{ trans('text.releaser') }}</th>
-              <th style="text-align:center">{{ trans('text.chapter') }}</th>
-              
+              <th>{{ trans('text.book') }}</th>              
+              <th style="text-align:center">{{ trans('text.page') }}</th>              
               <th style="width:1%;white-space:nowrap">{{ trans('text.action') }}</th>
             </tr>
             <tbody>
@@ -94,26 +77,23 @@
                  ?>
               <tr id="row-{{ $item->id }}">
                 <td><span class="order">{{ $i }}</span></td>    
-                <td>
-                  <img class="img-thumbnail lazy" width="80" data-original="{{ $item->image_url ? Helper::showImage($item->image_url) : URL::asset('backend/dist/img/no-image.jpg') }}" alt="{{ $item->name }}" title="{{ $item->name }}" />
-                </td>          
+                
                 <td>                  
-                  <a href="{{ route( 'book.edit', [ 'id' => $item->id ]) }}">{{ $item->folder->name }} - {{ $item->name }}</a>
+                  <a href="{{ route( 'chapter.edit', [ 'id' => $item->id ]) }}">{{ $item->name }}</a>
                 </td>
-                <td>{{ $item->author->name }}</td>
-                <td>{{ $item->user->email }}</td>
-                <td style="text-align:center"><a class="btn btn-info btn-sm" href="{{ route('chapter.index', ['book_id' => $item->id])}}">{{ $item->chapters->count() }}</a></td>                
+                <td>{{ $item->book->name }}</td>                
+                <td style="text-align:center"><a class="btn btn-info btn-sm" href="{{ route('page.index', ['chapter_id' => $item->id, 'folder_id' => $item->folder_id, 'book_id' => $item->book_id])}}">{{ $item->pages->count() }}</a></td>                
                 <td style="white-space:nowrap; text-align:right">                           
-                  <a href="{{ route( 'book.edit', [ 'id' => $item->id ]) }}" class="btn-sm btn btn-warning"><span class="glyphicon glyphicon-pencil"></span></a>                 
-                  @if( $item->chapters->count() == 0)
-                  <a onclick="return callDelete('{{ $item->name }}','{{ route( 'book.destroy', [ 'id' => $item->id ]) }}');" class="btn-sm btn btn-danger"><span class="glyphicon glyphicon-trash"></span></a>
+                  <a href="{{ route( 'chapter.edit', [ 'id' => $item->id ]) }}" class="btn-sm btn btn-warning"><span class="glyphicon glyphicon-pencil"></span></a>                 
+                  @if( $item->pages->count() == 0)
+                  <a onclick="return callDelete('{{ $item->name }}','{{ route( 'chapter.destroy', [ 'id' => $item->id ]) }}');" class="btn-sm btn btn-danger"><span class="glyphicon glyphicon-trash"></span></a>
                   @endif
                 </td>
               </tr> 
               @endforeach
             @else
             <tr>
-              <td colspan="7">{{ trans('text.no_data') }}</td>
+              <td colspan="5">{{ trans('text.no_data') }}</td>
             </tr>
             @endif
 
@@ -147,14 +127,12 @@ function callDelete(name, url){
 }
 $(document).ready(function(){  
   $('#folder_id').change(function(){
-    $('#author_id').val('');
+    
+    $('#book_id').val('');
     $('#searchForm').submit();
   });
-  $('#author_id').change(function(){
+  $('#book_id').change(function(){
     $('#created_user').val('');
-    $('#searchForm').submit();
-  });
-  $('#created_user').change(function(){    
     $('#searchForm').submit();
   });
   $('#table-list-data tbody').sortable({

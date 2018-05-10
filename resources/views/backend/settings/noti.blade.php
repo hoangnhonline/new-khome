@@ -7,9 +7,9 @@
       Thông báo chung
     </h1>
     <ol class="breadcrumb">
-      <li><a href="#"><i class="fa fa-dashboard"></i> Dashboard</a></li>
+      <li><a href="#"><i class="fa fa-dashboard"></i> {{ trans('text.dashboard') }}</a></li>
       <li><a href="{{ route('settings.noti') }}">Thông báo chung</a></li>
-      <li class="active">Cập nhật</li>
+      <li class="active">{{ trans('text.{{ trans('text.author') }}') }}</li>
     </ol>
   </section>
 
@@ -23,7 +23,7 @@
         <!-- general form elements -->
         <div class="box box-primary">
           <div class="box-header with-border">
-            <h3 class="box-title">Cập nhật</h3>
+            <h3 class="box-title">{{ trans('text.{{ trans('text.author') }}') }}</h3>
           </div>
           <!-- /.box-header -->               
             {!! csrf_field() !!}
@@ -54,7 +54,7 @@
                  
             </div>                        
             <div class="box-footer">
-              <button type="submit" class="btn btn-primary btn-sm">Lưu</button>         
+              <button type="submit" class="btn btn-primary btn-sm">{{ trans('text.save') }}</button>         
             </div>
             
         </div>

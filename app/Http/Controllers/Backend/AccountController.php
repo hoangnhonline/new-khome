@@ -95,7 +95,7 @@ class AccountController extends Controller
 
         $detail->password = Hash::make($new_pass);
         $detail->save();
-        Session::flash('message', 'Đổi mật khẩu thành công');
+        Session::flash('message', trans('text.success'));
 
         return redirect()->route('account.change-pass');
 

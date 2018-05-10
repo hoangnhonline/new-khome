@@ -7,15 +7,15 @@
       Danh mục cha      
     </h1>
     <ol class="breadcrumb">
-      <li><a href="#"><i class="fa fa-dashboard"></i> Dashboard</a></li>
+      <li><a href="#"><i class="fa fa-dashboard"></i> {{ trans('text.dashboard') }}</a></li>
       <li><a href="{{ route('cate.index') }}">Danh mục cha</a></li>
-      <li class="active">Tạo mới</li>
+      <li class="active">{{ trans('text.add_new') }}</li>
     </ol>
   </section>
 
   <!-- Main content -->
   <section class="content">
-    <a class="btn btn-default btn-sm" href="{{ route('cate.index') }}" style="margin-bottom:5px">Quay lại</a>
+    <a class="btn btn-default btn-sm" href="{{ route('cate.index') }}" style="margin-bottom:5px">{{ trans('text.back') }}</a>
     <form role="form" method="POST" action="{{ route('cate.store') }}">
     <div class="row">
       <!-- left column -->
@@ -24,7 +24,7 @@
         <!-- general form elements -->
         <div class="box box-primary">
           <div class="box-header with-border">
-            <h3 class="box-title">Tạo mới</h3>
+            <h3 class="box-title">{{ trans('text.add_new') }}</h3>
           </div>
           <!-- /.box-header -->               
             {!! csrf_field() !!}
@@ -52,7 +52,7 @@
                 </div>
                  <!-- text input -->
                 <div class="form-group">
-                  <label>Tên danh mục <span class="red-star">*</span></label>
+                  <label>{{ trans('text.name') }} danh mục <span class="red-star">*</span></label>
                   <input type="text" class="form-control" name="name" id="name" value="{{ old('name') }}">
                 </div>
                 <div class="form-group">
@@ -106,8 +106,8 @@
             <input type="hidden" name="image_url" id="image_url" value="{{ old('image_url') }}"/>          
             
             <div class="box-footer">
-              <button type="submit" class="btn btn-primary btn-sm">Lưu</button>
-              <a class="btn btn-default btn-sm" class="btn btn-primary btn-sm" href="{{ route('cate.index')}}">Hủy</a>
+              <button type="submit" class="btn btn-primary btn-sm">{{ trans('text.save') }}</button>
+              <a class="btn btn-default btn-sm" class="btn btn-primary btn-sm" href="{{ route('cate.index')}}">{{ trans('text.cancel') }}</a>
             </div>
             
         </div>

@@ -2,7 +2,7 @@
 <html >
   <head>
     <meta charset="UTF-8">
-    <title>KHMERBETA - Đăng nhập hệ thống</title>
+    <title>KHMERBETA - {{ trans('text.system_login') }}</title>
     
     
     <link rel="stylesheet" href="css/reset.css">
@@ -162,7 +162,7 @@ body {
 <!-- Form Module-->
 <div class="module form-module"> 
   <div class="form" >    
-    <h2 style="text-align:center">Đăng nhập hệ thống</h2>
+    <h2 style="text-align:center">{{ trans('text.system_login') }}</h2>
     @if(Session::has('error'))
         <div class="alert alert-danger">
             {{ Session::get('error') }}
@@ -170,9 +170,9 @@ body {
     @endif
     <form method="POST" action="{{ route('backend.check-login') }}">
       {!! csrf_field() !!}
-      <input type="email" placeholder="Email" name="email" />
-      <input type="password" placeholder="Mật khẩu" name="password" />
-      <button>Login</button>
+      <input type="email" placeholder="{{ trans('text.email') }}" name="email" />
+      <input type="password" placeholder="{{ trans('text.password') }}" name="password" />
+      <button>{{ trans('text.login') }}</button>
     </form>
   </div>
   

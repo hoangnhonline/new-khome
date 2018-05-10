@@ -7,9 +7,9 @@
             Danh mục cha 
         </h1>
         <ol class="breadcrumb">
-            <li><a href="#"><i class="fa fa-dashboard"></i> Dashboard</a></li>
+            <li><a href="#"><i class="fa fa-dashboard"></i> {{ trans('text.dashboard') }}</a></li>
             <li><a href="{{ route( 'cate.index' ) }}">Danh mục cha</a></li>
-            <li class="active">Danh sách</li>
+            <li class="active">{{ trans('text.the_list') }}</li>
         </ol>
     </section>
     <!-- Main content -->
@@ -19,7 +19,7 @@
                 @if(Session::has('message'))
                 <p class="alert alert-info" >{{ Session::get('message') }}</p>
                 @endif
-                <a href="{{ route('cate.create', ['parent_id' => $parent_id]) }}" class="btn btn-info btn-sm" style="margin-bottom:5px">Tạo mới</a>
+                <a href="{{ route('cate.create', ['parent_id' => $parent_id]) }}" class="btn btn-info btn-sm" style="margin-bottom:5px">{{ trans('text.add_new') }}</a>
                 <div class="panel panel-default">
                       <div class="panel-heading">
                         <h3 class="panel-title">Bộ lọc</h3>
@@ -38,7 +38,7 @@
                             </div>
                             
                             <div class="form-group">              
-                                <input type="text" placeholder="Tên" class="form-control" name="name" value="{{ $name }}" >
+                                <input type="text" placeholder="{{ trans('text.name') }}" class="form-control" name="name" value="{{ $name }}" >
                             </div>                            
                             <div class="form-group">
                                 <div class="checkbox">
@@ -53,7 +53,7 @@
                         </div></div>
                 <div class="box">
                     <div class="box-header with-border">
-                        <h3 class="box-title">Danh sách</h3>
+                        <h3 class="box-title">{{ trans('text.the_list') }}</h3>
                     </div>
                     <!-- /.box-header -->
                     <div class="box-body">
@@ -61,10 +61,10 @@
                         <table class="table table-bordered" id="table-list-data">
                             <tr>
                                 <th style="width: 1%">#</th>
-                                <th style="width: 1%;white-space:nowrap">Thứ tự</th>
+                                <th style="width: 1%;white-space:nowrap">{{ trans('text.order') }}</th>
                                 <th width="150">Hình ảnh</th>
-                                <th>Tên</th>
-                                <th width="1%;white-space:nowrap">Thao tác</th>
+                                <th>{{ trans('text.name') }}</th>
+                                <th width="1%;white-space:nowrap">{{ trans('text.action') }}</th>
                             </tr>
                             <tbody>
                                 @if( $items->count() > 0 )
@@ -74,7 +74,7 @@
                                 <tr id="row-{{ $item->id }}">
                                     <td><span class="order">{{ $i }}</span></td>
                                     <td style="vertical-align:middle;text-align:center">
-                                        <img src="{{ URL::asset('public/admin/dist/img/move.png')}}" class="move img-thumbnail" alt="Cập nhật thứ tự"/>
+                                        <img src="{{ URL::asset('public/admin/dist/img/move.png')}}" class="move img-thumbnail" alt="{{ trans('text.{{ trans('text.author') }}') }} thứ tự"/>
                                     </td>
                                     <td>
                                       <img class="img-thumbnail lazy" width="100" data-original="{{ $item->image_url ? Helper::showImage($item->image_url) : URL::asset('public/admin/dist/img/no-image.jpg') }}" alt="Nổi bật" title="Nổi bật" />
@@ -100,7 +100,7 @@
                                 @endforeach
                                 @else
                                 <tr>
-                                    <td colspan="9">Không có dữ liệu.</td>
+                                    <td colspan="9">{{ trans('text.no_data') }}</td>
                                 </tr>
                                 @endif
                             </tbody>
@@ -119,13 +119,13 @@
 <script type="text/javascript">
     function callDelete(name, url){  
       swal({
-        title: 'Bạn muốn xóa "' + name +'"?',
+        title: '{{ trans('text.confirm') }}',
         text: "Dữ liệu sẽ không thể phục hồi.",
         type: 'warning',
         showCancelButton: true,
         confirmButtonColor: '#3085d6',
         cancelButtonColor: '#d33',
-        confirmButtonText: 'Yes'
+        confirmButtonText: '{{ trans('text.yess') }}'
       }).then(function() {
         location.href= url;
       })

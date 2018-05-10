@@ -4,18 +4,19 @@
   <!-- Content Header (Page header) -->
   <section class="content-header">
     <h1>
-      {{ trans('text.book') }}     
+      {{ trans('text.chapter') }}      
     </h1>
     <ol class="breadcrumb">
       <li><a href="#"><i class="fa fa-dashboard"></i> {{ trans('text.dashboard') }}</a></li>
-      <li><a href="{{ route('book.index') }}">{{ trans('text.book') }}</a></li>
-      <li class="active">{{ trans('text.modify') }}</li>
+      <li><a href="{{ route('chapter.index') }}">{{ trans('text.chapter') }}</a></li>
+      <li class="active">{{ trans('text.add_new') }}</li>
     </ol>
   </section>
 
   <!-- Main content -->
   <section class="content">
-    <a class="btn btn-default btn-sm" href="{{ route('book.index') }}" style="margin-bottom:5px">{{ trans('text.back') }}</a>   
+    <a class="btn btn-default btn-sm" href="{{ route('chapter.index') }}" style="margin-bottom:5px">{{ trans('text.back') }}</a>
+    <form role="form" method="POST" action="{{ route('chapter.store') }}">
     <div class="row">
       <!-- left column -->
 
@@ -23,17 +24,12 @@
         <!-- general form elements -->
         <div class="box box-primary">
           <div class="box-header with-border">
-            {{ trans('text.modify') }}
+            <h3 class="box-title">{{ trans('text.add_new') }}</h3>
           </div>
-          <!-- /.box-header -->
-          <!-- form start -->
-          <form role="form" method="POST" action="{{ route('book.update') }}">
+          <!-- /.box-header -->               
             {!! csrf_field() !!}
-            <input type="hidden" name="id" value="{{ $detail->id }}">
+
             <div class="box-body">
-              @if(Session::has('message'))
-              <p class="alert alert-info" >{{ Session::get('message') }}</p>
-              @endif
               @if (count($errors) > 0)
                   <div class="alert alert-danger">
                       <ul>
@@ -43,59 +39,39 @@
                       </ul>
                   </div>
               @endif           
-               <!-- text input -->
-              <div class="form-group">
+               <div class="form-group">
                     <label for="email">{{ trans('text.folder') }} <span class="red-star">*</span></label>
                     <select class="form-control req" name="folder_id" id="folder_id">
                         <option value="">-- {{ trans('text.choose') }} --</option>
                         @foreach( $folderList as $value )
                         <option value="{{ $value->id }}"
-                        {{ old('folder_id', $detail->folder_id) == $value->id ? "selected" : "" }}                           
+                        {{ old('folder_id', $folder_id) == $value->id ? "selected" : "" }}                           
                         >{{ $value->name }}</option>
                         @endforeach
                     </select>
-                </div>     
+                </div>   
+                <div class="form-group">
+                    <label for="email">{{ trans('text.book') }} <span class="red-star">*</span></label>
+                    <select class="form-control req" name="book_id" id="book_id">
+                        <option value="">-- {{ trans('text.choose') }} --</option>
+                        @foreach( $bookList as $value )
+                        <option value="{{ $value->id }}"
+                        {{ old('book_id', $book_id) == $value->id ? "selected" : "" }}                           
+                        >{{ $value->name }}</option>
+                        @endforeach
+                    </select>
+                </div>   
                  <!-- text input -->
                 <div class="form-group">
                   <label>{{ trans('text.name') }}<span class="red-star">*</span></label>
-                  <input type="text" class="form-control" name="name" id="name" value="{{ old('name', $detail->name) }}">
+                  <input type="text" class="form-control" name="name" id="name" value="{{ old('name') }}">
                 </div>
-                <div class="form-group">
-                    <label for="email">{{ trans('text.author') }} <span class="red-star">*</span></label>
-                    <select class="form-control req" name="author_id" id="author_id">
-                        <option value="">-- {{ trans('text.choose') }} --</option>
-                        @foreach( $authorList as $value )
-                        <option value="{{ $value->id }}"
-                        {{ old('author_id', $detail->author_id) == $value->id ? "selected" : "" }}                           
-                        >{{ $value->name }}</option>
-                        @endforeach
-                    </select>
-                </div> 
-                <div class="form-group">
-                  <label>{{ trans('text.publishing_company') }}</label>
-                  <input type="text" class="form-control" name="publish_company" id="publish_company" value="{{ old('publish_company', $detail->publish_company) }}">
-                </div>
-                <div class="form-group">
-                  <label>{{ trans('text.publishing_year') }}</label>
-                  <input type="text" class="form-control" name="publish_year" id="publish_year" value="{{ old('publish_year', $detail->publish_year) }}">
-                </div>
-                <div class="form-group" style="margin-top:10px">  
-                <label class="col-md-3 row">{{ trans('text.cover') }} (190 x 268px)</label>    
-                <div class="col-md-9">
-                    <img id="thumbnail_image" src="{{ $detail->image_url ? Helper::showImage($detail->image_url ) : URL::asset('public/admin/dist/img/img.png') }}" class="img-thumbnail" width="145" height="85">
-                    
-                    <input type="file" id="file-image" style="display:none" />
-                 
-                    <button class="btn btn-default btn-sm" id="btnUploadImage" type="button"><span class="glyphicon glyphicon-upload" aria-hidden="true"></span> {{ trans('text.upload') }}</button>
-                    <input type="hidden" name="image_url" id="image_url" value="{{ old('image_url', $detail->image_url) }}"/>  
-                  </div>
-              </div>
-              
-            </div>         
-              
+            </div>
+            <!-- /.box-body -->
+            
             <div class="box-footer">
               <button type="submit" class="btn btn-primary btn-sm">{{ trans('text.save') }}</button>
-              <a class="btn btn-default btn-sm" class="btn btn-primary btn-sm" href="{{ route('book.index')}}">{{ trans('text.cancel') }}</a>
+              <a class="btn btn-default btn-sm" class="btn btn-primary btn-sm" href="{{ route('chapter.index')}}">{{ trans('text.cancel') }}</a>
             </div>
             
         </div>
@@ -104,6 +80,10 @@
       </div>
       <div class="col-md-5">
         
+        </div>
+        <!-- /.box -->     
+
+      </div>
       <!--/.col (left) -->      
     </div>
     </form>
@@ -120,7 +100,7 @@
 @stop
 @section('js')
 <script type="text/javascript">
-  var h = screen.height;
+var h = screen.height;
 var w = screen.width;
 var left = (screen.width/2)-((w-300)/2);
 var top = (screen.height/2)-((h-100)/2);
@@ -133,18 +113,62 @@ function openKCFinder_singleFile() {
       };
       window.open('{{ URL::asset("public/admin/dist/js/kcfinder/browse.php?type=images") }}', 'kcfinder_single','scrollbars=1,menubar=no,width='+ (w-300) +',height=' + (h-300) +',top=' + top+',left=' + left);
   }
-$(document).on('click', '.remove-image', function(){
-  if( confirm ("Bạn có chắc chắn không ?")){
-    $(this).parents('.col-md-3').remove();
-  }
-});
+
     $(document).ready(function(){
+       $('#folder_id').change(function(){       
+        $.ajax({
+                url : '{{ route('get-child') }}',
+                data : {
+                  mod : 'book',
+                  col : 'folder_id',              
+                  id : $(this).val()
+                },
+                type : 'POST',
+                dataType : 'html',
+                success : function(data){
+                  $('#book_id').html(data);                                             
+                }
+              });
+          });     
       $('#btnUploadImage').click(function(){        
+        //$('#file-image').click();
         openKCFinder_singleFile();
-      }); 
+      });     
+      
+      var files = "";
+      $('#file-image').change(function(e){
+         files = e.target.files;
+         
+         if(files != ''){
+           var dataForm = new FormData();        
+          $.each(files, function(key, value) {
+             dataForm.append('file', value);
+          });   
+          
+          dataForm.append('date_dir', 1);
+          dataForm.append('folder', 'tmp');
+
+          $.ajax({
+            url: $('#route_upload_tmp_image').val(),
+            type: "POST",
+            async: false,      
+            data: dataForm,
+            processData: false,
+            contentType: false,
+            success: function (response) {
+              if(response.image_path){
+                $('#thumbnail_image').attr('src',$('#upload_url').val() + response.image_path);
+                $( '#image_url' ).val( response.image_path );
+                $( '#image_name' ).val( response.image_name );
+              }
+            }
+          });
+        }
+      });
+      
       $('#name').change(function(){
          var name = $.trim( $(this).val() );
-         
+        
             $.ajax({
               url: $('#route_get_slug').val(),
               type: "POST",
@@ -157,8 +181,7 @@ $(document).on('click', '.remove-image', function(){
                   $('#slug').val( response.str );
                 }                
               }
-            });
-       
+            });        
       });
 
     });

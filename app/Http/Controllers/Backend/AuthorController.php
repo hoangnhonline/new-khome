@@ -56,7 +56,7 @@ class AuthorController extends Controller
 
         Author::create($dataArr);
 
-        Session::flash('message', 'Success.');
+        Session::flash('message', trans('text.success'));
 
         return redirect()->route('author.index');
     }
@@ -108,9 +108,9 @@ class AuthorController extends Controller
 
         $model->update($dataArr);
 
-        Session::flash('message', 'Success.');
+        Session::flash('message', trans('text.success'));
 
-        return redirect()->route('author.edit', $dataArr['id']);
+        return redirect()->route('author.index');
     }
 
     /**
@@ -126,7 +126,7 @@ class AuthorController extends Controller
         $model->delete();
 
         // redirect
-        Session::flash('message', 'Delete success.');
+        Session::flash('message', trans('text.success'));
         return redirect()->route('author.index');
     }
 }

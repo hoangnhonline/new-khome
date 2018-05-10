@@ -7,15 +7,15 @@
       Danh mục cha     
     </h1>
     <ol class="breadcrumb">
-      <li><a href="#"><i class="fa fa-dashboard"></i> Dashboard</a></li>
+      <li><a href="#"><i class="fa fa-dashboard"></i> {{ trans('text.dashboard') }}</a></li>
       <li><a href="{{ route('cate.index') }}">Danh mục cha</a></li>
-      <li class="active">Chỉnh sửa </li>
+      <li class="active">{{ trans('text.modify') }} </li>
     </ol>
   </section>
 
   <!-- Main content -->
   <section class="content">
-    <a class="btn btn-default btn-sm" href="{{ route('cate.index') }}" style="margin-bottom:5px">Quay lại</a>
+    <a class="btn btn-default btn-sm" href="{{ route('cate.index') }}" style="margin-bottom:5px">{{ trans('text.back') }}</a>
     <a class="btn btn-primary btn-sm" href="{{ route('cate', [$detail->cateParent->slug, $detail->slug] ) }}" target="_blank" style="margin-top:-6px"><i class="fa fa-eye" aria-hidden="true"></i> Xem</a>
     <div class="row">
       <!-- left column -->
@@ -24,7 +24,7 @@
         <!-- general form elements -->
         <div class="box box-primary">
           <div class="box-header with-border">
-            Chỉnh sửa
+            {{ trans('text.modify') }}
           </div>
           <!-- /.box-header -->
           <!-- form start -->
@@ -57,7 +57,7 @@
               </div>
                <!-- text input -->
               <div class="form-group">
-                <label>Tên danh mục <span class="red-star">*</span></label>
+                <label>{{ trans('text.name') }} danh mục <span class="red-star">*</span></label>
                 <input type="text" class="form-control" name="name" id="name" value="{{ $detail->name }}">
               </div>
               <div class="form-group">
@@ -110,8 +110,8 @@
 
             <input type="hidden" name="image_url" id="image_url" value="{{ $detail->image_url }}"/>                      
             <div class="box-footer">
-              <button type="submit" class="btn btn-primary btn-sm">Lưu</button>
-              <a class="btn btn-default btn-sm" class="btn btn-primary btn-sm" href="{{ route('cate.index')}}">Hủy</a>
+              <button type="submit" class="btn btn-primary btn-sm">{{ trans('text.save') }}</button>
+              <a class="btn btn-default btn-sm" class="btn btn-primary btn-sm" href="{{ route('cate.index')}}">{{ trans('text.cancel') }}</a>
             </div>
             
         </div>

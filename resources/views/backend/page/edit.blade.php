@@ -4,18 +4,18 @@
   <!-- Content Header (Page header) -->
   <section class="content-header">
     <h1>
-      {{ trans('text.book') }}     
+      {{ trans('text.page') }}     
     </h1>
     <ol class="breadcrumb">
       <li><a href="#"><i class="fa fa-dashboard"></i> {{ trans('text.dashboard') }}</a></li>
-      <li><a href="{{ route('book.index') }}">{{ trans('text.book') }}</a></li>
+      <li><a href="{{ route('page.index') }}">{{ trans('text.page') }}</a></li>
       <li class="active">{{ trans('text.modify') }}</li>
     </ol>
   </section>
 
   <!-- Main content -->
   <section class="content">
-    <a class="btn btn-default btn-sm" href="{{ route('book.index') }}" style="margin-bottom:5px">{{ trans('text.back') }}</a>   
+    <a class="btn btn-default btn-sm" href="{{ route('page.index') }}" style="margin-bottom:5px">{{ trans('text.back') }}</a>   
     <div class="row">
       <!-- left column -->
 
@@ -27,7 +27,7 @@
           </div>
           <!-- /.box-header -->
           <!-- form start -->
-          <form role="form" method="POST" action="{{ route('book.update') }}">
+          <form role="form" method="POST" action="{{ route('page.update') }}">
             {!! csrf_field() !!}
             <input type="hidden" name="id" value="{{ $detail->id }}">
             <div class="box-body">
@@ -43,59 +43,27 @@
                       </ul>
                   </div>
               @endif           
-               <!-- text input -->
-              <div class="form-group">
-                    <label for="email">{{ trans('text.folder') }} <span class="red-star">*</span></label>
-                    <select class="form-control req" name="folder_id" id="folder_id">
-                        <option value="">-- {{ trans('text.choose') }} --</option>
-                        @foreach( $folderList as $value )
-                        <option value="{{ $value->id }}"
-                        {{ old('folder_id', $detail->folder_id) == $value->id ? "selected" : "" }}                           
-                        >{{ $value->name }}</option>
-                        @endforeach
-                    </select>
-                </div>     
+              @if(Session::has('message'))
+              <p class="alert alert-info" >{{ Session::get('message') }}</p>
+              @endif              
+              <input type="hidden" name="folder_id" value="{{ $chapterDetail->folder_id }}">
+              <input type="hidden" name="book_id" value="{{ $chapterDetail->book_id }}">
+              <input type="hidden" name="chapter_id" value="{{ $chapter_id }}">
                  <!-- text input -->
-                <div class="form-group">
-                  <label>{{ trans('text.name') }}<span class="red-star">*</span></label>
-                  <input type="text" class="form-control" name="name" id="name" value="{{ old('name', $detail->name) }}">
+                 <div class="form-group">
+                  <label>{{ trans('text.notes') }}</label>
+                  <textarea name="notes" id="notes" class="form-control">{!! old('notes', $detail->notes) !!}</textarea>
                 </div>
                 <div class="form-group">
-                    <label for="email">{{ trans('text.author') }} <span class="red-star">*</span></label>
-                    <select class="form-control req" name="author_id" id="author_id">
-                        <option value="">-- {{ trans('text.choose') }} --</option>
-                        @foreach( $authorList as $value )
-                        <option value="{{ $value->id }}"
-                        {{ old('author_id', $detail->author_id) == $value->id ? "selected" : "" }}                           
-                        >{{ $value->name }}</option>
-                        @endforeach
-                    </select>
-                </div> 
-                <div class="form-group">
-                  <label>{{ trans('text.publishing_company') }}</label>
-                  <input type="text" class="form-control" name="publish_company" id="publish_company" value="{{ old('publish_company', $detail->publish_company) }}">
+                  <label>{{ trans('text.content') }}<span class="red-star">*</span></label>
+                  <textarea name="content" id="content" class="form-control">{!! old('content', $detail->content) !!}</textarea>
                 </div>
-                <div class="form-group">
-                  <label>{{ trans('text.publishing_year') }}</label>
-                  <input type="text" class="form-control" name="publish_year" id="publish_year" value="{{ old('publish_year', $detail->publish_year) }}">
-                </div>
-                <div class="form-group" style="margin-top:10px">  
-                <label class="col-md-3 row">{{ trans('text.cover') }} (190 x 268px)</label>    
-                <div class="col-md-9">
-                    <img id="thumbnail_image" src="{{ $detail->image_url ? Helper::showImage($detail->image_url ) : URL::asset('public/admin/dist/img/img.png') }}" class="img-thumbnail" width="145" height="85">
-                    
-                    <input type="file" id="file-image" style="display:none" />
-                 
-                    <button class="btn btn-default btn-sm" id="btnUploadImage" type="button"><span class="glyphicon glyphicon-upload" aria-hidden="true"></span> {{ trans('text.upload') }}</button>
-                    <input type="hidden" name="image_url" id="image_url" value="{{ old('image_url', $detail->image_url) }}"/>  
-                  </div>
-              </div>
               
             </div>         
               
             <div class="box-footer">
               <button type="submit" class="btn btn-primary btn-sm">{{ trans('text.save') }}</button>
-              <a class="btn btn-default btn-sm" class="btn btn-primary btn-sm" href="{{ route('book.index')}}">{{ trans('text.cancel') }}</a>
+              <a class="btn btn-default btn-sm" class="btn btn-primary btn-sm" href="{{ route('page.index')}}">{{ trans('text.cancel') }}</a>
             </div>
             
         </div>
@@ -138,6 +106,9 @@ $(document).on('click', '.remove-image', function(){
     $(this).parents('.col-md-3').remove();
   }
 });
+var editor1 = CKEDITOR.replace( 'content',{
+          height : 500
+      });
     $(document).ready(function(){
       $('#btnUploadImage').click(function(){        
         openKCFinder_singleFile();

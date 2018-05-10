@@ -31,5 +31,9 @@ class Chapter extends Model  {
     public function book()
     {
         return $this->belongsTo('App\Models\Book', 'book_id');
-    }    
+    } 
+    public function pages()
+    {
+        return $this->hasMany('App\Models\Page', 'chapter_id');
+    }     
 }

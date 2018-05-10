@@ -7,15 +7,15 @@
       Tạo tài khoản
     </h1>
     <ol class="breadcrumb">
-      <li><a href="#"><i class="fa fa-dashboard"></i> Dashboard</a></li>
+      <li><a href="#"><i class="fa fa-dashboard"></i> {{ trans('text.dashboard') }}</a></li>
       <li><a href="{{ route('account.index') }}">Tài khoản</a></li>
-      <li class="active">Tạo mới</li>
+      <li class="active">{{ trans('text.add_new') }}</li>
     </ol>
   </section>
 
   <!-- Main content -->
   <section class="content">
-    <a class="btn btn-default btn-sm" href="{{ route('account.index') }}" style="margin-bottom:5px">Quay lại</a>
+    <a class="btn btn-default btn-sm" href="{{ route('account.index') }}" style="margin-bottom:5px">{{ trans('text.back') }}</a>
     <form role="form" method="POST" action="{{ route('account.store') }}" id="formData">
     <div class="row">
       <!-- left column -->
@@ -24,7 +24,7 @@
         <!-- general form elements -->
         <div class="box box-primary">
           <div class="box-header with-border">
-            <h3 class="box-title">Tạo mới</h3>
+            <h3 class="box-title">{{ trans('text.add_new') }}</h3>
           </div>
           <!-- /.box-header -->               
             {!! csrf_field() !!}
@@ -55,7 +55,7 @@
                   <input type="password" class="form-control" name="re_password" id="re_password" value="{{ old('re_password') }}">
                 </div>   
                 <div class="form-group">
-                  <label>Tên hiển thị<span class="red-star">*</span></label>
+                  <label>{{ trans('text.name') }} hiển thị<span class="red-star">*</span></label>
                   <input type="text" class="form-control" name="display_name" id="display_name" value="{{ old('display_name') }}">
                 </div>
                 <div class="form-group">
@@ -82,8 +82,8 @@
                 </div>
             </div>
             <div class="box-footer">             
-              <button type="submit" class="btn btn-primary btn-sm" id="btnSave">Lưu</button>
-              <a class="btn btn-default btn-sm" class="btn btn-primary btn-sm" href="{{ route('account.index')}}">Hủy</a>
+              <button type="submit" class="btn btn-primary btn-sm" id="btnSave">{{ trans('text.save') }}</button>
+              <a class="btn btn-default btn-sm" class="btn btn-primary btn-sm" href="{{ route('account.index')}}">{{ trans('text.cancel') }}</a>
             </div>
             
         </div>

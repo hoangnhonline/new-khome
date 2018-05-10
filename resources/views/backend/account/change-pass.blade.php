@@ -4,11 +4,11 @@
   <!-- Content Header (Page header) -->
   <section class="content-header">
     <h1>
-      Đổi mật khẩu
+      {{ trans('text.change_password') }}
     </h1>
     <ol class="breadcrumb">
-      <li><a href="#"><i class="fa fa-dashboard"></i> Dashboard</a></li>      
-      <li class="active">Đổi mật khẩu</li>
+      <li><a href="#"><i class="fa fa-dashboard"></i> {{ trans('text.dashboard') }}</a></li>      
+      <li class="active">{{ trans('text.change_password') }}</li>
     </ol>
   </section>
 
@@ -23,7 +23,7 @@
         <!-- general form elements -->
         <div class="box box-primary">
           <div class="box-header with-border">
-            <h3 class="box-title">Tạo mới</h3>
+            <h3 class="box-title">{{ trans('text.add_new') }}</h3>
           </div>
           <!-- /.box-header -->               
             {!! csrf_field() !!}
@@ -44,22 +44,22 @@
                  
                  <!-- text input -->
                 <div class="form-group">
-                  <label>Mật khẩu hiện tại <span class="red-star">*</span></label>
+                  <label>{{ trans('text.current_password') }}<span class="red-star">*</span></label>
                   <input type="password" class="form-control" name="old_pass" id="old_pass" value="">
                 </div>
                  <div class="form-group">
-                  <label>Mật khẩu mới <span class="red-star">*</span></label>
+                  <label>{{ trans('text.new_password') }} <span class="red-star">*</span></label>
                   <input type="password" class="form-control" name="new_pass" id="new_pass" value="">
                 </div>  
                 <div class="form-group">
-                  <label>Xác nhận mật khẩu mới <span class="red-star">*</span></label>
+                  <label>{{ trans('text.confirm_password') }} <span class="red-star">*</span></label>
                   <input type="password" class="form-control" name="new_pass_re" id="new_pass_re" value="">
                 </div>                
                 
             </div>
             <div class="box-footer">
               <button type="button" class="btn btn-default btn-sm" id="btnLoading" style="display:none"><i class="fa fa-spin fa-spinner"></i></button>
-              <button type="submit" class="btn btn-primary btn-sm" id="btnSave">Lưu</button>             
+              <button type="submit" class="btn btn-primary btn-sm" id="btnSave">{{ trans('text.save') }}</button>             
             </div>
             
         </div>

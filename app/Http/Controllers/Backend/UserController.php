@@ -45,8 +45,8 @@ class UserController extends Controller
             'password' => 'required'
         ],
         [
-            'email.required' => 'Bạn chưa nhập email',
-            'password.required' => 'Bạn chưa nhập mật khẩu'            
+            'email.required' => 'Please input email',
+            'password.required' => 'Please input password'
         ]);
         $dataArr = [
             'email' => $request->email,
@@ -61,12 +61,12 @@ class UserController extends Controller
                     return redirect()->route('orders.index');    
                 }
             }else{
-                Session::flash('error', 'Tài khoản đã bị khóa.'); 
+                Session::flash('error', trans('text.account_locked'));
                 return redirect()->route('backend.login-form'); 
             }
         }else {
             // if any error send back with message.
-            Session::flash('error', 'Email hoặc mật khẩu không đúng.'); 
+            Session::flash('error', trans('text.wrong'));
             return redirect()->route('backend.login-form');
         }
 

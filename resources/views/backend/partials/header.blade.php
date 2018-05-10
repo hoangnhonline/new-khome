@@ -17,16 +17,16 @@
       <ul class="nav navbar-nav">     
         <li class="dropdown user user-menu">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">            
-            <i class="fa fa-gears"></i><span class="hidden-xs">Chào {{ Auth::user()->display_name }}</span>
+            <i class="fa fa-gears"></i><span class="hidden-xs">{{ trans('text.hello') }} {{ Auth::user()->full_name }}</span>
           </a>
           <ul class="dropdown-menu">            
             <li class="user-footer">
             <div class="pull-left">
-                <a href="{{ route('account.change-pass') }}" class="btn btn-success btn-flat">Đổi mật khẩu</a>
+                <a href="{{ route('account.change-pass') }}" class="btn btn-success btn-flat">{{ trans('text.change_password') }}</a>
               </div>             
               <div class="pull-right">
 
-                <a href="{{ route('backend.logout') }}" class="btn btn-danger btn-flat">Thoát</a>
+                <a href="{{ route('backend.logout') }}" class="btn btn-danger btn-flat">{{ trans('text.sign_out') }}</a>
               </div>
             </li>
           </ul>
