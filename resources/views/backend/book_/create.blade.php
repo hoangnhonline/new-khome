@@ -314,8 +314,7 @@ $(document).on('click', '.remove-image', function(){
             }
           });
       });
-	  $('#folder_id').change(function(){
-        //location.href="{{ route('book.create') }}?folder_id=" + $(this).val();
+	  $('#folder_id').change(function(){        
 		$.ajax({
             url : '{{ route('get-child') }}',
             data : {

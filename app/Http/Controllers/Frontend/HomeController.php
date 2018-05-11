@@ -5,67 +5,25 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use App\Models\Product;
-use App\Models\Banner;
-use App\Models\Location;
-use App\Models\Articles;
-use App\Models\ArticlesCate;
-use App\Models\Customer;
-use App\Models\Newsletter;
+use App\Models\Book;
+use App\Models\Folder;
+use App\Models\Chapter;
+use App\Models\Page;
+use App\Models\Author;
 use App\Models\Settings;
-use App\Models\HotCate;
-use App\Models\CateParent;
-use App\Models\Cate;
-use App\Models\Pages;
-use App\Models\Rating;
 
 use Helper, File, Session, Auth, Hash, Response, URL;
 
 class HomeController extends Controller
 {
-    
-    public static $loaiSpArrKey = [];    
-
     public function __construct(){
-        
-       
-
-    }    
-    public function rss(Request $request){
-        $productList = Product::where('status', 1)->orderBy('id', 'desc')->get();  
-        $settingArr = Helper::setting();
-        $articlesList = Articles::where('status', 1)->where('cate_id', '<>', 7)->orderBy('id', 'desc')->get();  
-        return Response::view('frontend.home.rss', compact('productList', 'settingArr', 'articlesList'))->header('Content-Type', 'text/xml');
-    }
-    public function insertRating(Request $request){
-        $score = $request->score;
-        $object_id = $request->object_id;
-        $object_type = $request->object_type;
-        if($score){
-            $rs = Rating::where(['score' => $score, 'object_id' => $object_id, 'object_type' => $object_type])->first();
-            if($rs){
-                $rs->amount = $rs->amount + 1;
-                $rs->save();
-            }else{
-                Rating::create(['score' => $score, 'object_id' => $object_id, 'object_type' => $object_type, 'amount' => 1]);
-            }
-        }
-        return view('frontend.partials.rating', compact('object_id', 'object_type'));
-    }
-    public function searchProduct(Request $request){
-        $data = $request->all();
-       // var_dump($data);
-        $search = trim($data['q']);
-        $query = Product::where('product.status', 1);
-        
-        if( $search != ''){
-            $query->where('product.alias', 'LIKE', ''.$search.'%');           
-        }
-        $query->orderBy('id', 'desc');
-        $list = $query->limit(10)->pluck('name', 'id')->toArray(); 
-        return Response::json($list);    
-
-    }
+    }   
+    public function getChild(Request $request){
+        $module = $request->mod;
+        $id = $request->id;
+        $column = $request->col;
+        return Helper::getChild($module, $column, $id);
+    }     
     public function index(Request $request)
     {   
         $settingArr = Helper::setting();     
@@ -76,16 +34,47 @@ class HomeController extends Controller
         $seo['keywords'] = $settingArr['site_keywords'];
         $socialImage = $settingArr['banner'];
 
-        
-        return view('frontend.home.index', compact('socialImage', 'seo'));
+        $bookList = Book::where('folder_id', 1)->where('status', 1)->orderBy('display_order', 'asc')->get();
+        $hotList = Book::where('status', 1)->orderBy('id', 'desc')->limit(5)->get();
+        return view('frontend.index', compact('socialImage', 'seo', 'bookList', 'hotList'));
 
     }
-    public function getChild(Request $request){
-        $module = $request->mod;
-        $id = $request->id;
-        $column = $request->col;
-        $is_branch = isset($request->is_branch) ? 1 : 0;
-        return Helper::getChild($module, $column, $id, $is_branch);
+    public function folder(Request $request){
+        $folder_id = $request->id;
+        $folderDetail = Folder::find($folder_id);
+        if(!$folderDetail){
+            return redirect()->route('home');
+        }
+        $seo['title'] =  $seo['description'] = $seo['keywords'] = $folderDetail->name;         
+        $bookList = Book::where(['folder_id' => $folder_id, 'status' => 1])->get();
+        return view('frontend.folder', compact('socialImage', 'seo', 'bookList', 'folder_id'));
+    }
+    public function book(Request $request){
+        $book_id = $request->id;
+        $bookDetail = Book::find($book_id);
+        if(!$bookDetail){
+            return redirect()->route('home');
+        }
+        $seo['title'] =  $seo['description'] = $seo['keywords'] = $bookDetail->name;         
+        $chapterList = Chapter::where(['book_id' => $book_id, 'status' => 1])->get();
+        $folder_id = $bookDetail->folder_id;
+        $bookList = Book::where(['folder_id' => $folder_id, 'status' => 1])->get();
+        return view('frontend.book', compact('socialImage', 'seo', 'bookDetail', 'chapterList', 'folder_id', 'bookList', 'book_id'));
+    }
+    public function chapter(Request $request){
+        $chapter_id = $request->id;
+        $chapterDetail =Chapter::find($chapter_id);
+        if(!$chapterDetail){
+            return redirect()->route('home');
+        }
+        $seo['title'] =  $seo['description'] = $seo['keywords'] = $chapterDetail->name;         
+        $pageList = Page::where(['chapter_id' => $chapter_id, 'status' => 1])->get();
+        $folder_id = $chapterDetail->folder_id;
+        $book_id = $chapterDetail->book_id;
+        $chapterList = Chapter::where(['book_id' => $book_id, 'status' => 1])->get();
+        $bookList = Book::where(['folder_id' => $folder_id, 'status' => 1])->get();
+        $url = url()->current();        
+        return view('frontend.chapter', compact('socialImage', 'seo', 'bookDetail', 'chapterList', 'folder_id', 'bookList', 'book_id', 'pageList', 'chapter_id'));
     }
     public function pages(Request $request){
         $slug = $request->slug;
@@ -101,22 +90,7 @@ class HomeController extends Controller
         return view('frontend.pages.index', compact('detailPage', 'seo', 'slug'));    
     }
 
-    public function services(Request $request){
-        $servicesList = Articles::where('cate_id', 7)->orderBy('display_order')->orderBy('id')->get();
-        
-        $seo['title'] =  $seo['description'] = $seo['keywords'] = "Dịch vụ";           
-
-        return view('frontend.pages.services', compact('servicesList', 'seo'));    
-    }
-
     
-    public function getNoti(){
-        $countMess = 0;
-        if(Session::get('userId') > 0){
-            $countMess = CustomerNotification::where(['customer_id' => Session::get('userId'), 'status' => 1])->count();    
-        }
-        return $countMess;
-    }
     /**
     * Show the form for creating a new resource.
     *
@@ -133,48 +107,6 @@ class HomeController extends Controller
         $seo['title'] = $seo['description'] =$seo['keywords'] = "Tìm kiếm sản phẩm theo từ khóa '".$tu_khoa."'";
        
         return view('frontend.cate.search', compact('productList', 'tu_khoa', 'seo', 'parent_id'));
-    }
-    public function chooseDistrict(Request $request){
-        $id = $request->id;
-        Session::put('choose_district', $id);
-        Session::put('choose_city', $request->city_id);
-        return redirect(URL::previous());
-    }
-    public function ajaxTab(Request $request){
-        $table = $request->type ? $request->type : 'category';
-        $id = $request->id;
-
-        $arr = Film::getFilmHomeTab( $table, $id);
-
-        return view('frontend.index.ajax-tab', compact('arr'));
-    }
-    public function contact(Request $request){        
-
-        $seo['title'] = 'Liên hệ';
-        $seo['description'] = 'Liên hệ';
-        $seo['keywords'] = 'Liên hệ';
-        $socialImage = '';
-        $servicesList = Articles::where('cate_id', 7)->orderBy('display_order')->orderBy('id')->get();
-        return view('frontend.contact.index', compact('seo', 'socialImage', 'servicesList'));
-    }
-
-    
-
-    public function registerNews(Request $request)
-    {
-
-        $register = 0; 
-        $email = $request->email;
-        $newsletter = Newsletter::where('email', $email)->first();
-        if(is_null($newsletter)) {
-           $newsletter = new Newsletter;
-           $newsletter->email = $email;
-           $newsletter->is_member = 0;
-           $newsletter->save();
-           $register = 1;
-        }
-
-        return $register;
-    }
+    }    
 
 }

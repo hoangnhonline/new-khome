@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html dir="ltr" lang="vi-VN" class="no-js ie ie6 lte7 lte8 lte9"><![endif]-->
+<!--[if IE 7 ]><html dir="ltr" lang="vi-VN" class="no-js ie ie7 lte7 lte8 lte9"><![endif]-->
+<!--[if IE 8 ]><html dir="ltr" lang="vi-VN" class="no-js ie ie8 lte8 lte9"><![endif]-->
+<!--[if IE 9 ]><html dir="ltr" lang="vi-VN" class="no-js ie ie9 lte9"><![endif]-->
+<!--[if IE 10 ]><html dir="ltr" lang="vi-VN" class="no-js ie ie10 lte10"><![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!-->
+<html lang="vn">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1"/>
+	<title>Detail</title>
+	<meta name="description" content="">
+	<meta name="keywords" content="">
+	<meta name="robots" content="index,follow" />
+	<!-- <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+	<link rel="icon" href="images/favicon.ico" type="image/x-icon"> -->
+
+	<!-- ===== Style CSS ===== -->
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<!-- ===== Responsive CSS ===== -->
+	<link rel="stylesheet" type="text/css" href="css/responsive.css">
+
+  	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	<!--[if lt IE 9]>
+		<link href='css/animations-ie-fix.css' rel='stylesheet'>
+		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+		<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+	<![endif]-->
+
+</head>
+<body>
+
+	<div id="wrapper_vnbet">
+	    <div id="fb-root"></div>
+		<script>(function(d, s, id) {
+		  var js, fjs = d.getElementsByTagName(s)[0];
+		  if (d.getElementById(id)) return;
+		  js = d.createElement(s); js.id = id;
+		  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=452243541554954&version=v2.0";
+		  fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'facebook-jssdk'));</script>  
+
+		<div class="container visible_xs hide-bg-xs"></div>
+		<div class="container main_vnbet">
+			<div class="row">
+				<div class="col-md-12" id="top_rs">
+	                <div class="logo_site">
+	                    <a href="http://vnbet.vn"><img src="images/logo.jpg" alt="LOGO VNBET"></a>
+	                </div>
+	            </div><!-- /#top_rs -->
+	            <div class="col-md-1 hidden-xs hidden-sm" id="left_rs"></div><!-- /#left_rs -->
+	            <div class="col-md-10">
+	            	<div class="row hidden-xs hidden-sm" id="top_2">
+	            		<div class="col-md-6" id="div_hd">
+					        <a href="#" class="dl_soft" target="_blank">Hướng dẫn sử dụng</a>     
+							<div style="margin-left:10px" class="fb-share-button" data-href="#" data-type="button_count"></div>
+					      </div>
+					      <div class="col-md-6" id="download">
+							<a href="#" class="dl_soft" target="_blank">                          
+								Tải về phần mềm Kinh sách tiếng Việt VNBET &nbsp;<img src="images/icons/download.png" alt="download vnbet">
+							</a>&nbsp;&nbsp;Lượt tải: <span id="luot_down">63112</span>
+					      </div>
+	            	</div><!-- /#top_2-->
+					<div class="row hidden-xs" id="box_search">
+					    <div class="col-md-2">
+					        Thư mục
+					        <select id="idDM_loc" name="idDM" style="width:70px">
+					            <option value="0">Chọn thư mục</option>
+					            <option value="1">Kinh</option>
+					            <option value="7">Luật</option>
+					            <option value="3">Luận</option>
+					            <option value="2">Sách</option>
+					        </select>
+					    </div>
+					    <div class="col-md-3">
+					        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sách
+					        <select id="idSach_loc" name="idSach">
+					            <option value="0">Chọn sách</option>
+					            <option ten_sach="kinh-truong-bo-1" value="1">
+					                Kinh Trường Bộ 1    
+					            </option>
+					            <option ten_sach="kinh-truong-bo-2" value="2">
+					                Kinh Trường Bộ 2    
+					            </option>
+					            <option ten_sach="kinh-trung-bo-1" value="3">
+					                Kinh Trung Bộ 1    
+					            </option>
+					            <option ten_sach="kinh-trung-bo-2" value="4">
+					                Kinh Trung Bộ 2    
+					            </option>
+					            <option ten_sach="kinh-tuong-ung-1-thien-co-ke" value="5">
+					                Kinh Tương Ưng 1 Thiên Có Kệ    
+					            </option>
+					            <option ten_sach="kinh-tuong-ung-2-thien-nhan-duyen" value="6">
+					                Kinh Tương Ưng 2 Thiên Nhân Duyên    
+					            </option>
+					            <option ten_sach="kinh-tuong-ung-3-thien-uan" value="7">
+					                Kinh Tương Ưng 3 Thiên Uẩn    
+					            </option>
+					            <option ten_sach="kinh-tuong-ung-4-thien-sau-xu" value="8">
+					                Kinh Tương Ưng 4 Thiên Sáu Xứ    
+					            </option>
+					            <option ten_sach="kinh-tuong-ung-5-dai-pham" value="11">
+					                Kinh Tương Ưng 5 Đại Phẩm    
+					            </option>
+					            <option ten_sach="kinh-tang-chi-bo-1" value="18">
+					                Kinh Tăng Chi Bộ 1    
+					            </option>
+					            <option ten_sach="kinh-tang-chi-bo-2" value="19">
+					                Kinh Tăng Chi Bộ 2    
+					            </option>
+					            <option ten_sach="kinh-tang-chi-bo-3" value="20">
+					                Kinh Tăng Chi Bộ 3    
+					            </option>
+					            <option ten_sach="kinh-tang-chi-bo-4" value="21">
+					                Kinh Tăng Chi Bộ 4    
+					            </option>
+					            <option ten_sach="kinh-tieu-bo-1" value="57">
+					                Kinh Tiểu Bộ 1    
+					            </option>
+					            <option ten_sach="kinh-tieu-bo-2" value="23">
+					                Kinh Tiểu Bộ 2    
+					            </option>
+					            <option ten_sach="kinh-tieu-bo-3" value="24">
+					                Kinh Tiểu Bộ 3    
+					            </option>
+					            <option ten_sach="kinh-tieu-bo-4" value="25">
+					                Kinh Tiểu Bộ 4    
+					            </option>
+					            <option ten_sach="kinh-tieu-bo-5" value="26">
+					                Kinh Tiểu Bộ 5    
+					            </option>
+					            <option ten_sach="kinh-tieu-bo-6" value="27">
+					                Kinh Tiểu Bộ 6    
+					            </option>
+					            <option ten_sach="kinh-tieu-bo-7" value="28">
+					                Kinh Tiểu Bộ 7    
+					            </option>
+					            <option ten_sach="kinh-tieu-bo-8" value="29">
+					                Kinh Tiểu Bộ 8    
+					            </option>
+					            <option ten_sach="kinh-tieu-bo-9" value="30">
+					                Kinh Tiểu Bộ 9    
+					            </option>
+					            <option ten_sach="kinh-tieu-bo-10" value="31">
+					                Kinh Tiểu Bộ 10    
+					            </option>
+					            <option ten_sach="kinh-dia-tang" value="65">
+					                Kinh Địa Tạng    
+					            </option>
+					            <option ten_sach="kinh-dieu-phap-lien-hoa" value="84">
+					                Kinh Diệu Pháp Liên Hoa    
+					            </option>
+					            <option ten_sach="kinh-dia-tang-bo-tat-bon-nguyen" value="85">
+					                Kinh Địa Tạng Bồ Tát Bổn Nguyện    
+					            </option>
+					            <option ten_sach="kinh-truong-bo-2013" value="86">
+					                Kinh Trường Bộ - 2013    
+					            </option>
+					            <option ten_sach="kinh-pho-mon-dieu-phap-lien-hoa-kinh-pho-mon-pham" value="134">
+					                Kinh Phổ Môn -  Diệu Pháp Liên Hoa Kinh Phổ Môn Phẩm    
+					            </option>
+					            <option ten_sach="kinh-kim-cang-kim-cang-bat-nha-ba-la-mat-kinh" value="139">
+					                Kinh Kim Cang - Kim Cang Bát-Nhã Ba-La-Mật Kinh    
+					            </option>
+					            <option ten_sach="kinh-duoc-su-luu-ly-quang-nhu-lai-bon-nguyen-cong-duc" value="140">
+					                Kinh Dược Sư - Lưu Ly Quang Như Lai Bổn Nguyện Công Đức    
+					            </option>
+					            <option ten_sach="kinh-dai-thua-vo-luong-nghia" value="141">
+					                Kinh Đại Thừa Vô Lượng Nghĩa    
+					            </option>
+					            <option ten_sach="di-giao-kinh-[-kinh-loi-day-cuoi-cung]" value="142">
+					                Di Giáo Kinh [ Kinh Lời Dạy Cuối Cùng]    
+					            </option>
+					            <option ten_sach="kinh-tu-thap-nhi-chuong-kinh-bon-muoi-hai-chuong" value="143">
+					                Kinh Tứ Thập Nhị Chương - Kinh Bốn Mươi Hai Chương    
+					            </option>
+					            <option ten_sach="nghi-thuc-tung-niem" value="148">
+					                Nghi Thức Tụng Niệm    
+					            </option>
+					            <option ten_sach="hong-danh-sam-hoi" value="154">
+					                Hồng Danh Sám Hối    
+					            </option>
+					            <option ten_sach="bon-mon-phap-hoa-kinh" value="155">
+					                Bổn Môn Pháp Hoa Kinh    
+					            </option>
+					            <option ten_sach="kinh-duoc-su" value="156">
+					                Kinh Dược Sư    
+					            </option>
+					            <option ten_sach="nghi-thuc-cau-an-cau-sieu" value="158">
+					                Nghi Thức Cầu An Cầu Siêu    
+					            </option>
+					            <option ten_sach="kinh-ty-kheo-na-tien" value="159">
+					                Kinh Tỳ-Kheo Na-Tiên    
+					            </option>
+					            <option ten_sach="kinh-duy-ma-cat" value="162">
+					                Kinh Duy-Ma-Cật    
+					            </option>
+					            <option ten_sach="chu-kinh-tap-yeu" value="163">
+					                Chư Kinh Tập Yếu    
+					            </option>
+					            <option ten_sach="tri-tinh-toan-tap-tap-1-kinh-dai-phuong-quang-phat-hoa-nghiem" value="168">
+					                Trí Tịnh Toàn Tập - Tập 1 - Kinh Đại Phương Quảng Phật Hoa Nghiêm    
+					            </option>
+					            <option ten_sach="tri-tinh-toan-tap-tap-2-kinh-dai-phuong-quang-phat-hoa-nghiem" value="169">
+					                Trí Tịnh Toàn Tập - Tập 2 - Kinh Đại Phương Quảng Phật Hoa Nghiêm    
+					            </option>
+					            <option ten_sach="tri-tinh-toan-tap-tap-3-kinh-dai-phuong-quang-phat-hoa-nghiem" value="170">
+					                Trí Tịnh Toàn Tập - Tập 3 - Kinh Đại Phương Quảng Phật Hoa Nghiêm    
+					            </option>
+					            <option ten_sach="tri-tinh-toan-tap-tap-4-kinh-dai-phuong-quang-phat-hoa-nghiem" value="171">
+					                Trí Tịnh Toàn Tập - Tập 4 - Kinh Đại Phương Quảng Phật Hoa Nghiêm    
+					            </option>
+					            <option ten_sach="tri-tinh-toan-tap-tap-5-kinh-bat-nha-ba-la-mat" value="172">
+					                Trí Tịnh Toàn Tập - Tập 5 - Kinh Bát Nhã Ba La Mật    
+					            </option>
+					            <option ten_sach="tri-tinh-toan-tap-tap-6-kinh-bat-nha-ba-la-mat" value="173">
+					                Trí Tịnh Toàn Tập - Tập 6 - Kinh Bát Nhã Ba La Mật    
+					            </option>
+					            <option ten_sach="tri-tinh-toan-tap-tap-7-kinh-bat-nha-ba-la-mat" value="174">
+					                Trí Tịnh Toàn Tập - Tập 7 - Kinh Bát Nhã Ba La Mật    
+					            </option>
+					            <option ten_sach="kinh-tuong-ung-bo-2013-tap-i" value="183">
+					                Kinh Tương Ưng Bộ  2013 - Tập I    
+					            </option>
+					            <option ten_sach="kinh-tuong-ung-bo-2013-tap-ii" value="184">
+					                Kinh Tương Ưng Bộ 2013 - Tập II    
+					            </option>
+					            <option ten_sach="kinh-tang-nhat-a-ham-tap-i" value="186">
+					                Kinh Tăng Nhất A-Hàm - Tập I    
+					            </option>
+					            <option ten_sach="kinh-tang-nhat-a-ham-tap-ii" value="188">
+					                Kinh Tăng Nhất A-Hàm - Tập II    
+					            </option>
+					            <option ten_sach="kinh-tang-nhat-a-ham-tap-iii" value="190">
+					                Kinh Tăng Nhất A-Hàm - Tập III    
+					            </option>
+					            <option ten_sach="kinh-trung-a-ham-tap-1" value="202">
+					                Kinh Trung A-Hàm Tập 1    
+					            </option>
+					            <option ten_sach="kinh-trung-a-ham-tap-2" value="204">
+					                Kinh Trung A-Hàm Tập 2    
+					            </option>
+					            <option ten_sach="kinh-truong-a-ham-tap-1" value="205">
+					                Kinh Trường A - Hàm Tập 1    
+					            </option>
+					            <option ten_sach="kinh-bi-hoa" value="209">
+					                Kinh Bi Hoa    
+					            </option>
+					            <option ten_sach="tang-nhat-a-ham-tap-1" value="223">
+					                Tăng Nhất A- Hàm Tập 1    
+					            </option>
+					            <option ten_sach="tang-nhat-a-ham-tap-2" value="225">
+					                Tăng Nhất A- Hàm  Tập 2    
+					            </option>
+					            <option ten_sach="gioi-thieu-kinh-thu-lang-nghiem" value="229">
+					                Giới Thiệu Kinh Thủ Lăng Nghiêm    
+					            </option>
+					            <option ten_sach="dai-bat-niet-ban-kinh-tap-1" value="233">
+					                Đại Bát Niết Bàn Kinh Tập 1    
+					            </option>
+					            <option ten_sach="dai-bat-niet-ban-kinh-tap-2" value="235">
+					                Đại Bát Niết Bàn Kinh Tập 2    
+					            </option>
+					            <option ten_sach="kinh-dai-bat-niet-ban-tap-1" value="236">
+					                Kinh Đại Bát Niết Bàn Tập 1    
+					            </option>
+					            <option ten_sach="kinh-dai-bat-niet-ban-tap-2" value="238">
+					                Kinh Đại Bát Niết Bàn Tập 2    
+					            </option>
+					            <option ten_sach="kinh-truong-a-ham" value="243">
+					                Kinh Trường A Hàm    
+					            </option>
+					            <option ten_sach="kim-cang-bat-nha-ba-la-mat-kinh" value="288">
+					                Kim Cang Bát Nhã Ba La Mật Kinh    
+					            </option>
+					            <option ten_sach="duy-ma-cat-so-thuyet-kinh" value="289">
+					                Duy Ma Cật Sở Thuyết Kinh    
+					            </option>
+					            <option ten_sach="nhu-lai-vien-giac-kinh" value="290">
+					                Như Lai Viên Giác Kinh    
+					            </option>
+					            <option ten_sach="kinh-hien-ngu-hien-ngu-nhan-duyen-kinh" value="291">
+					                Kinh Hiền Ngu (Hiền Ngu Nhân Duyên Kinh)    
+					            </option>
+					            <option ten_sach="kinh-tang-chi-bo-2015-tap-i" value="294">
+					                Kinh Tăng Chi Bộ 2015 - Tập I    
+					            </option>
+					            <option ten_sach="kinh-tang-chi-bo-2015-tap-ii" value="295">
+					                Kinh Tăng Chi Bộ 2015 - Tập II    
+					            </option>
+					            <option ten_sach="kinh-tieu-bo-2015-tap-i" value="296">
+					                Kinh Tiểu Bộ 2015 - Tập I    
+					            </option>
+					            <option ten_sach="kinh-tieu-bo-2015-tap-ii" value="298">
+					                Kinh Tiểu Bộ 2015 - Tập II    
+					            </option>
+					            <option ten_sach="kinh-tieu-bo-2015-tap-iii" value="299">
+					                Kinh Tiểu Bộ 2015 - Tập III    
+					            </option>
+					            <option ten_sach="kinh-tieu-bo-2015-tap-iv" value="303">
+					                Kinh Tiểu Bộ 2015 - Tập IV    
+					            </option>
+					            <option ten_sach="kinh-dai-phat-danh-thu-lang-nghiem-tap-1" value="309">
+					                Kinh Đại Phật Đảnh Thủ Lăng Nghiêm - Tập 1    
+					            </option>
+					            <option ten_sach="kinh-dai-phat-danh-thu-lang-nghiem-tap-2" value="310">
+					                Kinh Đại Phật Đảnh Thủ Lăng Nghiêm - Tập 2    
+					            </option>
+					            <option ten_sach="kinh-tieu-bo-2015-tap-v" value="319">
+					                Kinh Tiểu Bộ 2015- Tập V    
+					            </option>
+					            <option ten_sach="kinh-vo-luong-tho" value="328">
+					                Kinh Vô Lượng Thọ    
+					            </option>
+					            <option ten_sach="dai-tap-i-bo-a-ham-i-kinh-truong-a-ham-so-1" value="337">
+					                Đại Tập I, Bộ A- Hàm I, Kinh Trường A- Hàm Số 1    
+					            </option>
+					            <option ten_sach="dai-tap-ii-bo-a-ham-ii--kinh-truong-a-ham-so-2" value="339">
+					                Đại Tập II, Bộ A - Hàm II , Kinh Trường A - Hàm Số 2    
+					            </option>
+					            <option ten_sach="dai-tap-iii-bo-a-ham-iii-kinh-trung-a-ham-so-1" value="340">
+					                Đại Tập III, Bộ A - Hàm III, Kinh Trung A - Hàm Số 1    
+					            </option>
+					            <option ten_sach="dai-tap-iv-bo-a-ham-iv-kinh-trung-a-ham-so-2" value="341">
+					                Đại Tập IV, Bộ A- Hàm IV, Kinh Trung A- Hàm Số 2    
+					            </option>
+					            <option ten_sach="dai-tap-v-bo-a-ham-v-trung-a-ham-biet-dich-kinh-tap-a-ham-so-1" value="344">
+					                Đại Tập V, Bộ A - Hàm V, Trung A - Hàm Biệt Dịch &amp; Kinh Tạp  A - Hàm Số 1    
+					            </option>
+					            <option ten_sach="dai-tap-vi-bo-a-ham-vi-kinh-tap-a-ham-so-2" value="345">
+					                Đại Tập VI, Bộ A- Hàm VI, Kinh Tạp A- Hàm Số 2    
+					            </option>
+					            <option ten_sach="dai-tap-vii-bo-a-ham-vii-kinh-tap-a-ham-so-3" value="346">
+					                Đại Tập VII, Bộ A- Hàm VII, Kinh Tạp A- Hàm Số 3    
+					            </option>
+					            <option ten_sach="dai-tap-viii-bo-a-ham-viii-kinh-tap-a-ham-so-125-q1->30" value="347">
+					                Đại Tập VIII, Bộ A -Hàm VIII, Kinh Tạp A - Hàm Số 125 (Q1-&gt;30)    
+					            </option>
+					            <option ten_sach="dai-tap-ix-bo-a-ham-ix-so-125tt-151" value="348">
+					                Đại Tập IX, Bộ A- Hàm IX, Số 125(tt)- 151    
+					            </option>
+					            <option ten_sach="dai-tap-x-bo-ban-duyen-i-so-152-157" value="349">
+					                Đại Tập X, Bộ Bản Duyên I (Số 152 - 157)    
+					            </option>
+					            <option ten_sach="dai-tap-xi-bo-ban-duyen-ii-so-158-185" value="350">
+					                Đại Tập XI, Bộ Bản Duyên II, Số (158- 185)    
+					            </option>
+					            <option ten_sach="dai-tap-xii-bo-ban-duyen-iii-so-186-190" value="351">
+					                Đại Tập XII, Bộ Bản Duyên III (Số 186 - 190)    
+					            </option>
+					            <option ten_sach="dai-tap-xiii-bo-ban-duyen-iv-so-190-191" value="352">
+					                Đại Tập XIII, Bộ Bản Duyên IV (Số 190- 191)    
+					            </option>
+					            <option ten_sach="dai-tap-xiv-bo-ban-duyen-v-so-192-198" value="353">
+					                Đại Tập XIV, Bộ Bản Duyên V (Số 192 - 198)    
+					            </option>
+					            <option ten_sach="dai-tap-xv-bo-ban-duyen-vi-so-199-202" value="354">
+					                Đại Tập XV, Bộ Bản Duyên VI (Số 199- 202)    
+					            </option>
+					            <option ten_sach="dai-tap-xvi-bo-ban-duyen-vii-so-203-211" value="355">
+					                Đại Tập XVI, Bộ Bản Duyên VII (Số 203 - 211)    
+					            </option>
+					            <option ten_sach="dai-tap-xvii-bo-ban-duyen-viii-so-212-219" value="356">
+					                Đại Tập XVII, Bộ Bản Duyên VIII (Số 212- 219)    
+					            </option>
+					            <option ten_sach="dai-tap-xviii-bo-bat-nha-i-so-220-quyen-1-50" value="357">
+					                Đại Tập XVIII, Bộ Bát-Nhã I - Số 220 (Quyển 1 - 50)    
+					            </option>
+					            <option ten_sach="dai-tap-xix-bo-bat-nha-ii-so-220-quyen-51-100" value="358">
+					                Đại Tập XIX, Bộ Bát Nhã II, Số 220 (Quyển 51- 100)    
+					            </option>
+					            <option ten_sach="dai-tap-xx-bo-bat-nha-iii-so-220-quyen-101-150" value="359">
+					                Đại Tập XX, Bộ Bát Nhã III, Số 220 (Quyển 101- 150)    
+					            </option>
+					            <option ten_sach="dai-tap-xxi-bo-bat-nha-iv-so-220-quyen-151-200" value="360">
+					                Đại Tập XXI, Bộ Bát-Nhã IV - Số 220 (Quyển 151 - 200)    
+					            </option>
+					            <option ten_sach="dai-tap-xxii-bo-bat-nha-v-so-220-quyen-201-250" value="361">
+					                Đại Tập XXII, Bộ Bát Nhã V, Số 220 (Quyển 201- 250)    
+					            </option>
+					            <option ten_sach="dai-tap-xxiii-bo-bat-nha-vi-so-220-quyen-251-300" value="362">
+					                Đại Tập XXIII, Bộ Bát-Nhã VI - Số 220 (Quyển 251 - 300)    
+					            </option>
+					            <option ten_sach="dai-tap-xxiv-bo-bat-nha-vii-so-220-quyen-301-350" value="363">
+					                Đại Tập XXIV, Bộ Bát- Nhã VII Số 220 (Quyển 301- 350)    
+					            </option>
+					            <option ten_sach="dai-tap-xxv-bo-bat-nha-viii-so-220-quyen-351-400" value="364">
+					                Đại Tập XXV, Bộ Bát-Nhã VIII - Số 220 (Quyển 351 - 400)    
+					            </option>
+					            <option ten_sach="dai-tap-xxvi-bo-bat-nha-ix-so-220-quyen-401-450" value="366">
+					                Đại Tập XXVI, Bộ Bát- Nhã IX Số 220 (Quyển 401- 450)    
+					            </option>
+					        </select>
+					    </div>
+					    <div class="col-md-3">
+					        &nbsp;&nbsp;Mục lục
+					        <select id="idML_loc" name="idML">
+					            <option value="0">Chọn mục lục</option>
+					        </select>
+					    </div>
+					    <div class="col-md-3">
+					        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Trang 
+					        <select id="idTrang_loc" name="idTrang">
+					            <option value="0">Chọn trang</option>
+					        </select>
+					    </div>
+					    <div class="col-md-1">          
+					        <span class="hidden-lg">&nbsp;</span>
+					        <input type="button" id="btnLoc" value="Xem" name="btnSumit">
+					    </div>
+					</div><!-- /#box_search -->
+					<div id="center_rs" class="fck_content">
+						<div class="content_kinh txt_cente scroll_bar">
+						    <div class="content_page" thutu="5" id="content_5">
+						        <div style="text-align: center;">
+						            <span style="font-family:times new roman,times,serif;"><strong>GIẢI TRÌNH Ý NGHĨA VU LAN</strong></span>
+						        </div>
+						        <span style="font-family:times new roman,times,serif;">&nbsp;<br>
+						        &nbsp;Hằng năm vào dịp Rằm tháng Bẩy, các Phật tử cử hành Lễ Vu Lan báo hiếu một cách trang trọng, đầy cảm động, theo truyền thống Phật giáo Bắc phương, đó là một sinh hoạt tôn giáo bao hàm rất nhiều ý nghĩa.<br>
+						        &nbsp;Sự tích báo hiếu này phát xuất từ kinh Vu Lan Bồn, qua tấm gương cứu mẹ của tôn giả Mục Kiền Liên, vào thời đức Phật còn ở đời tại nước Ấn Độ. Đến khi Phật giáo truyền vào nước ta, kết hợp với truyền thống uống nước nhớ nguồn, tôn sư trọng đạo của dân tộc Việt Nam, Vu Lan đã trở thành một ngày lễ mang đầy tính chất thiêng liêng. Do thế, ngày nay Đại lễ Vu Lan không còn là ngày lễ riêng của người Phật tử, mà đã trở thành ngày truyền thống chung cho các dân tộc. Bởi vì, tất cả mọi người có mặt trên cõi đời này, từ một em bé thơ ngây đến những cụ già đầu bạc, từ một người dân bình thường cho đến các bậc cao sang quyền quí, không một ai là không do cha mẹ sinh thành, không một ai là khôn do cha mẹ dưỡng nuôi chăm sóc từ thuở âu thơ cho đến</span><br>
+						    </div>
+						    <p class="device_page">* Trang 5 *<br>
+						        <img src="images/hr.png" style="clear:both" alt="device">
+						    </p>
+						    <div class="content_page" thutu="6" id="content_6">
+						        <div>
+						            <span style="font-family:times new roman,times,serif;">lúc trưởng thành - ngoại trừ một số ít người bất hạnh. Chính nhờ cha mẹ mà ta mới có hình hài này và nhờ có hình hài này ta mới chu toàn được nghĩa vu của một người công dân lương thiện, hầu đóng góp sức lực nhỏ bé của mình vào công cuộc xây dựng một xã hội công bằng, văn minh và thịnh vượng.<br>
+						            &nbsp;Như vậy, Hiếu đạo hiển nhiên là một đạo lý <em>nghìn đời c</em><em>ủa những dân tộc văn minh, mà dân tộc </em>ta tự hào là một dân tộc <em>có bốn</em> nghìn năm văn hiến. Do thế, trong quá khứ, các nhà đạo đức của nước ta đã có công sưu tập những mẩu chuyện hiếu thảo của tiền nhân gom thành 20 sự tích, viết thành một quyển sách lấy tên là <em>Hai Mươi Gương Hiếu.</em> Nội dung tập sách này dùng để giáo dục mọi người giữ gìn hiếu đạo. Mà trong đó các tấm gương hiếu thảo của vua Trần Anh Tông đối với Phụ hoàng, vua Tự Đức đối với Mẫu hậu là tiêu biểu hơn hết. Những tấm gương này lâu nay đã được lưu truyền trong dân chúng và cũng từng được nhiều người ngưỡng mộ noi theo, dù chưa được phổ cập rộng rãi. Dân tộc ta từng chung sống và chịu ảnh hưởng của nền văn hóa Trung Hoa suốt hàng nghìn năm; thế nên, từ bao đời, chúng ta đã hiểu thế nào là Tam cương, Ngũ thường, thế nào là Tam tùng, Tứ đức, thế nào là Nhân nghĩa lễ trí tín, thế nào là Phụ từ tử hiếu, Phu xướng phụ</span>
+						        </div>
+						    </div>
+						    <p class="device_page">* Trang 6 *<br>
+						        <img src="images/hr.png" style="clear:both" alt="device">
+						    </p>
+						    <div class="content_page" thutu="7" id="content_7">
+						        <div>
+						            <span style="font-family:times new roman,times,serif;">tùy v.v... Khi nói về Đạo hiếu, chúng ta nhớ một câu nói trong Kinh Thi: Phụ hề sinh ngã, ai ai phụ mẫu sinh ngã cù lao, dục báo thâm ân, hiệu thiên võng cực (Cha sinh ra ta mẹ bồng bế ta, thương thay cha mẹ, sinh ta khó nhọc, muốn báo ân sâu, khác nào như trời cao khôn cùng) như một lời tuyên ngôn về Hiếu đạo. Còn khi đề cập đến công ơn từ mẫu thì đã có công thức chín chữ Cù lao: Sinh (đẻ ra), cúc (nâng đỡ), phủ (vuốt ve), súc (nuôi cho bú mớm), trưởng (nuôi cho khôn lớn), dục (dạy dỗ), cố (trông nom), phục (xem tính tình mà bảo ban), phúc (bảo vệ). Đồng thời các nhà luân lý Trung Hoa cũng sưu tập các gương hiếu thảo cổ kim viết thành một quyển sách gọi là Nhị thập tứ hiếu (24 tấm gương hiếu thảo), mà trong đó có những tấm gương tiêu biểu như vua Hán Linh Đế đích thân sắc thuốc dâng cho mẹ, mỗi khi Mẫu hậu ốm đau. Đinh Lăng khắc tượng cha mẹ để thờ, và hằng bữa dâng cơm nước lên hai dâng sinh thành như lúc song thân còn sống. Còn Mạnh Tông thì khóc măng, Quách Cự chôn con, Vương Tường nằm giá v.v…toàn là những tấm gương hiếu thảo rất ấn tượng, rất xúc động lòng người. Nhưng đặc biệt nhất là đức Khổng Tử đã đề xuất cách báo hiếu rất minh bạch và sâu sắc. Ngài bảo rằng bổn phận làm con không những cung phụng cho cha mẹ những tiện</span>
+						        </div>
+						    </div>
+						    <p class="device_page">* Trang 7 *<br>
+						        <img src="images/hr.png" style="clear:both" alt="device">
+						    </p>
+						    <div class="content_page" thutu="8" id="content_8">
+						        <div>
+						            <span style="font-family:times new roman,times,serif;">nghi vật chất mà điều cần thiết là phải thể hiện tình cảm chân thành, thương yêu cha mẹ hết lòng.<br>
+						            &nbsp;Ngài nói: <em>“</em><em>Hiếu t</em><em>ử</em><em> ch</em><em>ỉ</em><em> sự thân, cư tắc trí kỳ k</em><em>í</em><em>nh, dưỡng t</em><em>ắ</em><em>c trí kỳ </em><em>lạ</em><em>c, bệnh t</em><em>ắ</em><em>c tr</em><em>í</em><em> kỳ ưu, ta</em><em>ng </em>&nbsp;<em>tắ</em><em>c trí kỳ </em><em>ai</em><em>, t</em><em>ế </em><em>t</em><em>ắ</em><em>c trí kỳ nghiêm”. (Người con hiếu phụng dưỡng ch</em><em>a</em><em> mẹ, ăn </em><em>ở</em><em> cư xử ph</em><em>ải </em><em>cực kỳ cung kính, nuôi dưỡng cha m</em><em>ẹ</em><em> ph</em><em>ải</em><em> hết sức vu</em><em>i </em><em>v</em><em>ẻ</em><em>, khi cha m</em><em>ẹ</em><em> đau</em><em> yếu</em><em> phải lo </em><em>lắ</em><em>ng hết l</em><em>ò</em><em>ng, kh</em><em>i</em><em> lo việc ma chay phải cực kỳ thương xót, kh</em><em>i</em><em> c</em><em>ú</em><em>ng tế cha mẹ phải rất mực trang nghiêm).</em><br>
+						            &nbsp;Đó là những nguyên tắc báo hiếu rất thấu đáo và thiết thực. Có thể nói, từ ngàn xưa dân tộc ta đã thấm nhuần những chuẩn mực đạo đức rất nhân bản và thấm đượm tình người. Nhờ đó, tạo tiền đề cho một nếp sống lấy nhân nghĩa làm gốc, theo tinh thần <em>ơn </em><em>đ</em><em>ền nghĩa tr</em><em>ả</em><em>, ăn quả nhớ người trồng cây, xem tiền tài như tro bụi, trọng nhân nghĩa tựa nghìn vàng.</em> Chính nhờ tuân thủ những đạo lý này mà nhân dân ta có một nếp sống thuần lương đức hạnh, duy trì được tôn ti trong gia đình, ổn định được trật tự ngoài xã hội, giữ gìn kỷ cương của đất nước, tạo nên một nét nhân văn rất đặc sắc.<br>
+						            &nbsp;Về mặt thế thường và thực tiễn thì những cách báo hiếu như vừa trình bày trên đây thật sự tỏ ra có hiệu quả và tốt đẹp, không một ai có thể</span>
+						        </div>
+						    </div>
+						    <p class="device_page">* Trang 8 *<br>
+						        <img src="images/hr.png" style="clear:both" alt="device">
+						    </p>
+						    <div class="content_page" thutu="9" id="content_9">
+						        <div>
+						            <span style="font-family:times new roman,times,serif;">phủ nhận. Tuy nhiên, nếu hiểu báo hiếu theo nghĩa rốt ráo, vừa vật chất, vừa tinh thần, xuyên suốt quá khứ, hiện tại và vị lai, thì có lẽ chỉ có Phật giáo mới giới thiệu một mô hình báo hiếu tương đối hoàn thiện, như tấm gương báo hiếu của tôn giả Mục Kiền Liên mà kinh Vu Lan Bồn đã đề cập.<br>
+						            &nbsp;Kinh này trình bày sự kiện tôn giả Mục Liên vâng lời Phật dạy thỉnh cầu chư Tăng mười phương chú nguyện cầu siêu độ cho mẹ mình vào dịp Rằm tháng Bảy, ngày chúng Tăng Tự tứ. Và nhờ sức chú nguyện của Tăng chúng mà bà Thanh Đề đã thoát khỏi cảnh ngạ quỉ sinh về thiên giới. Qua sự tích này, chúng ta có thể nảy sinh một vài thắc mắc và xin được mạo muội giải trình:<br>
+						            &nbsp;Thứ nhất, kinh Vu Lan Bồn được biết là do chính Phật tuyên thuyết tại Ấn Độ, rồi truyền sang Trung Hoa, sau đó đến nước ta, trải qua thời gian khá lâu. Trong đó, có thể có một vài chi tiết bị thay đổi ít nhiều, nhưng đại thể vẫn là bắt nguồn từ một câu chuyện có thật, mang tính khái quát về phương pháp báo hiếu cha mẹ theo tinh thần Phật dạy. Mà đức Phật vốn là bậc: “<em>Chân ngữ giả, thật ngữ giả, như ngữ giả, bất cống ngữ giả, bất dị ngữ giả</em>” <em>(Người nói đúng đắn, nói</em></span>
+						        </div>
+						    </div>
+						    <p class="device_page">* Trang 9 *<br>
+						        <img src="images/hr.png" style="clear:both" alt="device">
+						    </p>
+						    <div class="content_page" thutu="10" id="content_10">
+						        <div>
+						            <span style="font-family:times new roman,times,serif;"><em>chắc chắn, nói như thật, nói không hư dối, nói không mâu thuẫn),</em> [kinh Kim Cương]. Hoặc như lời phát biểu của tôn giả A-nậu-lâu-đà trong kinh Di Giáo: <em>"Bạch Thế Tôn, mặt trăng có thể làm cho nóng lên, mặt trời có thể làm cho lạnh đi, nhưng chân lý mà Thế Tôn dạy thì không thể nào làm cho khác được".</em> Đức Phật lại là bậc Vô Thượng Chánh Giác có Ngũ nhãn, Lục thông. Ngũ nhãn là: Nhục nhãn, Thiên nhãn, Tuệ nhãn, Pháp nhãn và Phật nhãn. Nhục nhãn là cái thấy của những người thường như chúng ta, Thiên nhãn là cái thấy của chư Thiên, Tuệ nhãn là cái thấy của hàng Nhị thừa, Pháp nhãn là cái thấy của các vị Bồ-tát, và Phật nhãn là cái thấy của chư Phật. Mà Phật có đủ Ngũ nhãn nên Ngài thấy được quy luật nhân quả tường tận. Không những thấy được những sự việc hiện tại mà còn thấy cả những sự kiện thuộc quá khứ và vị lai. Không những thấy được những sự vật hữu hình mà còn thấy cả những sự vật vô hình, về không gian thì Ngài thấy khắp tam thiên đại thiên thế giới, về thời gian thì Ngài thấy suốt từ vô thỉ cho đến vô chung. Còn cái thấy của chúng ta thì dựa trên cơ sở nhục nhãn của một tâm trí còn đầy ắp vô minh cát bụi. Cho nên tầm nhìn của chúng ta còn rất nhiều hạn chế là lẽ đương nhiên. Vì vậy, chúng ta không nên đem cái thấy biết hạn hẹp của mình ra làm chuẩn mực để đo</span>
+						        </div>
+						    </div>
+						    <p class="device_page">* Trang 10 *<br>
+						        <img src="images/hr.png" style="clear:both" alt="device">
+						    </p>
+						    <div class="content_page" thutu="11" id="content_11">
+						        <div>
+						            <span style="font-family:times new roman,times,serif;">đạc tri kiến của Phật, rồi sinh tâm hoài nghi những điều Phật dạy. Huống nữa, đức Phật đã từng tuyên bố : “Như Lai vì lòng thương đời, vì hạnh phúc của chư Thiên và nhân loại nên thị hiện trong cõi đời này”. Qua đó có lẽ chúng ta đã lãnh hội được phần nào hoài bão của Phật qua nhừng lời kinh còn truyền lại.<br>
+						            &nbsp;Một điểm thắc mắc nữa là có chắc chư Tăng đủ đạo lực hóa giải được tội báo của bà Thanh Đề hay không? - Thiển nghĩ, việc này thật khó trả lời, vì nó quá huyền nhiệm. Nhưng có lẽ ai có tu thì mới biết được giá trị của sự tu hành như thế nào, giống như người uống nước lạnh hay nóng chỉ có mình mới rõ. Tuy thế, chúng ta thường nghe trong nhân gian người ta từng nói: <em>"Chúng đức như hải”;</em> nghĩa là <em>đức độ của chúng tăng bao la như biển cả.</em> Hay, <em>"Đạo cao long hổ phục, đức trọng </em><em>quỉ</em><em> thần kinh” (Những bậc đạo hạnh cao siêu thì cọp rồng đều nép phục, và những vị có đức độ sâu dày thì quỉ thần đều kiêng nể).</em> Và trong kinh Pháp Cú cũng minh họa hình ảnh của một bậc A-la-hán đã hoàn toàn giải thoát:</span>
+						        </div>
+						        <div style="margin-left: 40px;">
+						            <span style="font-family:times new roman,times,serif;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <em>Thành thị hay xóm làng,</em><br>
+						            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; <em>Thung lũng hay đồi cao,</em><br>
+						            <em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; La-hán trú chỗ </em><em>nào,</em><br>
+						            <em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Nơi ấy được </em><em>an lạc.</em></span>
+						        </div>
+						    </div>
+						    <p class="device_page">* Trang 11 *<br>
+						        <img src="images/hr.png" style="clear:both" alt="device">
+						    </p>
+						    <div class="content_page" thutu="12" id="content_12">
+						        <div>
+						            <span style="font-family:times new roman,times,serif;">&nbsp;Ngoài ra, cổ đức cũng từng mô tả về chân dung của một bậc thiện nhân cao khiết: “Dữ thiện nhân cư như nhập chi lan chi thất” (Cùng sống chung với bậc hiền thiện như vào trong ngôi nhà được chất đầy những đóa hoa chi hoa lan).<br>
+						            &nbsp;Đó là đôi nét về hành trạng của những bậc Thánh thiện, giải thoát. Chúng ta vẫn biết rằng trong số chư Tăng mà Mục Liên thỉnh cầu chú nguyện cho thân mẫu của mình không phải ai cũng đã đắc đạo, nhưng có điều chắc chắn là trong đó có nhiều người đã thành tựu đạo nghiệp đến một mức độ nhất định, cũng như không ít người suốt đời tâm nghĩ điều lành, miệng nói lời lành, thân làm việc lành. Với những người có đức độ như vậy hướng tâm lực nguyện cầu cho bà Thanh Đề, ắt hẳn tâm bà sẽ chuyển biến từ ác niệm sang thiện niệm, Mà niệm ác thì chuốc lấy quả khổ, còn niệm thiện thì hưởng được phước lành, vì tam giới do tâm tạo. Tâm giống như một họa sĩ, có thể vẽ nên địa ngục mà cũng có thể tạo ra thiên đường. Cho nên: <em>“</em><em>Tiền tâm tác ác như vân phú nhật, hậu tâm khởi thiện như cự tiêu ám</em><em>” </em><em>(Tâm trước làm</em><em> ác</em><em> như đám mây che khuất mặt trời</em>, <em>tâm sau </em><em>khởi thiện như ngọn đuốc xua tan bóng tối)</em> [Kinh Luật Dị Tướng]. Khi tâm bà Thanh Đề đã chuyển hướng, kết hợp với mãnh lực</span>
+						        </div>
+						    </div>
+						    <p class="device_page">* Trang 12 *<br>
+						        <img src="images/hr.png" style="clear:both" alt="device">
+						    </p>
+						    <div class="content_page" thutu="13" id="content_13">
+						        <div>
+						            <span style="font-family:times new roman,times,serif;">chú nguyện của các bậc Thánh Tăng giàu lòng từ mẫn. thiết nghĩ, bà được giải thoát khỏi cảnh u đồ, sinh lên thiên giới là điều có thể hiểu được. Trái lại, giả sử tâm bà vẫn giữ ác niệm trước sau như một, thì dù cho với đạo lực từ bi cao cả như chư Phật, chung cục cũng không thể nào cứu vớt được bà.<br>
+						            &nbsp;Qua sự kiện này, nhắc nhở cho chúng ta biết rằng chết chưa phải là hết mà vẫn còn diễn tiến liên tục qua nhiều đời sống khác. Mọi người sống trên thế gian này, nếu như chưa chứng được Thánh quả, giải thoát khỏi khổ đau, đạt đến Niết- bàn vĩnh cửu, thì còn bị định luật sinh tử luân hồi chi phôi, trôi lăn trong ba cõi, sáu đường, sinh tử, tử sinh bất tận; hễ làm phước thì hưởng quả vui, gây ác thì chuốc khổ báo. Tất cả loài hữu tình đều phải chịu trách nhiệm về ba nghiệp do mình tạo ra. Thế nên, trong hiện tại phải nỗ lực vun bồi công đức, gây tạo phước lành, tránh xa việc ác, để mai sau được mãi mãi thăng tiến trên con đường Thánh thiện.<br>
+						            &nbsp;Như vậy là chúng ta đã có thể tin tưởng được luật nhân quả, gieo nhân nào gặt quả nấy. Thế nhưng, dựa vào niềm tin này có người sẽ nêu lên câu hỏi: “Cha mẹ tôi lúc sinh tiền làm nhiều việc phước thiện nên sau khi chết, nếu như không</span>
+						        </div>
+						    </div>
+						    <p class="device_page">* Trang 13 *<br>
+						        <img src="images/hr.png" style="clear:both" alt="device">
+						    </p>
+						    <div class="content_page" thutu="14" id="content_14">
+						        <div>
+						            <span style="font-family:times new roman,times,serif;">thành bậc Thánh thì cũng được sinh lên cõi trời hưởng mọi phước lạc, chứ đâu có đọa vào ngạ quỉ khổ sở như bà Thanh Đề mà phải gây tạo công đức, cầu thỉnh chư Tăng cứu độ?”<br>
+						            &nbsp;Qua thắc mắc này, người viết xin được trao đổi như sau: Chúng ta từng nghe Phật dạy: <em>“Hà nhân vô quá</em>, <em>hà giả vô khiên" (Ai mà không có l</em><em>ỗ</em><em>i, ai mà không có tội);</em> cho nên, ngoại trừ các bậc Thánh đã đoạn trừ hết ba độc, còn tuyệt đại đa số chúng ta đang sống trong cõi đời này thì mấy ai dám cho là mình không gây ra ít nhiều lầm lỗi. Mà đã cố lỗi thì sau khi qua đời thường bị đọa lạc, mà đã đọa lạc thì rất cần đến thân nhân làm phước hồi hướng để cứu vớt cho mình, đó là lẽ tự nhiên. Tuy nhiên, nếu như cha mẹ ta đều được giải thoát, không còn đọa lạc, thì những công đức mà mình đã tạo ra để hồi hướng cho họ vẫn còn nguyên vẹn chứ không hề suy suyển chút nào. Những công đức ấy giống như một thứ ngân khoản mà mình ký gởi vào ngân hàng - một loại ngân hàng bất hoại, vĩnh cửu, không có bất cứ một thứ gì có thể phá hủy được- hễ khi nào cần đến thì mình lấy ra sử dụng. Hơn nữa, hành vi báo hiếu của mình không những có kết quả ở tương lai mà còn cố kết quả ngay trong hiện tại. Vì lẽ, khi ta thực hiện một nghĩa cử cao đẹp, làm một việc hợp với đạo lý thì tâm hồn của ta cảm thấy nhẹ nhàng</span>
+						        </div>
+						    </div>
+						    <p class="device_page">* Trang 14 *<br>
+						        <img src="images/hr.png" style="clear:both" alt="device">
+						    </p>
+						    <div class="content_page" thutu="15" id="content_15">
+						        <div>
+						            <span style="font-family:times new roman,times,serif;">thanh thản, mà những người xung quanh cũng nhìn ta với đôi mắt ái mộ và đầy thiện cảm. Nhờ đó, khi cần tham gia một việc công ích nào thì nhân cách của mình được mọi người tín nhiệm, lời nói của mình được mọi người tin tưởng. Thiết nghĩ, sống trên cuộc đời này mà được tha nhân mến mộ, tin cậy, thì quả thật là một phần thưởng cực kỳ cao quí.<br>
+						            &nbsp;Một điểm đặc biệt khác là trong thế gian này, có thể có những người không hiếu thảo với cha mẹ, nhưng không một ai là không mong muốn con cháu hiếu thảo với mình. Mà muốn cho con cháu có lòng hiếu thảo thì không có cách nào hữu hiệu hơn là chính bản thân mình phải làm gương tốt. Tấm gương hiếu thảo của mình đối với cha mẹ là một bài học sống, một hình thức thân giáo đầy thuyết phục, có tác dụng rất sâu sắc đối với con cháu của chính mình; do thế, ta có quyền hy vọng chúng sẽ noi theo gương mình mà chu toàn hiếu đạo. Điều này các bậc tiền bối đã từng lý giải:</span>
+						        </div>
+						        <div style="margin-left: 40px;">
+						            <span style="font-family:times new roman,times,serif;"><em>&nbsp;“</em><em>Hiếu thuận hoàn sinh hiếu thuận tử,</em><br>
+						            &nbsp;<em>Ng</em><em>ỗ</em><em> nghịch hoàn sinh ngỗ nghịch nhi.</em><br>
+						            <em>Bất tín </em><em>đãn khán thiềm đầu thủy,</em><br>
+						            <em>Đi</em><em>ể</em><em>m đi</em><em>ể</em><em>m trích trích bất sai di</em><em>”</em><br>
+						            <em>(</em><em>Nếu mình hiếu với mẹ cha,</em><br>
+						            <em>&nbsp;Mai sau con hiếu với ta khác gì.</em></span>
+						        </div>
+						    </div>
+						    <p class="device_page">* Trang 15 *<br>
+						        <img src="images/hr.png" style="clear:both" alt="device">
+						    </p>
+						    <div class="content_page" thutu="16" id="content_16">
+						        <div style="margin-left: 40px;">
+						            <span style="font-family:times new roman,times,serif;"><em>Nếu mình ăn ở vô ngh</em><em>ì</em><em>,</em><br>
+						            <em>Đừng mong con thảo làm gì uổng công.</em><br>
+						            <em>Kìa xem giọt nước xuôi dòng,</em><br>
+						            &nbsp;<em>Giọt sau, giọt trước cũng </em><em>đồ</em><em>ng m</em><em>ộ</em><em>t nơi.)</em></span>
+						        </div>
+						        <span style="font-family:times new roman,times,serif;">&nbsp;Hiện nay các phương tiện truyền thanh, truyền hình giới thiệu những loại hình nghệ thuật, phim ảnh rất đa dạng. Tuy nhằm mục đích giải trí và làm phong phú kiến thức của công chúng về những chân trời mới, nhưng trong đó tiềm tàng không ít những cạm bẫy và chứa đựng khá nhiều độc tố. Đối với người lớn vì phần đông đã được trang bị bằng những vốn liếng văn hóa truyền thống, đã từng trái nghiệm cuộc đời, nên khi thưởng thức các loại hình ấy biết cách gạn đục khơi trong, tiếp thu những phương diện tích cực, loại bỏ những khía cạnh tiêu cực; do đó, tương đối ít nguy hiểm. Thế nhưng, đối với giới trẻ là những người đang dồi dào sinh lực, thường có khuynh hướng phiêu lưu mạo hiểm, bản thân lại chưa thấm nhuần đạo đức truyền thống, chưa trải qua kinh nghiệm trường đời, cho nên khi thưởng thức những loại hình nghệ thuật ngoại lai, không những họ tiếp thu nét tinh hoa của chúng mà cùng lúc hấp thụ luôn cả những độc tố. Những độc tố ấy đến khi phát tác sẽ làm cho thể xác tàn tạ, tầm hồn băng hoại, đưa đến gia đình tan rã, xã hội rối loạn và đất nước bất ổn. Vì vậy, thiết</span><br>
+						    </div>
+						    <p class="device_page">* Trang 16 *<br>
+						        <img src="images/hr.png" style="clear:both" alt="device">
+						    </p>
+						    <div class="content_page" thutu="17" id="content_17">
+						        <div>
+						            <span style="font-family:times new roman,times,serif;">nghĩ các bậc phụ huynh, các nhà giáo dục cần phải hết sức cảnh giác đề phòng, và giới chức có thẩm quyền cần phải quan tâm nhiều hơn nữa, gạn lọc những độc tố tiềm tàng trong các loại phim ảnh ngoại lai, chọn lựa cẩn thận những loại hình nghệ thuật đứng đắn, trước khi cho trình chiếu. Có như vậy, may ra mới tránh bớt những hậu quả đáng tiếc mà lâu nay báo chí đã phản ảnh khá nhiều.<br>
+						            &nbsp;Thế còn các loại hình nghệ thuật và những mô thức giáo dục truyền thống thì sao? Thiển nghĩ, các loại hình này đã trải qua nhiều đời, các bậc hiền nhân thánh triết của ta đà tốn nhiều công sức gạn lọc, loại bỏ những nhược điểm và tô bồi những ưu điểm. Do thế, những mô hình tương đối bảo đảm tính an toàn; nếu như không làm thăng hoa phẩm hạnh của con người đến đích chân thiện mỹ, thì cũng không đến nỗi gây ra những tác hại nghiêm trọng.<br>
+						            &nbsp;Thiết nghĩ, dịp lễ Vu Lan báo hiếu cũng là một cơ hội tốt đẹp để cho những người con Phật chu toàn hiếu đạo đối với tứ thân phụ mẫu, với cửu huyền thất tổ và những thân nhân quá cố. Mà làm tròn đạo nghĩa cao đẹp của một con người cũng là phương thức khẳng định nhân cách của <em>một công dân lương thiện</em>, <em>trong một đ</em><em>ấ</em><em>t nước có </em>truyền thống văn hóa lâu <em>đ</em><em>ời.</em> Xin thành tâm <em>kính</em></span>
+						        </div>
+						    </div>
+						    <p class="device_page">* Trang 17 *<br>
+						        <img src="images/hr.png" style="clear:both" alt="device">
+						    </p>
+						    <div class="content_page" thutu="18" id="content_18">
+						        <div>
+						            <span style="font-family:times new roman,times,serif;">chúc quí vị, ai nấy đều là những dân hiền, con thảo<strong>, </strong>bản thân được nhiều an lạc, gia đình tràn đầy hạnh phúc trong mùa báo hiếu Vu Lan.<br>
+						            &nbsp;</span>
+						        </div>
+						        <div style="text-align: center;">
+						            <span style="font-family:times new roman,times,serif;">*</span>
+						        </div>
+						    </div>
+						    <p class="device_page">* Trang 18 *<br>
+						        <img src="images/hr.png" style="clear:both" alt="device">
+						    </p>
+						</div>
+					</div>
+	            </div><!-- /.col-md-10 -->
+	            <div class="col-md-1 hidden-xs hidden-sm" id="right_rs">
+	            	<a href="#" class="icon_next_pre next" id="page_next" title="Xem mục lục kế tiếp">&nbsp;</a>
+	            </div><!-- /#right_rs -->
+			</div>
+			<div class="row" id="book_name">
+				<div class="col-md-12">
+                	<div id="box_name_kinh" class="col-md-12 name_kinh_bottom">
+                		Thư viện điện tử Kinh sách Phật giáo tiếng Việt
+                	</div>
+            	</div>
+			</div>
+		</div><!-- /.container .main_vnbet -->
+	</div><!-- wrapper vnbet -->
+
+	<div class="float_item item_left">
+	    <div class="float_content">
+	        <div class="ui-widget" id="siteMenuBar">
+	            <div class="tab_control">
+	                <a href="kinh.html" class="tabmenu active" idml="1">Kinh</a>
+	                <a href="luat.html" idml="7" class="tabmenu ">Luật</a>
+	                <a href="luan.html" idml="3" class="tabmenu ">Luận</a>
+	                <a href="sach.html" idml="2" class="tabmenu ">Sách</a>
+	            </div>
+	            <div class="box_width_common">
+	                <div class="content_tab scroll_bar" style="height: 380px;">
+	                    <div class="ui-widget-header scroll-pane" id="menuContainer">
+	                        <div class="baosach">
+	                            <p class="sach"><a href="kinh-truong-bo-1-1.html">Kinh Trường Bộ 1</a></p>
+	                            <p class="sach"><a href="kinh-truong-bo-2-2.html">Kinh Trường Bộ 2</a></p>
+	                            <p class="sach"><a href="kinh-trung-bo-1-3.html">Kinh Trung Bộ 1</a></p>
+	                            <p class="sach"><a href="kinh-trung-bo-2-4.html">Kinh Trung Bộ 2</a></p>
+	                            <p class="sach"><a href="kinh-tuong-ung-1-thien-co-ke-5.html">Kinh Tương Ưng 1 Thiên Có Kệ</a></p>
+	                            <p class="sach"><a href="kinh-tuong-ung-2-thien-nhan-duyen-6.html">Kinh Tương Ưng 2 Thiên Nhân Duyên</a></p>
+	                            <p class="sach"><a href="kinh-tuong-ung-3-thien-uan-7.html">Kinh Tương Ưng 3 Thiên Uẩn</a></p>
+	                            <p class="sach"><a href="kinh-tuong-ung-4-thien-sau-xu-8.html">Kinh Tương Ưng 4 Thiên Sáu Xứ</a></p>
+	                            <p class="sach"><a href="kinh-tuong-ung-5-dai-pham-11.html">Kinh Tương Ưng 5 Đại Phẩm</a></p>
+	                            <p class="sach"><a href="kinh-tang-chi-bo-1-18.html">Kinh Tăng Chi Bộ 1</a></p>
+	                            <p class="sach"><a href="kinh-tang-chi-bo-2-19.html">Kinh Tăng Chi Bộ 2</a></p>
+	                            <p class="sach"><a href="kinh-tang-chi-bo-3-20.html">Kinh Tăng Chi Bộ 3</a></p>
+	                            <p class="sach"><a href="kinh-tang-chi-bo-4-21.html">Kinh Tăng Chi Bộ 4</a></p>
+	                            <p class="sach"><a href="kinh-tieu-bo-1-57.html">Kinh Tiểu Bộ 1</a></p>
+	                            <p class="sach"><a href="kinh-tieu-bo-2-23.html">Kinh Tiểu Bộ 2</a></p>
+	                            <p class="sach"><a href="kinh-tieu-bo-3-24.html">Kinh Tiểu Bộ 3</a></p>
+	                            <p class="sach"><a href="kinh-tieu-bo-4-25.html">Kinh Tiểu Bộ 4</a></p>
+	                            <p class="sach"><a href="kinh-tieu-bo-5-26.html">Kinh Tiểu Bộ 5</a></p>
+	                            <p class="sach"><a href="kinh-tieu-bo-6-27.html">Kinh Tiểu Bộ 6</a></p>
+	                            <p class="sach"><a href="kinh-tieu-bo-7-28.html">Kinh Tiểu Bộ 7</a></p>
+	                            <p class="sach"><a href="kinh-tieu-bo-8-29.html">Kinh Tiểu Bộ 8</a></p>
+	                            <p class="sach"><a href="kinh-tieu-bo-9-30.html">Kinh Tiểu Bộ 9</a></p>
+	                            <p class="sach"><a href="kinh-tieu-bo-10-31.html">Kinh Tiểu Bộ 10</a></p>
+	                            <p class="sach"><a href="kinh-dia-tang-65.html">Kinh Địa Tạng</a></p>
+	                            <p class="sach"><a href="kinh-dieu-phap-lien-hoa-84.html">Kinh Diệu Pháp Liên Hoa</a></p>
+	                            <p class="sach"><a href="kinh-dia-tang-bo-tat-bon-nguyen-85.html">Kinh Địa Tạng Bồ Tát Bổn Nguyện</a></p>
+	                            <p class="sach"><a href="kinh-truong-bo-2013-86.html">Kinh Trường Bộ - 2013</a></p>
+	                            <p class="sach"><a href="kinh-pho-mon-dieu-phap-lien-hoa-kinh-pho-mon-pham-134.html">Kinh Phổ Môn -  Diệu Pháp Liên Hoa Kinh Phổ Môn Phẩm</a></p>
+	                            <p class="sach"><a href="kinh-kim-cang-kim-cang-bat-nha-ba-la-mat-kinh-139.html">Kinh Kim Cang - Kim Cang Bát-Nhã Ba-La-Mật Kinh</a></p>
+	                            <p class="sach"><a href="kinh-duoc-su-luu-ly-quang-nhu-lai-bon-nguyen-cong-duc-140.html">Kinh Dược Sư - Lưu Ly Quang Như Lai Bổn Nguyện Công Đức</a></p>
+	                            <p class="sach"><a href="kinh-dai-thua-vo-luong-nghia-141.html">Kinh Đại Thừa Vô Lượng Nghĩa</a></p>
+	                            <p class="sach"><a href="di-giao-kinh-[-kinh-loi-day-cuoi-cung]-142.html">Di Giáo Kinh [ Kinh Lời Dạy Cuối Cùng]</a></p>
+	                            <p class="sach"><a href="kinh-tu-thap-nhi-chuong-kinh-bon-muoi-hai-chuong-143.html">Kinh Tứ Thập Nhị Chương - Kinh Bốn Mươi Hai Chương</a></p>
+	                            <p class="sach"><a href="nghi-thuc-tung-niem-148.html">Nghi Thức Tụng Niệm</a></p>
+	                            <p class="sach"><a href="hong-danh-sam-hoi-154.html">Hồng Danh Sám Hối</a></p>
+	                            <p class="sach"><a href="bon-mon-phap-hoa-kinh-155.html">Bổn Môn Pháp Hoa Kinh</a></p>
+	                            <p class="sach"><a href="kinh-duoc-su-156.html">Kinh Dược Sư</a></p>
+	                            <p class="sach"><a href="nghi-thuc-cau-an-cau-sieu-158.html">Nghi Thức Cầu An Cầu Siêu</a></p>
+	                            <p class="sach"><a href="kinh-ty-kheo-na-tien-159.html">Kinh Tỳ-Kheo Na-Tiên</a></p>
+	                            <p class="sach"><a href="kinh-duy-ma-cat-162.html">Kinh Duy-Ma-Cật</a></p>
+	                            <p class="sach"><a href="chu-kinh-tap-yeu-163.html">Chư Kinh Tập Yếu</a></p>
+	                            <p class="sach"><a href="tri-tinh-toan-tap-tap-1-kinh-dai-phuong-quang-phat-hoa-nghiem-168.html">Trí Tịnh Toàn Tập - Tập 1 - Kinh Đại Phương Quảng Phật Hoa Nghiêm</a></p>
+	                            <p class="sach"><a href="tri-tinh-toan-tap-tap-2-kinh-dai-phuong-quang-phat-hoa-nghiem-169.html">Trí Tịnh Toàn Tập - Tập 2 - Kinh Đại Phương Quảng Phật Hoa Nghiêm</a></p>
+	                            <p class="sach"><a href="tri-tinh-toan-tap-tap-3-kinh-dai-phuong-quang-phat-hoa-nghiem-170.html">Trí Tịnh Toàn Tập - Tập 3 - Kinh Đại Phương Quảng Phật Hoa Nghiêm</a></p>
+	                            <p class="sach"><a href="tri-tinh-toan-tap-tap-4-kinh-dai-phuong-quang-phat-hoa-nghiem-171.html">Trí Tịnh Toàn Tập - Tập 4 - Kinh Đại Phương Quảng Phật Hoa Nghiêm</a></p>
+	                            <p class="sach"><a href="tri-tinh-toan-tap-tap-5-kinh-bat-nha-ba-la-mat-172.html">Trí Tịnh Toàn Tập - Tập 5 - Kinh Bát Nhã Ba La Mật</a></p>
+	                            <p class="sach"><a href="tri-tinh-toan-tap-tap-6-kinh-bat-nha-ba-la-mat-173.html">Trí Tịnh Toàn Tập - Tập 6 - Kinh Bát Nhã Ba La Mật</a></p>
+	                            <p class="sach"><a href="tri-tinh-toan-tap-tap-7-kinh-bat-nha-ba-la-mat-174.html">Trí Tịnh Toàn Tập - Tập 7 - Kinh Bát Nhã Ba La Mật</a></p>
+	                            <p class="sach"><a href="kinh-tuong-ung-bo-2013-tap-i-183.html">Kinh Tương Ưng Bộ  2013 - Tập I</a></p>
+	                            <p class="sach"><a href="kinh-tuong-ung-bo-2013-tap-ii-184.html">Kinh Tương Ưng Bộ 2013 - Tập II</a></p>
+	                            <p class="sach"><a href="kinh-tang-nhat-a-ham-tap-i-186.html">Kinh Tăng Nhất A-Hàm - Tập I</a></p>
+	                            <p class="sach"><a href="kinh-tang-nhat-a-ham-tap-ii-188.html">Kinh Tăng Nhất A-Hàm - Tập II</a></p>
+	                            <p class="sach"><a href="kinh-tang-nhat-a-ham-tap-iii-190.html">Kinh Tăng Nhất A-Hàm - Tập III</a></p>
+	                            <p class="sach"><a href="kinh-trung-a-ham-tap-1-202.html">Kinh Trung A-Hàm Tập 1</a></p>
+	                            <p class="sach"><a href="kinh-trung-a-ham-tap-2-204.html">Kinh Trung A-Hàm Tập 2</a></p>
+	                            <p class="sach"><a href="kinh-truong-a-ham-tap-1-205.html">Kinh Trường A - Hàm Tập 1</a></p>
+	                            <p class="sach"><a href="kinh-bi-hoa-209.html">Kinh Bi Hoa</a></p>
+	                            <p class="sach"><a href="tang-nhat-a-ham-tap-1-223.html">Tăng Nhất A- Hàm Tập 1</a></p>
+	                            <p class="sach"><a href="tang-nhat-a-ham-tap-2-225.html">Tăng Nhất A- Hàm  Tập 2</a></p>
+	                            <p class="sach"><a href="gioi-thieu-kinh-thu-lang-nghiem-229.html">Giới Thiệu Kinh Thủ Lăng Nghiêm</a></p>
+	                            <p class="sach"><a href="dai-bat-niet-ban-kinh-tap-1-233.html">Đại Bát Niết Bàn Kinh Tập 1</a></p>
+	                            <p class="sach"><a href="dai-bat-niet-ban-kinh-tap-2-235.html">Đại Bát Niết Bàn Kinh Tập 2</a></p>
+	                            <p class="sach"><a href="kinh-dai-bat-niet-ban-tap-1-236.html">Kinh Đại Bát Niết Bàn Tập 1</a></p>
+	                            <p class="sach"><a href="kinh-dai-bat-niet-ban-tap-2-238.html">Kinh Đại Bát Niết Bàn Tập 2</a></p>
+	                            <p class="sach"><a href="kinh-truong-a-ham-243.html">Kinh Trường A Hàm</a></p>
+	                            <p class="sach"><a href="kim-cang-bat-nha-ba-la-mat-kinh-288.html">Kim Cang Bát Nhã Ba La Mật Kinh</a></p>
+	                            <p class="sach"><a href="duy-ma-cat-so-thuyet-kinh-289.html">Duy Ma Cật Sở Thuyết Kinh</a></p>
+	                            <p class="sach"><a href="nhu-lai-vien-giac-kinh-290.html">Như Lai Viên Giác Kinh</a></p>
+	                            <p class="sach"><a href="kinh-hien-ngu-hien-ngu-nhan-duyen-kinh-291.html">Kinh Hiền Ngu (Hiền Ngu Nhân Duyên Kinh)</a></p>
+	                            <p class="sach"><a href="kinh-tang-chi-bo-2015-tap-i-294.html">Kinh Tăng Chi Bộ 2015 - Tập I</a></p>
+	                            <p class="sach"><a href="kinh-tang-chi-bo-2015-tap-ii-295.html">Kinh Tăng Chi Bộ 2015 - Tập II</a></p>
+	                            <p class="sach"><a href="kinh-tieu-bo-2015-tap-i-296.html">Kinh Tiểu Bộ 2015 - Tập I</a></p>
+	                            <p class="sach"><a href="kinh-tieu-bo-2015-tap-ii-298.html">Kinh Tiểu Bộ 2015 - Tập II</a></p>
+	                            <p class="sach"><a href="kinh-tieu-bo-2015-tap-iii-299.html">Kinh Tiểu Bộ 2015 - Tập III</a></p>
+	                            <p class="sach"><a href="kinh-tieu-bo-2015-tap-iv-303.html">Kinh Tiểu Bộ 2015 - Tập IV</a></p>
+	                            <p class="sach"><a href="kinh-dai-phat-danh-thu-lang-nghiem-tap-1-309.html">Kinh Đại Phật Đảnh Thủ Lăng Nghiêm - Tập 1</a></p>
+	                            <p class="sach"><a href="kinh-dai-phat-danh-thu-lang-nghiem-tap-2-310.html">Kinh Đại Phật Đảnh Thủ Lăng Nghiêm - Tập 2</a></p>
+	                            <p class="sach"><a href="kinh-tieu-bo-2015-tap-v-319.html">Kinh Tiểu Bộ 2015- Tập V</a></p>
+	                            <p class="sach"><a href="kinh-vo-luong-tho-328.html">Kinh Vô Lượng Thọ</a></p>
+	                            <p class="sach"><a href="dai-tap-i-bo-a-ham-i-kinh-truong-a-ham-so-1-337.html">Đại Tập I, Bộ A- Hàm I, Kinh Trường A- Hàm Số 1</a></p>
+	                            <p class="sach"><a href="dai-tap-ii-bo-a-ham-ii--kinh-truong-a-ham-so-2-339.html">Đại Tập II, Bộ A - Hàm II , Kinh Trường A - Hàm Số 2</a></p>
+	                            <p class="sach"><a href="dai-tap-iii-bo-a-ham-iii-kinh-trung-a-ham-so-1-340.html">Đại Tập III, Bộ A - Hàm III, Kinh Trung A - Hàm Số 1</a></p>
+	                            <p class="sach"><a href="dai-tap-iv-bo-a-ham-iv-kinh-trung-a-ham-so-2-341.html">Đại Tập IV, Bộ A- Hàm IV, Kinh Trung A- Hàm Số 2</a></p>
+	                            <p class="sach"><a href="dai-tap-v-bo-a-ham-v-trung-a-ham-biet-dich-kinh-tap-a-ham-so-1-344.html">Đại Tập V, Bộ A - Hàm V, Trung A - Hàm Biệt Dịch &amp; Kinh Tạp  A - Hàm Số 1</a></p>
+	                            <p class="sach"><a href="dai-tap-vi-bo-a-ham-vi-kinh-tap-a-ham-so-2-345.html">Đại Tập VI, Bộ A- Hàm VI, Kinh Tạp A- Hàm Số 2</a></p>
+	                            <p class="sach"><a href="dai-tap-vii-bo-a-ham-vii-kinh-tap-a-ham-so-3-346.html">Đại Tập VII, Bộ A- Hàm VII, Kinh Tạp A- Hàm Số 3</a></p>
+	                            <p class="sach"><a href="dai-tap-viii-bo-a-ham-viii-kinh-tap-a-ham-so-125-q1-&gt;30-347.html">Đại Tập VIII, Bộ A -Hàm VIII, Kinh Tạp A - Hàm Số 125 (Q1-&gt;30)</a></p>
+	                            <p class="sach"><a href="dai-tap-ix-bo-a-ham-ix-so-125tt-151-348.html">Đại Tập IX, Bộ A- Hàm IX, Số 125(tt)- 151</a></p>
+	                            <p class="sach"><a href="dai-tap-x-bo-ban-duyen-i-so-152-157-349.html">Đại Tập X, Bộ Bản Duyên I (Số 152 - 157)</a></p>
+	                            <p class="sach"><a href="dai-tap-xi-bo-ban-duyen-ii-so-158-185-350.html">Đại Tập XI, Bộ Bản Duyên II, Số (158- 185)</a></p>
+	                            <p class="sach"><a href="dai-tap-xii-bo-ban-duyen-iii-so-186-190-351.html">Đại Tập XII, Bộ Bản Duyên III (Số 186 - 190)</a></p>
+	                            <p class="sach"><a href="dai-tap-xiii-bo-ban-duyen-iv-so-190-191-352.html">Đại Tập XIII, Bộ Bản Duyên IV (Số 190- 191)</a></p>
+	                            <p class="sach"><a href="dai-tap-xiv-bo-ban-duyen-v-so-192-198-353.html">Đại Tập XIV, Bộ Bản Duyên V (Số 192 - 198)</a></p>
+	                            <p class="sach"><a href="dai-tap-xv-bo-ban-duyen-vi-so-199-202-354.html">Đại Tập XV, Bộ Bản Duyên VI (Số 199- 202)</a></p>
+	                            <p class="sach"><a href="dai-tap-xvi-bo-ban-duyen-vii-so-203-211-355.html">Đại Tập XVI, Bộ Bản Duyên VII (Số 203 - 211)</a></p>
+	                            <p class="sach"><a href="dai-tap-xvii-bo-ban-duyen-viii-so-212-219-356.html">Đại Tập XVII, Bộ Bản Duyên VIII (Số 212- 219)</a></p>
+	                            <p class="sach"><a href="dai-tap-xviii-bo-bat-nha-i-so-220-quyen-1-50-357.html">Đại Tập XVIII, Bộ Bát-Nhã I - Số 220 (Quyển 1 - 50)</a></p>
+	                            <p class="sach"><a href="dai-tap-xix-bo-bat-nha-ii-so-220-quyen-51-100-358.html">Đại Tập XIX, Bộ Bát Nhã II, Số 220 (Quyển 51- 100)</a></p>
+	                            <p class="sach"><a href="dai-tap-xx-bo-bat-nha-iii-so-220-quyen-101-150-359.html">Đại Tập XX, Bộ Bát Nhã III, Số 220 (Quyển 101- 150)</a></p>
+	                            <p class="sach"><a href="dai-tap-xxi-bo-bat-nha-iv-so-220-quyen-151-200-360.html">Đại Tập XXI, Bộ Bát-Nhã IV - Số 220 (Quyển 151 - 200)</a></p>
+	                            <p class="sach"><a href="dai-tap-xxii-bo-bat-nha-v-so-220-quyen-201-250-361.html">Đại Tập XXII, Bộ Bát Nhã V, Số 220 (Quyển 201- 250)</a></p>
+	                            <p class="sach"><a href="dai-tap-xxiii-bo-bat-nha-vi-so-220-quyen-251-300-362.html">Đại Tập XXIII, Bộ Bát-Nhã VI - Số 220 (Quyển 251 - 300)</a></p>
+	                            <p class="sach"><a href="dai-tap-xxiv-bo-bat-nha-vii-so-220-quyen-301-350-363.html">Đại Tập XXIV, Bộ Bát- Nhã VII Số 220 (Quyển 301- 350)</a></p>
+	                            <p class="sach"><a href="dai-tap-xxv-bo-bat-nha-viii-so-220-quyen-351-400-364.html">Đại Tập XXV, Bộ Bát-Nhã VIII - Số 220 (Quyển 351 - 400)</a></p>
+	                            <p class="sach"><a href="dai-tap-xxvi-bo-bat-nha-ix-so-220-quyen-401-450-366.html">Đại Tập XXVI, Bộ Bát- Nhã IX Số 220 (Quyển 401- 450)</a></p>
+	                        </div>
+	                        <!-- baosach -->
+	                    </div>
+	                    <!-- menuContainer -->
+	                </div>
+	                <!-- content_tab -->
+	            </div>
+	            <!-- box_width_common -->
+	        </div>
+	        <!-- siteMenuBar -->
+	        <div class="control_float_left">
+	            <a id="btn_left" class="btn_control_float" title="Ẩn/hiện danh mục" href="javascript:;">
+	            	<img alt="icon ẩn hiện danh mục" src="images/icon_ra.gif">
+	            </a>
+	        </div>
+	    </div>
+	    <!-- float_content -->
+	</div><!-- float_content -->
+
+	<div class="float_top_item item_top hidden-xs">
+	    <div class="float_content row">
+	        <div class="block_search">
+	            Thư mục 
+	            <select id="idML_Find" name="idML_Find">
+	                <option value="1">Kinh</option>
+	                <option value="7">Luật</option>
+	                <option value="3">Luận</option>
+	                <option value="2">Sách</option>
+	            </select>
+	            <input name="keyword" type="text" class="txt_input_search" id="textKeyword" value="Nhập từ tìm kiếm">
+	            <input type="submit" name="btnSumit" id="btnFind" value="Tìm kiếm" class="searchbtn">
+	            <div class="clear">&nbsp;</div>
+	        </div>
+	        <!-- block_search -->
+	        <div id="result_find" class="row">
+	            <div class="block_content_float col-md-12">
+	                <div class="col-md-1 hidden-xs hidden-sm"></div>
+	                <div class="main_content_slide col-md-10" style="margin-left:30px"></div>
+	                <div class="col-md-1 hidden-xs hidden-sm"></div>
+	            </div>
+	        </div>
+	        <!-- result_find -->
+	        <div class="control_float">
+	            <a href="javascript:;" title="Tìm kiếm kinh sách" class="btn_control_float" id="btn_top">
+	            <img src="images/icon_up.gif" alt="icon ẩn hiện search">
+	            </a>
+	        </div>
+	    </div>
+	    <!-- float_content -->
+	</div><!-- item_top -->
+
+	<div class="float_top_item item_bottom hidden-xs">
+		<div class="float_content">
+			<div id="wrapper_phapam">
+				<div id="list_phap_am">
+					<ul class="owl-carousel owl-theme owl-style2" data-nav="true" data-dots="false" data-loop="true" data-margin="10" data-responsive='{"0":{"items":1},"480":{"items":2},"600":{"items":2},"768":{"items":3},"800":{"items":3},"992":{"items":4}}'>
+						<li>
+					    	<img src="images/album/kinhtrungbotap1.png" alt="Giải Trình Ý Nghĩa Vu Lan" />
+					    	<span class="title_phapam">Kinh Trường Bộ tập 1</span>
+						</li>
+						<li>
+					    	<img src="images/album/kinhtrungbotap1.png" alt="Tư Tưởng Kinh Kim Cương" />
+					    	<span class="title_phapam">Kinh Trường Bộ tập 1</span>
+						</li>
+						<li>
+					    	<img src="images/album/kinhtrungbotap1.png" alt="Việc Lớn Nhất Của Đời Người" />
+					    	<span class="title_phapam">Kinh Trường Bộ tập 1</span>
+						</li>
+						<li>
+					    	<img src="images/album/kinhtrungbotap1.png" alt="Phương Pháp Hành Trì Chuẩn Đề Đà La Ni" />
+					    	<span class="title_phapam">Kinh Trường Bộ tập 1</span>
+						</li>
+					</ul>
+				</div>				
+				<!-- list_phap_am -->
+				<span class="hidden" id="nut_hien_list">Xem danh sách pháp âm</span>
+				<span class="hidden" id="dang_nghe">Pháp âm đang nghe</span>
+				<div class="hidden" id="hien_phap_am"></div>
+			</div>
+			<a id="btn_bottom" class="btn_control_float" title="Nghe pháp âm" href="javascript:void(0)">
+	            <img alt="icon ẩn hiện nghe pháp âm" src="images/icon_up.gif">
+	        </a>
+		</div>
+	</div>
+
+	<!-- ===== JS ===== -->
+	<script src="js/jquery.min.js"></script>
+	<!-- ===== JS Bootstrap ===== -->
+	<script src="lib/bootstrap/bootstrap.min.js"></script>
+	<!-- ===== carousel ===== -->
+	<script src="lib/owl.carousel/owl.carousel.min.js"></script>
+    <!-- ===== Js Common ===== -->
+	<script src="js/common.js"></script>
+	<script src="js/home.js"></script>
+
+</body>
+</html>

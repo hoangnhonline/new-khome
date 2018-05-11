@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html dir="ltr" lang="vi-VN" class="no-js ie ie6 lte7 lte8 lte9"><![endif]-->
+<!--[if IE 7 ]><html dir="ltr" lang="vi-VN" class="no-js ie ie7 lte7 lte8 lte9"><![endif]-->
+<!--[if IE 8 ]><html dir="ltr" lang="vi-VN" class="no-js ie ie8 lte8 lte9"><![endif]-->
+<!--[if IE 9 ]><html dir="ltr" lang="vi-VN" class="no-js ie ie9 lte9"><![endif]-->
+<!--[if IE 10 ]><html dir="ltr" lang="vi-VN" class="no-js ie ie10 lte10"><![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!-->
+<html lang="vn">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1"/>
+	<title>Detail</title>
+	<meta name="description" content="">
+	<meta name="keywords" content="">
+	<meta name="robots" content="index,follow" />
+	<!-- <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+	<link rel="icon" href="images/favicon.ico" type="image/x-icon"> -->
+
+	<!-- ===== Style CSS ===== -->
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<!-- ===== Responsive CSS ===== -->
+	<link rel="stylesheet" type="text/css" href="css/responsive.css">
+
+  	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	<!--[if lt IE 9]>
+		<link href='css/animations-ie-fix.css' rel='stylesheet'>
+		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+		<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+	<![endif]-->
+
+</head>
+<body>
+
+	<div id="wrapper_vnbet">
+	    <div id="fb-root"></div>
+		<script>(function(d, s, id) {
+		  var js, fjs = d.getElementsByTagName(s)[0];
+		  if (d.getElementById(id)) return;
+		  js = d.createElement(s); js.id = id;
+		  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=452243541554954&version=v2.0";
+		  fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'facebook-jssdk'));</script>  
+
+		<div class="container visible_xs hide-bg-xs"></div>
+		<div class="container main_vnbet">
+			<div class="row">
+				<div class="col-md-12" id="top_rs">
+	                <div class="logo_site">
+	                    <a href="http://vnbet.vn"><img src="images/logo.jpg" alt="LOGO VNBET"></a>
+	                </div>
+	            </div><!-- /#top_rs -->
+	            <div class="col-md-1 hidden-xs hidden-sm" id="left_rs"></div><!-- /#left_rs -->
+	            <div class="col-md-10">
+	            	<div class="row hidden-xs hidden-sm" id="top_2">
+	            		<div class="col-md-6" id="div_hd">
+					        <a href="#" class="dl_soft" target="_blank">Hướng dẫn sử dụng</a>     
+							<div style="margin-left:10px" class="fb-share-button" data-href="#" data-type="button_count"></div>
+					      </div>
+					      <div class="col-md-6" id="download">
+							<a href="#" class="dl_soft" target="_blank">                          
+								Tải về phần mềm Kinh sách tiếng Việt VNBET &nbsp;<img src="images/icons/download.png" alt="download vnbet">
+							</a>&nbsp;&nbsp;Lượt tải: <span id="luot_down">63112</span>
+					      </div>
+	            	</div><!-- /#top_2-->
+					<div class="row hidden-xs" id="box_search">
+					    <div class="col-md-2">
+					        Thư mục
+					        <select id="idDM_loc" name="idDM" style="width:70px">
+					            <option value="0">Chọn thư mục</option>
+					            <option value="1">Kinh</option>
+					            <option value="7">Luật</option>
+					            <option value="3">Luận</option>
+					            <option value="2">Sách</option>
+					        </select>
+					    </div>
+					    <div class="col-md-3">
+					        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sách
+					        <select id="idSach_loc" name="idSach">
+					            <option value="0">Chọn sách</option>
+					            <option ten_sach="kinh-truong-bo-1" value="1">
+					                Kinh Trường Bộ 1    
+					            </option>
+					            <option ten_sach="kinh-truong-bo-2" value="2">
+					                Kinh Trường Bộ 2    
+					            </option>
+					            <option ten_sach="kinh-trung-bo-1" value="3">
+					                Kinh Trung Bộ 1    
+					            </option>
+					            <option ten_sach="kinh-trung-bo-2" value="4">
+					                Kinh Trung Bộ 2    
+					            </option>
+					            <option ten_sach="kinh-tuong-ung-1-thien-co-ke" value="5">
+					                Kinh Tương Ưng 1 Thiên Có Kệ    
+					            </option>
+					            <option ten_sach="kinh-tuong-ung-2-thien-nhan-duyen" value="6">
+					                Kinh Tương Ưng 2 Thiên Nhân Duyên    
+					            </option>
+					            <option ten_sach="kinh-tuong-ung-3-thien-uan" value="7">
+					                Kinh Tương Ưng 3 Thiên Uẩn    
+					            </option>
+					            <option ten_sach="kinh-tuong-ung-4-thien-sau-xu" value="8">
+					                Kinh Tương Ưng 4 Thiên Sáu Xứ    
+					            </option>
+					            <option ten_sach="kinh-tuong-ung-5-dai-pham" value="11">
+					                Kinh Tương Ưng 5 Đại Phẩm    
+					            </option>
+					            <option ten_sach="kinh-tang-chi-bo-1" value="18">
+					                Kinh Tăng Chi Bộ 1    
+					            </option>
+					            <option ten_sach="kinh-tang-chi-bo-2" value="19">
+					                Kinh Tăng Chi Bộ 2    
+					            </option>
+					            <option ten_sach="kinh-tang-chi-bo-3" value="20">
+					                Kinh Tăng Chi Bộ 3    
+					            </option>
+					            <option ten_sach="kinh-tang-chi-bo-4" value="21">
+					                Kinh Tăng Chi Bộ 4    
+					            </option>
+					            <option ten_sach="kinh-tieu-bo-1" value="57">
+					                Kinh Tiểu Bộ 1    
+					            </option>
+					            <option ten_sach="kinh-tieu-bo-2" value="23">
+					                Kinh Tiểu Bộ 2    
+					            </option>
+					            <option ten_sach="kinh-tieu-bo-3" value="24">
+					                Kinh Tiểu Bộ 3    
+					            </option>
+					            <option ten_sach="kinh-tieu-bo-4" value="25">
+					                Kinh Tiểu Bộ 4    
+					            </option>
+					            <option ten_sach="kinh-tieu-bo-5" value="26">
+					                Kinh Tiểu Bộ 5    
+					            </option>
+					            <option ten_sach="kinh-tieu-bo-6" value="27">
+					                Kinh Tiểu Bộ 6    
+					            </option>
+					            <option ten_sach="kinh-tieu-bo-7" value="28">
+					                Kinh Tiểu Bộ 7    
+					            </option>
+					            <option ten_sach="kinh-tieu-bo-8" value="29">
+					                Kinh Tiểu Bộ 8    
+					            </option>
+					            <option ten_sach="kinh-tieu-bo-9" value="30">
+					                Kinh Tiểu Bộ 9    
+					            </option>
+					            <option ten_sach="kinh-tieu-bo-10" value="31">
+					                Kinh Tiểu Bộ 10    
+					            </option>
+					            <option ten_sach="kinh-dia-tang" value="65">
+					                Kinh Địa Tạng    
+					            </option>
+					            <option ten_sach="kinh-dieu-phap-lien-hoa" value="84">
+					                Kinh Diệu Pháp Liên Hoa    
+					            </option>
+					            <option ten_sach="kinh-dia-tang-bo-tat-bon-nguyen" value="85">
+					                Kinh Địa Tạng Bồ Tát Bổn Nguyện    
+					            </option>
+					            <option ten_sach="kinh-truong-bo-2013" value="86">
+					                Kinh Trường Bộ - 2013    
+					            </option>
+					            <option ten_sach="kinh-pho-mon-dieu-phap-lien-hoa-kinh-pho-mon-pham" value="134">
+					                Kinh Phổ Môn -  Diệu Pháp Liên Hoa Kinh Phổ Môn Phẩm    
+					            </option>
+					            <option ten_sach="kinh-kim-cang-kim-cang-bat-nha-ba-la-mat-kinh" value="139">
+					                Kinh Kim Cang - Kim Cang Bát-Nhã Ba-La-Mật Kinh    
+					            </option>
+					            <option ten_sach="kinh-duoc-su-luu-ly-quang-nhu-lai-bon-nguyen-cong-duc" value="140">
+					                Kinh Dược Sư - Lưu Ly Quang Như Lai Bổn Nguyện Công Đức    
+					            </option>
+					            <option ten_sach="kinh-dai-thua-vo-luong-nghia" value="141">
+					                Kinh Đại Thừa Vô Lượng Nghĩa    
+					            </option>
+					            <option ten_sach="di-giao-kinh-[-kinh-loi-day-cuoi-cung]" value="142">
+					                Di Giáo Kinh [ Kinh Lời Dạy Cuối Cùng]    
+					            </option>
+					            <option ten_sach="kinh-tu-thap-nhi-chuong-kinh-bon-muoi-hai-chuong" value="143">
+					                Kinh Tứ Thập Nhị Chương - Kinh Bốn Mươi Hai Chương    
+					            </option>
+					            <option ten_sach="nghi-thuc-tung-niem" value="148">
+					                Nghi Thức Tụng Niệm    
+					            </option>
+					            <option ten_sach="hong-danh-sam-hoi" value="154">
+					                Hồng Danh Sám Hối    
+					            </option>
+					            <option ten_sach="bon-mon-phap-hoa-kinh" value="155">
+					                Bổn Môn Pháp Hoa Kinh    
+					            </option>
+					            <option ten_sach="kinh-duoc-su" value="156">
+					                Kinh Dược Sư    
+					            </option>
+					            <option ten_sach="nghi-thuc-cau-an-cau-sieu" value="158">
+					                Nghi Thức Cầu An Cầu Siêu    
+					            </option>
+					            <option ten_sach="kinh-ty-kheo-na-tien" value="159">
+					                Kinh Tỳ-Kheo Na-Tiên    
+					            </option>
+					            <option ten_sach="kinh-duy-ma-cat" value="162">
+					                Kinh Duy-Ma-Cật    
+					            </option>
+					            <option ten_sach="chu-kinh-tap-yeu" value="163">
+					                Chư Kinh Tập Yếu    
+					            </option>
+					            <option ten_sach="tri-tinh-toan-tap-tap-1-kinh-dai-phuong-quang-phat-hoa-nghiem" value="168">
+					                Trí Tịnh Toàn Tập - Tập 1 - Kinh Đại Phương Quảng Phật Hoa Nghiêm    
+					            </option>
+					            <option ten_sach="tri-tinh-toan-tap-tap-2-kinh-dai-phuong-quang-phat-hoa-nghiem" value="169">
+					                Trí Tịnh Toàn Tập - Tập 2 - Kinh Đại Phương Quảng Phật Hoa Nghiêm    
+					            </option>
+					            <option ten_sach="tri-tinh-toan-tap-tap-3-kinh-dai-phuong-quang-phat-hoa-nghiem" value="170">
+					                Trí Tịnh Toàn Tập - Tập 3 - Kinh Đại Phương Quảng Phật Hoa Nghiêm    
+					            </option>
+					            <option ten_sach="tri-tinh-toan-tap-tap-4-kinh-dai-phuong-quang-phat-hoa-nghiem" value="171">
+					                Trí Tịnh Toàn Tập - Tập 4 - Kinh Đại Phương Quảng Phật Hoa Nghiêm    
+					            </option>
+					            <option ten_sach="tri-tinh-toan-tap-tap-5-kinh-bat-nha-ba-la-mat" value="172">
+					                Trí Tịnh Toàn Tập - Tập 5 - Kinh Bát Nhã Ba La Mật    
+					            </option>
+					            <option ten_sach="tri-tinh-toan-tap-tap-6-kinh-bat-nha-ba-la-mat" value="173">
+					                Trí Tịnh Toàn Tập - Tập 6 - Kinh Bát Nhã Ba La Mật    
+					            </option>
+					            <option ten_sach="tri-tinh-toan-tap-tap-7-kinh-bat-nha-ba-la-mat" value="174">
+					                Trí Tịnh Toàn Tập - Tập 7 - Kinh Bát Nhã Ba La Mật    
+					            </option>
+					            <option ten_sach="kinh-tuong-ung-bo-2013-tap-i" value="183">
+					                Kinh Tương Ưng Bộ  2013 - Tập I    
+					            </option>
+					            <option ten_sach="kinh-tuong-ung-bo-2013-tap-ii" value="184">
+					                Kinh Tương Ưng Bộ 2013 - Tập II    
+					            </option>
+					            <option ten_sach="kinh-tang-nhat-a-ham-tap-i" value="186">
+					                Kinh Tăng Nhất A-Hàm - Tập I    
+					            </option>
+					            <option ten_sach="kinh-tang-nhat-a-ham-tap-ii" value="188">
+					                Kinh Tăng Nhất A-Hàm - Tập II    
+					            </option>
+					            <option ten_sach="kinh-tang-nhat-a-ham-tap-iii" value="190">
+					                Kinh Tăng Nhất A-Hàm - Tập III    
+					            </option>
+					            <option ten_sach="kinh-trung-a-ham-tap-1" value="202">
+					                Kinh Trung A-Hàm Tập 1    
+					            </option>
+					            <option ten_sach="kinh-trung-a-ham-tap-2" value="204">
+					                Kinh Trung A-Hàm Tập 2    
+					            </option>
+					            <option ten_sach="kinh-truong-a-ham-tap-1" value="205">
+					                Kinh Trường A - Hàm Tập 1    
+					            </option>
+					            <option ten_sach="kinh-bi-hoa" value="209">
+					                Kinh Bi Hoa    
+					            </option>
+					            <option ten_sach="tang-nhat-a-ham-tap-1" value="223">
+					                Tăng Nhất A- Hàm Tập 1    
+					            </option>
+					            <option ten_sach="tang-nhat-a-ham-tap-2" value="225">
+					                Tăng Nhất A- Hàm  Tập 2    
+					            </option>
+					            <option ten_sach="gioi-thieu-kinh-thu-lang-nghiem" value="229">
+					                Giới Thiệu Kinh Thủ Lăng Nghiêm    
+					            </option>
+					            <option ten_sach="dai-bat-niet-ban-kinh-tap-1" value="233">
+					                Đại Bát Niết Bàn Kinh Tập 1    
+					            </option>
+					            <option ten_sach="dai-bat-niet-ban-kinh-tap-2" value="235">
+					                Đại Bát Niết Bàn Kinh Tập 2    
+					            </option>
+					            <option ten_sach="kinh-dai-bat-niet-ban-tap-1" value="236">
+					                Kinh Đại Bát Niết Bàn Tập 1    
+					            </option>
+					            <option ten_sach="kinh-dai-bat-niet-ban-tap-2" value="238">
+					                Kinh Đại Bát Niết Bàn Tập 2    
+					            </option>
+					            <option ten_sach="kinh-truong-a-ham" value="243">
+					                Kinh Trường A Hàm    
+					            </option>
+					            <option ten_sach="kim-cang-bat-nha-ba-la-mat-kinh" value="288">
+					                Kim Cang Bát Nhã Ba La Mật Kinh    
+					            </option>
+					            <option ten_sach="duy-ma-cat-so-thuyet-kinh" value="289">
+					                Duy Ma Cật Sở Thuyết Kinh    
+					            </option>
+					            <option ten_sach="nhu-lai-vien-giac-kinh" value="290">
+					                Như Lai Viên Giác Kinh    
+					            </option>
+					            <option ten_sach="kinh-hien-ngu-hien-ngu-nhan-duyen-kinh" value="291">
+					                Kinh Hiền Ngu (Hiền Ngu Nhân Duyên Kinh)    
+					            </option>
+					            <option ten_sach="kinh-tang-chi-bo-2015-tap-i" value="294">
+					                Kinh Tăng Chi Bộ 2015 - Tập I    
+					            </option>
+					            <option ten_sach="kinh-tang-chi-bo-2015-tap-ii" value="295">
+					                Kinh Tăng Chi Bộ 2015 - Tập II    
+					            </option>
+					            <option ten_sach="kinh-tieu-bo-2015-tap-i" value="296">
+					                Kinh Tiểu Bộ 2015 - Tập I    
+					            </option>
+					            <option ten_sach="kinh-tieu-bo-2015-tap-ii" value="298">
+					                Kinh Tiểu Bộ 2015 - Tập II    
+					            </option>
+					            <option ten_sach="kinh-tieu-bo-2015-tap-iii" value="299">
+					                Kinh Tiểu Bộ 2015 - Tập III    
+					            </option>
+					            <option ten_sach="kinh-tieu-bo-2015-tap-iv" value="303">
+					                Kinh Tiểu Bộ 2015 - Tập IV    
+					            </option>
+					            <option ten_sach="kinh-dai-phat-danh-thu-lang-nghiem-tap-1" value="309">
+					                Kinh Đại Phật Đảnh Thủ Lăng Nghiêm - Tập 1    
+					            </option>
+					            <option ten_sach="kinh-dai-phat-danh-thu-lang-nghiem-tap-2" value="310">
+					                Kinh Đại Phật Đảnh Thủ Lăng Nghiêm - Tập 2    
+					            </option>
+					            <option ten_sach="kinh-tieu-bo-2015-tap-v" value="319">
+					                Kinh Tiểu Bộ 2015- Tập V    
+					            </option>
+					            <option ten_sach="kinh-vo-luong-tho" value="328">
+					                Kinh Vô Lượng Thọ    
+					            </option>
+					            <option ten_sach="dai-tap-i-bo-a-ham-i-kinh-truong-a-ham-so-1" value="337">
+					                Đại Tập I, Bộ A- Hàm I, Kinh Trường A- Hàm Số 1    
+					            </option>
+					            <option ten_sach="dai-tap-ii-bo-a-ham-ii--kinh-truong-a-ham-so-2" value="339">
+					                Đại Tập II, Bộ A - Hàm II , Kinh Trường A - Hàm Số 2    
+					            </option>
+					            <option ten_sach="dai-tap-iii-bo-a-ham-iii-kinh-trung-a-ham-so-1" value="340">
+					                Đại Tập III, Bộ A - Hàm III, Kinh Trung A - Hàm Số 1    
+					            </option>
+					            <option ten_sach="dai-tap-iv-bo-a-ham-iv-kinh-trung-a-ham-so-2" value="341">
+					                Đại Tập IV, Bộ A- Hàm IV, Kinh Trung A- Hàm Số 2    
+					            </option>
+					            <option ten_sach="dai-tap-v-bo-a-ham-v-trung-a-ham-biet-dich-kinh-tap-a-ham-so-1" value="344">
+					                Đại Tập V, Bộ A - Hàm V, Trung A - Hàm Biệt Dịch &amp; Kinh Tạp  A - Hàm Số 1    
+					            </option>
+					            <option ten_sach="dai-tap-vi-bo-a-ham-vi-kinh-tap-a-ham-so-2" value="345">
+					                Đại Tập VI, Bộ A- Hàm VI, Kinh Tạp A- Hàm Số 2    
+					            </option>
+					            <option ten_sach="dai-tap-vii-bo-a-ham-vii-kinh-tap-a-ham-so-3" value="346">
+					                Đại Tập VII, Bộ A- Hàm VII, Kinh Tạp A- Hàm Số 3    
+					            </option>
+					            <option ten_sach="dai-tap-viii-bo-a-ham-viii-kinh-tap-a-ham-so-125-q1->30" value="347">
+					                Đại Tập VIII, Bộ A -Hàm VIII, Kinh Tạp A - Hàm Số 125 (Q1-&gt;30)    
+					            </option>
+					            <option ten_sach="dai-tap-ix-bo-a-ham-ix-so-125tt-151" value="348">
+					                Đại Tập IX, Bộ A- Hàm IX, Số 125(tt)- 151    
+					            </option>
+					            <option ten_sach="dai-tap-x-bo-ban-duyen-i-so-152-157" value="349">
+					                Đại Tập X, Bộ Bản Duyên I (Số 152 - 157)    
+					            </option>
+					            <option ten_sach="dai-tap-xi-bo-ban-duyen-ii-so-158-185" value="350">
+					                Đại Tập XI, Bộ Bản Duyên II, Số (158- 185)    
+					            </option>
+					            <option ten_sach="dai-tap-xii-bo-ban-duyen-iii-so-186-190" value="351">
+					                Đại Tập XII, Bộ Bản Duyên III (Số 186 - 190)    
+					            </option>
+					            <option ten_sach="dai-tap-xiii-bo-ban-duyen-iv-so-190-191" value="352">
+					                Đại Tập XIII, Bộ Bản Duyên IV (Số 190- 191)    
+					            </option>
+					            <option ten_sach="dai-tap-xiv-bo-ban-duyen-v-so-192-198" value="353">
+					                Đại Tập XIV, Bộ Bản Duyên V (Số 192 - 198)    
+					            </option>
+					            <option ten_sach="dai-tap-xv-bo-ban-duyen-vi-so-199-202" value="354">
+					                Đại Tập XV, Bộ Bản Duyên VI (Số 199- 202)    
+					            </option>
+					            <option ten_sach="dai-tap-xvi-bo-ban-duyen-vii-so-203-211" value="355">
+					                Đại Tập XVI, Bộ Bản Duyên VII (Số 203 - 211)    
+					            </option>
+					            <option ten_sach="dai-tap-xvii-bo-ban-duyen-viii-so-212-219" value="356">
+					                Đại Tập XVII, Bộ Bản Duyên VIII (Số 212- 219)    
+					            </option>
+					            <option ten_sach="dai-tap-xviii-bo-bat-nha-i-so-220-quyen-1-50" value="357">
+					                Đại Tập XVIII, Bộ Bát-Nhã I - Số 220 (Quyển 1 - 50)    
+					            </option>
+					            <option ten_sach="dai-tap-xix-bo-bat-nha-ii-so-220-quyen-51-100" value="358">
+					                Đại Tập XIX, Bộ Bát Nhã II, Số 220 (Quyển 51- 100)    
+					            </option>
+					            <option ten_sach="dai-tap-xx-bo-bat-nha-iii-so-220-quyen-101-150" value="359">
+					                Đại Tập XX, Bộ Bát Nhã III, Số 220 (Quyển 101- 150)    
+					            </option>
+					            <option ten_sach="dai-tap-xxi-bo-bat-nha-iv-so-220-quyen-151-200" value="360">
+					                Đại Tập XXI, Bộ Bát-Nhã IV - Số 220 (Quyển 151 - 200)    
+					            </option>
+					            <option ten_sach="dai-tap-xxii-bo-bat-nha-v-so-220-quyen-201-250" value="361">
+					                Đại Tập XXII, Bộ Bát Nhã V, Số 220 (Quyển 201- 250)    
+					            </option>
+					            <option ten_sach="dai-tap-xxiii-bo-bat-nha-vi-so-220-quyen-251-300" value="362">
+					                Đại Tập XXIII, Bộ Bát-Nhã VI - Số 220 (Quyển 251 - 300)    
+					            </option>
+					            <option ten_sach="dai-tap-xxiv-bo-bat-nha-vii-so-220-quyen-301-350" value="363">
+					                Đại Tập XXIV, Bộ Bát- Nhã VII Số 220 (Quyển 301- 350)    
+					            </option>
+					            <option ten_sach="dai-tap-xxv-bo-bat-nha-viii-so-220-quyen-351-400" value="364">
+					                Đại Tập XXV, Bộ Bát-Nhã VIII - Số 220 (Quyển 351 - 400)    
+					            </option>
+					            <option ten_sach="dai-tap-xxvi-bo-bat-nha-ix-so-220-quyen-401-450" value="366">
+					                Đại Tập XXVI, Bộ Bát- Nhã IX Số 220 (Quyển 401- 450)    
+					            </option>
+					        </select>
+					    </div>
+					    <div class="col-md-3">
+					        &nbsp;&nbsp;Mục lục
+					        <select id="idML_loc" name="idML">
+					            <option value="0">Chọn mục lục</option>
+					        </select>
+					    </div>
+					    <div class="col-md-3">
+					        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Trang 
+					        <select id="idTrang_loc" name="idTrang">
+					            <option value="0">Chọn trang</option>
+					        </select>
+					    </div>
+					    <div class="col-md-1">          
+					        <span class="hidden-lg">&nbsp;</span>
+					        <input type="button" id="btnLoc" value="Xem" name="btnSumit">
+					    </div>
+					</div><!-- /#box_search -->
+					<div id="center_rs" class="fck_content">
+						<div class="content_kinh txt_center scroll_bar">
+							<div id="content_mucluc">
+								<h1 id="book-name" class="mucluc_sach">Giải Trình Ý Nghĩa Vu Lan</h1>
+								<div style="width:90%;margin:auto">
+								    <h2 class="danhmuc_sach">
+								        <a class="mls_content" href="#">Lời Thưa</a>
+								    </h2>
+								    <h2 class="danhmuc_sach">
+								        <a class="mls_content" href="#">1. Giải Trình Ý Nghĩa Vu Lan</a>
+								    </h2>
+								    <h2 class="danhmuc_sach">
+								        <a class="mls_content" href="#">2. Thế Tôn Báo Hiếu Phụ Vương</a>
+								    </h2>
+								    <h2 class="danhmuc_sach">
+								        <a class="mls_content" href="#">3. Kinh Ma Ha Ma Da</a>
+								    </h2>
+								    <h2 class="danhmuc_sach">
+								        <a class="mls_content" href="#">Quyển Thượng</a>
+								    </h2>
+								    <h2 class="danhmuc_sach">
+								        <a class="mls_content" href="#">Quyển Hạ</a>
+								    </h2>
+								    <h2 class="danhmuc_sach">
+								        <a class="mls_content" href="#">4. Hạnh Hiếu Qua Hai Mẩu Chuyện</a>
+								    </h2>
+								    <h2 class="danhmuc_sach">
+								        <a class="mls_content" href="#">5. Vu Lan, Ngày Báo Hiếu</a>
+								    </h2>
+								    <h2 class="danhmuc_sach">
+								        <a class="mls_content" href="#">6. Hạnh Hiếu Cũng Là Hạnh Phật</a>
+								    </h2>
+								    <h2 class="danhmuc_sach">
+								        <a class="mls_content" href="#">7. Ân Đức Sinh Thành</a>
+								    </h2>
+								    <h2 class="danhmuc_sach">
+								        <a class="mls_content" href="#">8. Cha Mẹ Ân Cao Làm Sao Trả Hết</a>
+								    </h2>
+								    <h2 class="danhmuc_sach">
+								        <a class="mls_content" href="#">9. Những Đức Tính Tốt Của Con Người</a>
+								    </h2>
+								    <h2 class="danhmuc_sach">
+								        <a class="mls_content" href="#">10. Gương Báo Hiếu Của Người Xuất Gia</a>
+								    </h2>
+								    <h2 class="danhmuc_sach">
+								        <a class="mls_content" href="#">Mục Lục</a>
+								    </h2>
+								</div>
+							</div>
+						</div>
+					</div>
+	            </div><!-- /.col-md-10 -->
+	            <div class="col-md-1 hidden-xs hidden-sm" id="right_rs"></div><!-- /#right_rs -->
+			</div>
+			<div class="row" id="book_name">
+				<div class="col-md-12">
+                	<div id="box_name_kinh" class="col-md-12 name_kinh_bottom">
+                		Thư viện điện tử Kinh sách Phật giáo tiếng Việt
+                	</div>
+            	</div>
+			</div>
+		</div><!-- /.container .main_vnbet -->
+	</div><!-- wrapper vnbet -->
+
+	<div class="float_item item_left">
+	    <div class="float_content">
+	        <div class="ui-widget" id="siteMenuBar">
+	            <div class="tab_control">
+	                <a href="kinh.html" class="tabmenu active" idml="1">Kinh</a>
+	                <a href="luat.html" idml="7" class="tabmenu ">Luật</a>
+	                <a href="luan.html" idml="3" class="tabmenu ">Luận</a>
+	                <a href="sach.html" idml="2" class="tabmenu ">Sách</a>
+	            </div>
+	            <div class="box_width_common">
+	                <div class="content_tab scroll_bar" style="height: 380px;">
+	                    <div class="ui-widget-header scroll-pane" id="menuContainer">
+	                        <div class="baosach">
+	                            <p class="sach"><a href="kinh-truong-bo-1-1.html">Kinh Trường Bộ 1</a></p>
+	                            <p class="sach"><a href="kinh-truong-bo-2-2.html">Kinh Trường Bộ 2</a></p>
+	                            <p class="sach"><a href="kinh-trung-bo-1-3.html">Kinh Trung Bộ 1</a></p>
+	                            <p class="sach"><a href="kinh-trung-bo-2-4.html">Kinh Trung Bộ 2</a></p>
+	                            <p class="sach"><a href="kinh-tuong-ung-1-thien-co-ke-5.html">Kinh Tương Ưng 1 Thiên Có Kệ</a></p>
+	                            <p class="sach"><a href="kinh-tuong-ung-2-thien-nhan-duyen-6.html">Kinh Tương Ưng 2 Thiên Nhân Duyên</a></p>
+	                            <p class="sach"><a href="kinh-tuong-ung-3-thien-uan-7.html">Kinh Tương Ưng 3 Thiên Uẩn</a></p>
+	                            <p class="sach"><a href="kinh-tuong-ung-4-thien-sau-xu-8.html">Kinh Tương Ưng 4 Thiên Sáu Xứ</a></p>
+	                            <p class="sach"><a href="kinh-tuong-ung-5-dai-pham-11.html">Kinh Tương Ưng 5 Đại Phẩm</a></p>
+	                            <p class="sach"><a href="kinh-tang-chi-bo-1-18.html">Kinh Tăng Chi Bộ 1</a></p>
+	                            <p class="sach"><a href="kinh-tang-chi-bo-2-19.html">Kinh Tăng Chi Bộ 2</a></p>
+	                            <p class="sach"><a href="kinh-tang-chi-bo-3-20.html">Kinh Tăng Chi Bộ 3</a></p>
+	                            <p class="sach"><a href="kinh-tang-chi-bo-4-21.html">Kinh Tăng Chi Bộ 4</a></p>
+	                            <p class="sach"><a href="kinh-tieu-bo-1-57.html">Kinh Tiểu Bộ 1</a></p>
+	                            <p class="sach"><a href="kinh-tieu-bo-2-23.html">Kinh Tiểu Bộ 2</a></p>
+	                            <p class="sach"><a href="kinh-tieu-bo-3-24.html">Kinh Tiểu Bộ 3</a></p>
+	                            <p class="sach"><a href="kinh-tieu-bo-4-25.html">Kinh Tiểu Bộ 4</a></p>
+	                            <p class="sach"><a href="kinh-tieu-bo-5-26.html">Kinh Tiểu Bộ 5</a></p>
+	                            <p class="sach"><a href="kinh-tieu-bo-6-27.html">Kinh Tiểu Bộ 6</a></p>
+	                            <p class="sach"><a href="kinh-tieu-bo-7-28.html">Kinh Tiểu Bộ 7</a></p>
+	                            <p class="sach"><a href="kinh-tieu-bo-8-29.html">Kinh Tiểu Bộ 8</a></p>
+	                            <p class="sach"><a href="kinh-tieu-bo-9-30.html">Kinh Tiểu Bộ 9</a></p>
+	                            <p class="sach"><a href="kinh-tieu-bo-10-31.html">Kinh Tiểu Bộ 10</a></p>
+	                            <p class="sach"><a href="kinh-dia-tang-65.html">Kinh Địa Tạng</a></p>
+	                            <p class="sach"><a href="kinh-dieu-phap-lien-hoa-84.html">Kinh Diệu Pháp Liên Hoa</a></p>
+	                            <p class="sach"><a href="kinh-dia-tang-bo-tat-bon-nguyen-85.html">Kinh Địa Tạng Bồ Tát Bổn Nguyện</a></p>
+	                            <p class="sach"><a href="kinh-truong-bo-2013-86.html">Kinh Trường Bộ - 2013</a></p>
+	                            <p class="sach"><a href="kinh-pho-mon-dieu-phap-lien-hoa-kinh-pho-mon-pham-134.html">Kinh Phổ Môn -  Diệu Pháp Liên Hoa Kinh Phổ Môn Phẩm</a></p>
+	                            <p class="sach"><a href="kinh-kim-cang-kim-cang-bat-nha-ba-la-mat-kinh-139.html">Kinh Kim Cang - Kim Cang Bát-Nhã Ba-La-Mật Kinh</a></p>
+	                            <p class="sach"><a href="kinh-duoc-su-luu-ly-quang-nhu-lai-bon-nguyen-cong-duc-140.html">Kinh Dược Sư - Lưu Ly Quang Như Lai Bổn Nguyện Công Đức</a></p>
+	                            <p class="sach"><a href="kinh-dai-thua-vo-luong-nghia-141.html">Kinh Đại Thừa Vô Lượng Nghĩa</a></p>
+	                            <p class="sach"><a href="di-giao-kinh-[-kinh-loi-day-cuoi-cung]-142.html">Di Giáo Kinh [ Kinh Lời Dạy Cuối Cùng]</a></p>
+	                            <p class="sach"><a href="kinh-tu-thap-nhi-chuong-kinh-bon-muoi-hai-chuong-143.html">Kinh Tứ Thập Nhị Chương - Kinh Bốn Mươi Hai Chương</a></p>
+	                            <p class="sach"><a href="nghi-thuc-tung-niem-148.html">Nghi Thức Tụng Niệm</a></p>
+	                            <p class="sach"><a href="hong-danh-sam-hoi-154.html">Hồng Danh Sám Hối</a></p>
+	                            <p class="sach"><a href="bon-mon-phap-hoa-kinh-155.html">Bổn Môn Pháp Hoa Kinh</a></p>
+	                            <p class="sach"><a href="kinh-duoc-su-156.html">Kinh Dược Sư</a></p>
+	                            <p class="sach"><a href="nghi-thuc-cau-an-cau-sieu-158.html">Nghi Thức Cầu An Cầu Siêu</a></p>
+	                            <p class="sach"><a href="kinh-ty-kheo-na-tien-159.html">Kinh Tỳ-Kheo Na-Tiên</a></p>
+	                            <p class="sach"><a href="kinh-duy-ma-cat-162.html">Kinh Duy-Ma-Cật</a></p>
+	                            <p class="sach"><a href="chu-kinh-tap-yeu-163.html">Chư Kinh Tập Yếu</a></p>
+	                            <p class="sach"><a href="tri-tinh-toan-tap-tap-1-kinh-dai-phuong-quang-phat-hoa-nghiem-168.html">Trí Tịnh Toàn Tập - Tập 1 - Kinh Đại Phương Quảng Phật Hoa Nghiêm</a></p>
+	                            <p class="sach"><a href="tri-tinh-toan-tap-tap-2-kinh-dai-phuong-quang-phat-hoa-nghiem-169.html">Trí Tịnh Toàn Tập - Tập 2 - Kinh Đại Phương Quảng Phật Hoa Nghiêm</a></p>
+	                            <p class="sach"><a href="tri-tinh-toan-tap-tap-3-kinh-dai-phuong-quang-phat-hoa-nghiem-170.html">Trí Tịnh Toàn Tập - Tập 3 - Kinh Đại Phương Quảng Phật Hoa Nghiêm</a></p>
+	                            <p class="sach"><a href="tri-tinh-toan-tap-tap-4-kinh-dai-phuong-quang-phat-hoa-nghiem-171.html">Trí Tịnh Toàn Tập - Tập 4 - Kinh Đại Phương Quảng Phật Hoa Nghiêm</a></p>
+	                            <p class="sach"><a href="tri-tinh-toan-tap-tap-5-kinh-bat-nha-ba-la-mat-172.html">Trí Tịnh Toàn Tập - Tập 5 - Kinh Bát Nhã Ba La Mật</a></p>
+	                            <p class="sach"><a href="tri-tinh-toan-tap-tap-6-kinh-bat-nha-ba-la-mat-173.html">Trí Tịnh Toàn Tập - Tập 6 - Kinh Bát Nhã Ba La Mật</a></p>
+	                            <p class="sach"><a href="tri-tinh-toan-tap-tap-7-kinh-bat-nha-ba-la-mat-174.html">Trí Tịnh Toàn Tập - Tập 7 - Kinh Bát Nhã Ba La Mật</a></p>
+	                            <p class="sach"><a href="kinh-tuong-ung-bo-2013-tap-i-183.html">Kinh Tương Ưng Bộ  2013 - Tập I</a></p>
+	                            <p class="sach"><a href="kinh-tuong-ung-bo-2013-tap-ii-184.html">Kinh Tương Ưng Bộ 2013 - Tập II</a></p>
+	                            <p class="sach"><a href="kinh-tang-nhat-a-ham-tap-i-186.html">Kinh Tăng Nhất A-Hàm - Tập I</a></p>
+	                            <p class="sach"><a href="kinh-tang-nhat-a-ham-tap-ii-188.html">Kinh Tăng Nhất A-Hàm - Tập II</a></p>
+	                            <p class="sach"><a href="kinh-tang-nhat-a-ham-tap-iii-190.html">Kinh Tăng Nhất A-Hàm - Tập III</a></p>
+	                            <p class="sach"><a href="kinh-trung-a-ham-tap-1-202.html">Kinh Trung A-Hàm Tập 1</a></p>
+	                            <p class="sach"><a href="kinh-trung-a-ham-tap-2-204.html">Kinh Trung A-Hàm Tập 2</a></p>
+	                            <p class="sach"><a href="kinh-truong-a-ham-tap-1-205.html">Kinh Trường A - Hàm Tập 1</a></p>
+	                            <p class="sach"><a href="kinh-bi-hoa-209.html">Kinh Bi Hoa</a></p>
+	                            <p class="sach"><a href="tang-nhat-a-ham-tap-1-223.html">Tăng Nhất A- Hàm Tập 1</a></p>
+	                            <p class="sach"><a href="tang-nhat-a-ham-tap-2-225.html">Tăng Nhất A- Hàm  Tập 2</a></p>
+	                            <p class="sach"><a href="gioi-thieu-kinh-thu-lang-nghiem-229.html">Giới Thiệu Kinh Thủ Lăng Nghiêm</a></p>
+	                            <p class="sach"><a href="dai-bat-niet-ban-kinh-tap-1-233.html">Đại Bát Niết Bàn Kinh Tập 1</a></p>
+	                            <p class="sach"><a href="dai-bat-niet-ban-kinh-tap-2-235.html">Đại Bát Niết Bàn Kinh Tập 2</a></p>
+	                            <p class="sach"><a href="kinh-dai-bat-niet-ban-tap-1-236.html">Kinh Đại Bát Niết Bàn Tập 1</a></p>
+	                            <p class="sach"><a href="kinh-dai-bat-niet-ban-tap-2-238.html">Kinh Đại Bát Niết Bàn Tập 2</a></p>
+	                            <p class="sach"><a href="kinh-truong-a-ham-243.html">Kinh Trường A Hàm</a></p>
+	                            <p class="sach"><a href="kim-cang-bat-nha-ba-la-mat-kinh-288.html">Kim Cang Bát Nhã Ba La Mật Kinh</a></p>
+	                            <p class="sach"><a href="duy-ma-cat-so-thuyet-kinh-289.html">Duy Ma Cật Sở Thuyết Kinh</a></p>
+	                            <p class="sach"><a href="nhu-lai-vien-giac-kinh-290.html">Như Lai Viên Giác Kinh</a></p>
+	                            <p class="sach"><a href="kinh-hien-ngu-hien-ngu-nhan-duyen-kinh-291.html">Kinh Hiền Ngu (Hiền Ngu Nhân Duyên Kinh)</a></p>
+	                            <p class="sach"><a href="kinh-tang-chi-bo-2015-tap-i-294.html">Kinh Tăng Chi Bộ 2015 - Tập I</a></p>
+	                            <p class="sach"><a href="kinh-tang-chi-bo-2015-tap-ii-295.html">Kinh Tăng Chi Bộ 2015 - Tập II</a></p>
+	                            <p class="sach"><a href="kinh-tieu-bo-2015-tap-i-296.html">Kinh Tiểu Bộ 2015 - Tập I</a></p>
+	                            <p class="sach"><a href="kinh-tieu-bo-2015-tap-ii-298.html">Kinh Tiểu Bộ 2015 - Tập II</a></p>
+	                            <p class="sach"><a href="kinh-tieu-bo-2015-tap-iii-299.html">Kinh Tiểu Bộ 2015 - Tập III</a></p>
+	                            <p class="sach"><a href="kinh-tieu-bo-2015-tap-iv-303.html">Kinh Tiểu Bộ 2015 - Tập IV</a></p>
+	                            <p class="sach"><a href="kinh-dai-phat-danh-thu-lang-nghiem-tap-1-309.html">Kinh Đại Phật Đảnh Thủ Lăng Nghiêm - Tập 1</a></p>
+	                            <p class="sach"><a href="kinh-dai-phat-danh-thu-lang-nghiem-tap-2-310.html">Kinh Đại Phật Đảnh Thủ Lăng Nghiêm - Tập 2</a></p>
+	                            <p class="sach"><a href="kinh-tieu-bo-2015-tap-v-319.html">Kinh Tiểu Bộ 2015- Tập V</a></p>
+	                            <p class="sach"><a href="kinh-vo-luong-tho-328.html">Kinh Vô Lượng Thọ</a></p>
+	                            <p class="sach"><a href="dai-tap-i-bo-a-ham-i-kinh-truong-a-ham-so-1-337.html">Đại Tập I, Bộ A- Hàm I, Kinh Trường A- Hàm Số 1</a></p>
+	                            <p class="sach"><a href="dai-tap-ii-bo-a-ham-ii--kinh-truong-a-ham-so-2-339.html">Đại Tập II, Bộ A - Hàm II , Kinh Trường A - Hàm Số 2</a></p>
+	                            <p class="sach"><a href="dai-tap-iii-bo-a-ham-iii-kinh-trung-a-ham-so-1-340.html">Đại Tập III, Bộ A - Hàm III, Kinh Trung A - Hàm Số 1</a></p>
+	                            <p class="sach"><a href="dai-tap-iv-bo-a-ham-iv-kinh-trung-a-ham-so-2-341.html">Đại Tập IV, Bộ A- Hàm IV, Kinh Trung A- Hàm Số 2</a></p>
+	                            <p class="sach"><a href="dai-tap-v-bo-a-ham-v-trung-a-ham-biet-dich-kinh-tap-a-ham-so-1-344.html">Đại Tập V, Bộ A - Hàm V, Trung A - Hàm Biệt Dịch &amp; Kinh Tạp  A - Hàm Số 1</a></p>
+	                            <p class="sach"><a href="dai-tap-vi-bo-a-ham-vi-kinh-tap-a-ham-so-2-345.html">Đại Tập VI, Bộ A- Hàm VI, Kinh Tạp A- Hàm Số 2</a></p>
+	                            <p class="sach"><a href="dai-tap-vii-bo-a-ham-vii-kinh-tap-a-ham-so-3-346.html">Đại Tập VII, Bộ A- Hàm VII, Kinh Tạp A- Hàm Số 3</a></p>
+	                            <p class="sach"><a href="dai-tap-viii-bo-a-ham-viii-kinh-tap-a-ham-so-125-q1-&gt;30-347.html">Đại Tập VIII, Bộ A -Hàm VIII, Kinh Tạp A - Hàm Số 125 (Q1-&gt;30)</a></p>
+	                            <p class="sach"><a href="dai-tap-ix-bo-a-ham-ix-so-125tt-151-348.html">Đại Tập IX, Bộ A- Hàm IX, Số 125(tt)- 151</a></p>
+	                            <p class="sach"><a href="dai-tap-x-bo-ban-duyen-i-so-152-157-349.html">Đại Tập X, Bộ Bản Duyên I (Số 152 - 157)</a></p>
+	                            <p class="sach"><a href="dai-tap-xi-bo-ban-duyen-ii-so-158-185-350.html">Đại Tập XI, Bộ Bản Duyên II, Số (158- 185)</a></p>
+	                            <p class="sach"><a href="dai-tap-xii-bo-ban-duyen-iii-so-186-190-351.html">Đại Tập XII, Bộ Bản Duyên III (Số 186 - 190)</a></p>
+	                            <p class="sach"><a href="dai-tap-xiii-bo-ban-duyen-iv-so-190-191-352.html">Đại Tập XIII, Bộ Bản Duyên IV (Số 190- 191)</a></p>
+	                            <p class="sach"><a href="dai-tap-xiv-bo-ban-duyen-v-so-192-198-353.html">Đại Tập XIV, Bộ Bản Duyên V (Số 192 - 198)</a></p>
+	                            <p class="sach"><a href="dai-tap-xv-bo-ban-duyen-vi-so-199-202-354.html">Đại Tập XV, Bộ Bản Duyên VI (Số 199- 202)</a></p>
+	                            <p class="sach"><a href="dai-tap-xvi-bo-ban-duyen-vii-so-203-211-355.html">Đại Tập XVI, Bộ Bản Duyên VII (Số 203 - 211)</a></p>
+	                            <p class="sach"><a href="dai-tap-xvii-bo-ban-duyen-viii-so-212-219-356.html">Đại Tập XVII, Bộ Bản Duyên VIII (Số 212- 219)</a></p>
+	                            <p class="sach"><a href="dai-tap-xviii-bo-bat-nha-i-so-220-quyen-1-50-357.html">Đại Tập XVIII, Bộ Bát-Nhã I - Số 220 (Quyển 1 - 50)</a></p>
+	                            <p class="sach"><a href="dai-tap-xix-bo-bat-nha-ii-so-220-quyen-51-100-358.html">Đại Tập XIX, Bộ Bát Nhã II, Số 220 (Quyển 51- 100)</a></p>
+	                            <p class="sach"><a href="dai-tap-xx-bo-bat-nha-iii-so-220-quyen-101-150-359.html">Đại Tập XX, Bộ Bát Nhã III, Số 220 (Quyển 101- 150)</a></p>
+	                            <p class="sach"><a href="dai-tap-xxi-bo-bat-nha-iv-so-220-quyen-151-200-360.html">Đại Tập XXI, Bộ Bát-Nhã IV - Số 220 (Quyển 151 - 200)</a></p>
+	                            <p class="sach"><a href="dai-tap-xxii-bo-bat-nha-v-so-220-quyen-201-250-361.html">Đại Tập XXII, Bộ Bát Nhã V, Số 220 (Quyển 201- 250)</a></p>
+	                            <p class="sach"><a href="dai-tap-xxiii-bo-bat-nha-vi-so-220-quyen-251-300-362.html">Đại Tập XXIII, Bộ Bát-Nhã VI - Số 220 (Quyển 251 - 300)</a></p>
+	                            <p class="sach"><a href="dai-tap-xxiv-bo-bat-nha-vii-so-220-quyen-301-350-363.html">Đại Tập XXIV, Bộ Bát- Nhã VII Số 220 (Quyển 301- 350)</a></p>
+	                            <p class="sach"><a href="dai-tap-xxv-bo-bat-nha-viii-so-220-quyen-351-400-364.html">Đại Tập XXV, Bộ Bát-Nhã VIII - Số 220 (Quyển 351 - 400)</a></p>
+	                            <p class="sach"><a href="dai-tap-xxvi-bo-bat-nha-ix-so-220-quyen-401-450-366.html">Đại Tập XXVI, Bộ Bát- Nhã IX Số 220 (Quyển 401- 450)</a></p>
+	                        </div>
+	                        <!-- baosach -->
+	                    </div>
+	                    <!-- menuContainer -->
+	                </div>
+	                <!-- content_tab -->
+	            </div>
+	            <!-- box_width_common -->
+	        </div>
+	        <!-- siteMenuBar -->
+	        <div class="control_float_left">
+	            <a id="btn_left" class="btn_control_float" title="Ẩn/hiện danh mục" href="javascript:;">
+	            	<img alt="icon ẩn hiện danh mục" src="images/icon_ra.gif">
+	            </a>
+	        </div>
+	    </div>
+	    <!-- float_content -->
+	</div><!-- float_content -->
+
+	<div class="float_top_item item_top hidden-xs">
+	    <div class="float_content row">
+	        <div class="block_search">
+	            Thư mục 
+	            <select id="idML_Find" name="idML_Find">
+	                <option value="1">Kinh</option>
+	                <option value="7">Luật</option>
+	                <option value="3">Luận</option>
+	                <option value="2">Sách</option>
+	            </select>
+	            <input name="keyword" type="text" class="txt_input_search" id="textKeyword" value="Nhập từ tìm kiếm">
+	            <input type="submit" name="btnSumit" id="btnFind" value="Tìm kiếm" class="searchbtn">
+	            <div class="clear">&nbsp;</div>
+	        </div>
+	        <!-- block_search -->
+	        <div id="result_find" class="row">
+	            <div class="block_content_float col-md-12">
+	                <div class="col-md-1 hidden-xs hidden-sm"></div>
+	                <div class="main_content_slide col-md-10" style="margin-left:30px"></div>
+	                <div class="col-md-1 hidden-xs hidden-sm"></div>
+	            </div>
+	        </div>
+	        <!-- result_find -->
+	        <div class="control_float">
+	            <a href="javascript:;" title="Tìm kiếm kinh sách" class="btn_control_float" id="btn_top">
+	            <img src="images/icon_up.gif" alt="icon ẩn hiện search">
+	            </a>
+	        </div>
+	    </div>
+	    <!-- float_content -->
+	</div><!-- item_top -->
+
+	<div class="float_top_item item_bottom hidden-xs">
+		<div class="float_content">
+			<div id="wrapper_phapam">
+				<div id="list_phap_am">
+					<ul class="owl-carousel owl-theme owl-style2" data-nav="true" data-dots="false" data-loop="true" data-margin="10" data-responsive='{"0":{"items":1},"480":{"items":2},"600":{"items":2},"768":{"items":3},"800":{"items":3},"992":{"items":4}}'>
+						<li>
+					    	<img src="images/album/kinhtrungbotap1.png" alt="Giải Trình Ý Nghĩa Vu Lan" />
+					    	<span class="title_phapam">Kinh Trường Bộ tập 1</span>
+						</li>
+						<li>
+					    	<img src="images/album/kinhtrungbotap1.png" alt="Tư Tưởng Kinh Kim Cương" />
+					    	<span class="title_phapam">Kinh Trường Bộ tập 1</span>
+						</li>
+						<li>
+					    	<img src="images/album/kinhtrungbotap1.png" alt="Việc Lớn Nhất Của Đời Người" />
+					    	<span class="title_phapam">Kinh Trường Bộ tập 1</span>
+						</li>
+						<li>
+					    	<img src="images/album/kinhtrungbotap1.png" alt="Phương Pháp Hành Trì Chuẩn Đề Đà La Ni" />
+					    	<span class="title_phapam">Kinh Trường Bộ tập 1</span>
+						</li>
+					</ul>
+				</div>				
+				<!-- list_phap_am -->
+				<span class="hidden" id="nut_hien_list">Xem danh sách pháp âm</span>
+				<span class="hidden" id="dang_nghe">Pháp âm đang nghe</span>
+				<div class="hidden" id="hien_phap_am"></div>
+			</div>
+			<a id="btn_bottom" class="btn_control_float" title="Nghe pháp âm" href="javascript:void(0)">
+	            <img alt="icon ẩn hiện nghe pháp âm" src="images/icon_up.gif">
+	        </a>
+		</div>
+	</div>
+
+	<!-- ===== JS ===== -->
+	<script src="js/jquery.min.js"></script>
+	<!-- ===== JS Bootstrap ===== -->
+	<script src="lib/bootstrap/bootstrap.min.js"></script>
+	<!-- ===== carousel ===== -->
+	<script src="lib/owl.carousel/owl.carousel.min.js"></script>
+    <!-- ===== Js Common ===== -->
+	<script src="js/common.js"></script>
+	<script src="js/home.js"></script>
+
+</body>
+</html>

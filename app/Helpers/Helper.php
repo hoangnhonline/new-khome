@@ -35,10 +35,16 @@ class Helper
             echo '<option value="">--'.trans('text.choose').'--</option>';
         if($is_branch == 0){
             if(!empty(  (array) $listData  )){
-                
-                foreach($listData as $data){
-                    echo "<option value=".$data->id.">".$data->name."</option>";
+                if($table == 'page'){
+                    foreach($listData as $data){
+                        echo "<option data-chapter=".$parent_id." value=".$data->id.">".$data->id."</option>";
+                    }
+                }else{
+                    foreach($listData as $data){
+                        echo "<option value=".$data->id.">".$data->name."</option>";
+                    }    
                 }
+                
             }
         }else{
             $branchArr = Branch::whereRaw('1=1')->groupBy('district_id')->pluck('district_id')->toArray(); 
